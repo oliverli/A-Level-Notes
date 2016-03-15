@@ -1,0 +1,66 @@
+\documentclass[Chemistry.tex]{subfiles}
+\begin{document}
+\chapter{Organic Mechanisms}
+\section{Free Radical Substitution}
+\begin{enumerate}
+\item Initiation: \begin{itemize}\item\ch{ '\chemfig{@{frscl1}X-[@{frsbond}]@{frscl2}X}' ->[UV] 2 X^.}\chemmove{\draw[-{>[right]}](frsbond)..controls+(90:1em)and+(90:1em)..(frscl1);\draw[-{>[left]}](frsbond)..controls+(90:1em)and+(90:1em)..(frscl2);}\end{itemize}
+\item Propagation: 
+\begin{itemize}
+\item \ch{CH4 + Cl^. -> ^.CH3 + HCl}
+\item \ch{^.CH3 + Cl2 -> CH3Cl + Cl^.}
+\end{itemize}
+\item Termination
+\begin{itemize}
+\item \ch{2 Cl^. -> Cl2}
+\item \ch{^.CH3 + Cl^. -> CH3Cl}
+\item \ch{2 ^.CH3 -> CH3CH3}
+\end{itemize}
+\end{enumerate}
+\section{Electrophilic Addition}
+\begin{enumerate}
+\item \ch{ '\chemfig{C(-[3]H)(-[5]H)=[@{ea1cc}]C(-[1]H)(-[7]H)}' + '\chemfig{@{ea1br}\chemabove{X}{\scriptstyle\mupdelta+}-[@{ea1brbr}]@{ea1br2}\chemabove{X}{\scriptstyle\mupdelta-}}' ->[slow] '\chemfig{H-C(-[2]H)(-[6]X)-\chemabove{C}{\scriptstyle+}(-[1]H)(-[7]H)}' + '\chemfig{\lewis{6:,X}}' ^-}
+\chemmove{\draw[shorten <=1pt, ->](ea1cc)..controls+(270:2.5em)and+(270:2.5em)..(ea1br.270);\draw[->](ea1brbr)..controls+(270:2em)and+(270:1em)..(ea1br2.270);}
+\item \ch{ '\chemfig{H-C(-[2]H)(-[6]X)-@{ea2c}\chemabove{C}{\scriptstyle+}(-[1]H)(-[7]H)}' + '\chemfig{@{ea2br}\lewis{6:,X}}' ^- ->[fast] '\chemfig{H-C(-[2]H)(-[6]X)-C(-[2]H)(-[6]X)-H}' }
+\chemmove{\draw[shorten <=4pt, ->](ea2br)..controls+(270:2.5em)and+(270:2.5em)..(ea2c.270);}
+\end{enumerate}
+%\columnbreak
+\section{Electrophilic Substitution}
+\begin{enumerate}
+\item Formation of electrophile
+\begin{itemize}
+\item \ch{HNO3 + 2 H2SO4 <=> NO2^+ + 2 HSO4^- + H3O^+}
+\item \ch{RX + MX3 -> R^+ + MX4^-}; \ch{5/2 X2 + M -> X^+ + MX4^-}; \ch{R} is \ch{X} or an alkyl; \ch{M} is \ch{Fe} or \ch{Al}
+\end{itemize}
+\item Electrophilic attack
+
+\ch{ '\chemfig{**6(------)}' + '\chemfig{@{es2x}X}' ^+}\chemmove{\draw[->](arccenter)..controls+(45:3em)and+(90:2em)..(es2x);}\ch{ ->[slow] '\chemfig{**[135,405,late~options={name=arccenter,label=center:+}]6(----([::+0]-X)([::-120]-H)--)}' }
+\item Neutralisation (deprotonation)
+
+\ch{ '\chemfig{**[135,405,late~options={name=arccenter,label=center:+}]6(----([::+0]-X)([::-120]-[@{es3ch}]@{es3h}H)--)}' }\chemmove{\draw[shorten >=4pt,->](es3ch)..controls+(300:1em)and+(45:2em)..(arccenter);}\ch{ + '\chemfig{@{es3a}\lewis{2:,A}}' ^- ->[fast] '\chemfig{**6(----(-X)--)}' + HA}
+\chemmove{\draw[shorten <=4pt,->](es3a)..controls+(90:1em)and+(0:2em)..(es3h);}
+\end{enumerate}
+\section{Nucleophilic Addition}
+\begin{enumerate}
+\item Nucleophilic attack
+
+\ch{ '\chemfig{@{na1c}\chembelow{C}{\scriptstyle\mupdelta+}(=[@{na1co}:90]@{na1o}\chemsuper{O}{\mupdelta-})(-[:210]R)(-[:330]R\slchemprime\relax)}' + '\chemfig{@{na1cnc}\lewis{2:,C}N}' ^- <=>[slow] '\chemfig{R-C(-[2]\lewis{4:,\chemsuper{O}{-}})(-[6]R\slchemprime\relax)-CN}' }
+\chemmove{\draw[shorten <=1pt, ->](na1co)..controls+(180:1em)and+(180:1em)..(na1o);\draw[shorten <=4pt, ->](na1cnc)..controls+(90:2em)and+(30:3em)..(na1c);}
+\item Neutralisation (protonation)
+
+\ch{ '\chemfig{R-C(-[2]@{na2o}\lewis{0:,\chemlsuper{O}{-}})(-[6]R\slchemprime\relax)-CN}' + '\chemfig{@{na2h}\chembelow{H}{\scriptstyle\mupdelta+}-[@{na2ch}]@{na2c}\chemabove{C}{\scriptstyle\mupdelta-}N}' <=> '\chemfig{R-C(-[2]OH)(-[6]R\slchemprime\relax)-CN}' + CN^-}
+\chemmove{\draw[shorten <=4pt, ->](na2o)..controls+(0:3em)and+(90:1em)..(na2h);\draw[->](na2ch)..controls+(270:1em)and+(270:1em)..(na2c);}
+\end{enumerate}
+\section{Nucleophilic Substitution}
+\subsection{S\textsubscript{N}2 (Bimolecular)}
+\ch{ '\chemfig{@{sn21nu}\lewis{2:,Nu}}' ^- + '\chemfig{[0,1.5]@{sn21c}\chemabove{C}{\scriptstyle\mupdelta+}(-[3]H)(<:[:195]H)(<[:240]H_3C)-[@{sn21cx}]@{sn21x}\chembelow{X}{\scriptstyle\mupdelta-}}' -> '\(\chemleft[\chemfig{\chemabove{Nu}{\scriptstyle\mupdelta-}-[,2,,,dash~pattern=on~1.5pt~off~1.5pt]C(-[2]H)(-[:225]H)(-[:315]CH_3)-[,2,,,dash~pattern=on~1.5pt~off~1.5pt]\chemabove{X}{\scriptstyle\mupdelta-}}\chemright]^\ddag\)' }
+
+\ch{-> '\hflipnext\chemfig{[0,1.5]C(-[3]H)(<:[:195]H)(<[:240,,,2]H_3C)-Nu}' + X^- }
+\chemmove{\draw[shorten <=4pt,->](sn21nu)..controls+(90:2.5em)and+(165:1em)..(sn21c);\draw[->](sn21cx)..controls+(90:2em)and+(90:2em)..(sn21x);}
+\subsection{S\textsubscript{N}1 (Unimolecular)}
+\begin{enumerate}
+\item \ch{ '\chemfig{@{sn11x}\chembelow{X}{\scriptstyle\mupdelta-}-[@{sn11cx}]\chemabove{C}{\hphantom{CC}\scriptstyle\mupdelta+}(-[2]CH_3)(-[6]CH_3)-CH_3}' ->[slow] '\chemfig{\chemsuper{C}{+}(-[2]CH_3)(-[:210]H_3C)(-[:330]CH_3)}' + X^- }
+\chemmove{\draw[->](sn11cx)..controls+(90:1em)and+(90:1em)..(sn11x);}
+\item \ch{ '\chemfig{@{sn12c}\chemlsuper{C}{+}(-[2]CH_3)(-[:210]H_3C)(-[:330]CH_3)}' + '\chemfig{@{sn12nu}\lewis{2:,Nu}}' ^- ->[fast] '\chemfig{H_3C-C(-[2]CH_3)(-[6]CH_3)-Nu}' }
+\chemmove{\draw[shorten <=4pt, ->](sn12nu)..controls+(90:2em)and+(30:2em)..(sn12c);}
+\end{enumerate}
+\end{document}

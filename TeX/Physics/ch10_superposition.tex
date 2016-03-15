@@ -1,0 +1,77 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Superposition}
+Superposition is a property of linear systems where the net response at a given point and time caused by two or more stimuli is the sum of the responses which would have been caused by each stimulus individually.
+
+When contextualised to waves, the \sldef{superposition principle} is as such: When two waves of the same kind meet at a point in space, the resultant displacement at that point is the vector sum of the displacements that the two waves would separately produce at that point.
+\section{Interference}
+\sldef{Interference} is the superposing of 2 or more waves of the same type, interacting according to the principle of superposition. \sldef{Observable interference} is the superposing of 2 or more coherent waves to produce regions of maxima and minima in space, according to the principle of superposition.
+
+\sldef{Coherent sources} are sources with the same frequency and a constant phase difference.
+
+For interference to be observable, the sources must be coherent; the waves must have approximately equal amplitudes, and they must be polarised in the same plane, or unpolarised.
+
+\sldef{Constructive interference} occurs when two or more waves arrive at the screen in phase with each other, such that the amplitude of the resultant wave is the sum of the amplitudes of the resultant waves.
+
+\sldef{Destructive interference} occurs when two or more waves arrive at the screen \(\pi\) out of phase with each other, such that the amplitude of the resultant wave is the minimum possible value.
+
+Interfering waves produce interference patterns with alternating maxima and minima. The zero order maximum is the brightest maximum; if there are multiple maxima with the highest amplitude, the zero order can be chosen as any. Successive maxima away from the 0 order are numbered the 1st, 2nd, 3rd and so on. Minima have the same order as the adjacent maximum away from the 0 order. This means that there is no 0 order minimum.
+\subsection{One-source interference i.e. diffraction}
+\sldef{Diffraction} is the bending or spreading of waves when they travel through a small opening. It is a special case of interference, and it occurs due to the Huygens-Fresnel principle, where each point along a slit is considered a source of spherical waves.
+
+In diffraction, waves from the Huygens sources interfere with each other and produce a pattern with alternating maxima and minima, with minima at angles \(\theta\) satisfying the equation \begin{equation}a\sin\theta = m\lambda\end{equation} where \(a\) is the slit width and \(m\in\mathbb{Z}^+\) is the order of the minimum.
+
+Generally, diffraction can only be observed when the size of the opening is approximately the same order as the wavelength or smaller.
+%
+%The intensity \(I\) of a diffraction pattern at distance \(d \propto\sin\theta\) is \[I = I_0\left(\frac{\sin( \pi a\lambda^{-1}\sin\theta)}{\pi a\lambda^{-1}\sin\theta}\right)^2\] where \(a\) is the slit width.
+\subsection{Two-source interference}
+Two point sources of spherical waves can produce an interference pattern on a screen, with alternating maxima and minima. The zero order maximum occurs at the point on the screen that is equidistant from both sources (assuming the sources are in phase).
+
+The separation between successive maxima is estimated by \begin{equation}\Delta x = \frac{\lambda D}{a}\end{equation} for \(D \gg a\), where \(D\) is the distance from the point sources to the screen, and \(a\) is the separation of the two point sources. If \(D \approx a\) or \(D < a\), then Pythagoras' theorem must be used.
+
+This phenomenon is investigated in Young's double slit experiment, where the two point sources are replaced by a monochromatic source of light passing through a single slit that acts as a point source, followed by a double slit that acts as two coherent point sources and causes light to diffract so that they can overlap and interfere.
+
+For such a setup to produce a visible pattern, the double slits must be small enough for diffraction to occur; the single slit must be small enough so the light reaching the double slits is coherent; and the slit-screen separation must be at least one order larger than the slit separation so that the diffracted waves can overlap and interfere.
+
+The path difference \(\Delta x\) between the two waves reaching a maximum and minimum in two-source interference can be expressed in terms of the order of the maximum \(n\) or minimum \(n\). If the two sources are in phase, then for maxima \begin{align}\Delta x &= n\lambda\\\intertext{and for minima}\Delta x &= (n - \frac{1}{2})\lambda\end{align} and vice versa for sources in antiphase.
+%
+%The intensity \(I\) of a two-source interference pattern at distance \(d \propto \sin\theta\) is \[I = I_{0}\left(\frac{\pi a\sin\theta}{\lambda}\right)\] \(I_0\) can be expressed in terms of an unknown constant where required.
+
+Two-source interference can be demonstrated with a ripple tank. Two dippers connected to a bar connected to a vibrator are set into vertical vibrations with the same amplitude and frequency and in phase. Each dipper produces circular waves that have the same frequency, which spread out and overlap, interfering constructively and destructively, and an interference pattern where there are points with water waves of maximum amplitude and points with minimum amplitude is formed.
+
+Two-source interference can also be demonstrated with a microwave. Microwaves from a transmitter pass through two slits on an aluminium plate that act as coherent sources of microwaves. Microwaves emerging from the slits diffract and overlap, resulting in constructive and destructive interference. A microwave detector is moved along a line and the current registered will vary alternately from a maximum to a minimum, showing constructive and destructive interference. Since the wavelength of microwaves is about \SI{3}{\centi\metre}, the slit size should be about \SI{3}{\centi\metre}, and the slit separation should be about \SI{30}{\centi\metre}, about \(10\lambda\). The interference can be observed about \SI{1}{\metre} away.
+\subsection{Many-source interference}
+A \sldef{diffraction grating} is a plate with a large number of parallel, identically spaced slits of the same width. These multiple slits act as multiple coherent sources.
+
+Multiple sources of waves can produce an interference pattern similar to the previous two, with alternating maxima and minima. The zero order beam is the one parallel to the original beam of light.
+
+The angle \(\theta\) from the normal to the grating at which each maximum (or each beam) occurs satisfies the equation \begin{equation}d\sin\theta = m\lambda\end{equation} where \(d\) is the slit separation, and \(m\) is the order of the maximum.
+
+The maximum observable order for a planar screen parallel to the grating occurs at \[0 < \theta < \SI{90}{\degree} \iff \sin\theta < 1\] From the equation above, it can be derived that \begin{equation}m < \frac{d}{\lambda}\end{equation}
+\section{Standing waves}
+When two waves of the same type, amplitude and frequency travel in opposite directions to each other and overlap, a standing wave will be formed due to superposition.
+
+Standing waves have points where constructive and destructive interference always occurs; they are known as \sldef{antinodes} and \sldef{nodes} respectively. Nodes are halfway between antinodes, and vice versa. Nodes have the minimum amplitude and intensity, while antinodes have the maximum amplitude and intensity.
+
+In stationary waves, each point between consecutive nodes are in phase with each other i.e. they will reach the amplitude and equilibrium at the same time. Points to the between a node and the next node to the left are in antiphase with points between that node and the node to the right.
+
+The distance between consecutive nodes or consecutive antinodes is half the wavelength of the original waves.
+
+Standing waves can be produced when a reflector reflects waves back in the direction they came from. In reality, however, reflected waves will not have the same amplitude, so perfect standing waves are not formed.
+%
+%The displacement-distance and time graph of a standing wave is given by \(y = 2y_0\sin kx\sin\omega t\), where \(k\) is the wavenumber and \(y_0\) is the amplitude of the original waves. From this equation it can be seen that the amplitude at any point is \(y\prime_0 = 2y_0\sin kx\), where \(x\) is the distance from any node.
+\subsection{Harmonics}
+A \sldef{harmonic} of a wave is a frequency that is an integer multiple of the fundamental frequency.
+
+Standing waves can be produced with nodes at both ends of the wave. This occurs e.g. in a string fixed at both ends that is then plucked. The longest possible wavelength occurs when the two end nodes are consecutive nodes i.e. the distance \(L\) between the two nodes is half the wavelength. This mode is known as the 1st harmonic or the fundamental. The frequency, which is the fundamental frequency, is then \[f_1 = \frac{v}{2L}\] The next possible standing wave occurs when there is one node between the two end nodes i.e. the distance \(L\) is the wavelength. This mode is the 2nd harmonic or the 1st overtone and has frequency \[f_2 = \frac{v}{L} = 2f_1\] Therefore, the frequency and wavelength of the \(n\)th harmonic or \((n-1)\)th overtone are \begin{align*}f_n &= nf_1\\\lambda_n &= \frac{2L}{n}\end{align*}
+
+Standing waves can be produced with a node at one end and an antinode at the other. This occurs in a sound wave that enters an air column with one end closed, for example. The longest possible wavelength occurs also when the end node and antinode are adjacent i.e. \[L = \frac{1}{4}\lambda\] Thus the 1st harmonic or fundamental \[f_1 = \frac{v}{4L}\] The next possible standing wave occurs when there is one node between the node and antinode i.e. \[L = \frac{3}{4}\lambda\] This is the \emph{3rd} harmonic (since \(f\) is thrice that of \(f_1\)) or 1st overtone; \[f_3 = 3\frac{v}{4L} = 3f_1\] Therefore, the frequency and wavelength of the \(n\)th harmonic or \(\frac{1}{2}(n-1)\)th overtone are \begin{align*}f_n &= nf_1\\\lambda_n &= \frac{4L}{n}\end{align*}
+
+Standing waves can be produced with antinodes at both ends. This occurs in a sound wave that enters an air column open at both ends. The modes of operation for this are identical to standing waves with nodes as ends.
+
+In general, closed ends are usually nodes as particles cannot vibrate there; conversely, open ends are antinodes as particles must vibrate there.
+
+For sound waves, pressure nodes are displacement antinodes, and vice versa. At a pressure node, a microphone or ear will not detect sound as they sense pressure variations, not displacement.
+
+The air at the end(s) of a pipe are generally free to move and so naturally vibrations will extend into the air outside the pipe i.e. the antinode is slightly beyond the open end. The extra length it extends is called the \sldef{end correction}, and it is added to the length of the pipe i.e. \[f_1 = \frac{v}{4(L+e)}\] for a pipe with one open end, and \[f_1 = \frac{v}{2(L+2e)}\] for a pipe open at both ends.
+\end{document}

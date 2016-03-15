@@ -1,0 +1,113 @@
+\documentclass[Chemistry.tex]{subfiles}
+\begin{document}
+\chapter{Reaction Kinetics}
+The \sldef{rate of reaction} is the change in the concentration of reactants or products per unit time. It is the magnitude of the gradient of a concentration-time graph, and has units of \si{mol.dm^{-3}.time^{-1}}.
+
+There are three general types of rate of reaction.
+
+\sldef{Instantaneous rate} refers to the rate of change of concentration of a reactant or product at some \(t\), and is represented by the gradient of the tangent to a concentration-time graph at the time \(t\).
+
+\sldef{Initial rate} is the instantaneous rate of reaction at \(t=0\).
+
+\sldef{Average rate} refers to the change in concentration of a reactant or product over some time interval. It is represented by the gradient of the line connecting the two points on the concentration-time graph at the start and end of the time interval.
+\section{Rate equations and orders of reaction}
+The \sldef{rate equation} relates the rate of reaction to the concentration of reactants raised to some indices. It takes the form of \(\slrt = k[A]^m[B]^n\), where \(k\) is a rate constant.
+
+The \sldef{rate constant} \(k\), a proportionality constant, is given by \[k = Ae^{-\frac{E_{a}}{\text{RT}}}\] where \(A\) is the Arrhenius constant, \slEa{} is the activation energy of the reaction, \(R\) is the molar gas constant, and \(T\) is the temperature. For a reaction with overall order \(n\), it has units of \(\si{\mol}^{1-n}\,\si{\deci\metre}^{3n-3}\,\si{\per\second}\).
+
+\(A\), the \sldef{Arrhenius constant}, is generally seen as the total number of collisions that occur (both effective and non-effective collisions) per unit time.
+
+The \sldef{order of reaction} with respect to \conc{A} and \conc{B} are \(m\) and \(n\) respectively. It is the index to which the concentration of a reactant is raised in the rate equation, and must be experimentally determined.
+
+The \sldef{overall order of reaction} is the sum of all the individual orders of reactions in the rate equation.
+
+The \sldef{half-life} of a reaction (\(\slhl\)) is the time taken for \conc{reactant} to decrease to half its original value.
+
+A reaction that is zero-order with respect to a reactant will have its rate of reaction independent of the concentration of that reactant. For such a reaction, \begin{slinenum}
+\item a rate-molarity graph will be a horizontal line at \(\slrt = k\)
+\item a molarity-time graph will be a downward-sloping straight line with gradient \(-k\).\end{slinenum}
+
+A reaction that is first-order with respect to a reactant will have its rate of reaction directly proportional to the concentration of that reactant. For such a reaction, \begin{slinenum}
+\item a rate-molarity graph will be a straight line passing through the origin with positive gradient \(k\)
+\item a molarity-time graph will be a decreasing exponential graph that shows a constant half-life.\end{slinenum} The half-life of the reaction with respect to the reactant is given as \begin{equation}\slhl = \frac{\ln2}{k}\end{equation} and the concentration of the reactant at any time \(t\) \begin{equation}\conc{reactant} = \left(\frac{1}{2}\right)^{t/\slhl}\conc{reactant}_0\end{equation}
+
+A reaction that is second-order with respect to a reactant will have its rate of reaction directly proportional to the square of the concentration of that reactant. For such a reaction, \begin{slinenum}
+\item a rate-molarity graph will be a quadratic curve
+\item a molarity-time graph will be a decreasing curve without a constant half-life.\end{slinenum}
+
+A reaction with overall order of reaction greater than 1 can become a pseudo first-order reaction if all reactants except one that the reaction is first-order with respect to are present in large excess. This works as reactants that are present in large excess will exhibit negligible changes in concentration as the reaction progresses, so their concentrations remain effectively constant.
+
+To find the order of reaction with respect to a reactant based on experimental concentration data, compare two experiments that differ only in the concentration of the reactant and possibly other reactants for which the order of reaction is known.
+
+To find the order of reaction with respect to a reactant based on a molarity-time graph, \begin{slinenum}
+\item for the reactant on the y-axis, look at the half-life of the reaction
+\item for any reactants for which multiple graphs are drawn for different concentrations, look at and compare the initial rate of reactions of two suitable graphs.
+\end{slinenum}
+\section{Activation energy and reaction mechanisms}
+\sldef{Collision theory} states that chemical reactions only occur if there are effective collisions, which occur when \begin{slinenum}
+\item reactant particles collide with energy greater than the activation energy \slEa{}
+\item reactant particles collide with the correct orientation.\end{slinenum}
+
+The rate of reaction is directly proportional to the frequency of effective collisions.
+
+The \sldef{activation energy} (\slEa{}) is the minimum amount of energy that molecular collisions must possess for a chemical reaction to occur. It is used mainly to break bonds in reacting particles, and overcome repulsive forces present when reactant molecules are close to one another (steric repulsion).
+
+A \sldef{Maxwell-Boltzmann distribution} curve shows the number of particles with a specific amount of energy at a given temperature. An activation energy is represented by a vertical line at \(E = \slEa\). The area under the graph to the right of the line gives the number of particles with energy greater than or equal to \slEa{}.
+
+For all chemical reactions, reactants form a transition state before forming products. Only reactant particles with at least the activation energy can attain the transition state before products are formed. The transition state is indicated on an energy profile diagram by the peak between the reactants and products.
+
+An \sldef{elementary reaction} is a reaction with a single step. An energy profile diagram of such a reaction would show only one transition state. For elementary reactions, the orders of reaction correspond to the stoichiometric coefficients in the reaction equation. Since each step in a non-elementary reaction is an elementary reaction, this applies likewise.
+
+A \sldef{non-elementary reaction} is a reaction with more than one step. An energy profile diagram of such a reaction would show a number of peaks corresponding to the number of steps. The slow step of the reaction would have the highest activation energy. For non-elementary reactions, the overall rate equation is the rate equation of the slow step, also known as the rate-determining step.
+
+Reactions involving more than two molecules are usually not elementary reactions as it is very unlikely for three molecules to collide with the correct orientations with energy greater than the activation energy for the reaction to occur in a single step.
+\section{Factors affecting rate of reaction}
+The concentration of reactants affects the rate of reaction as \begin{slinenum}
+\item when concentration is increased, the number of reactant particles per unit volume increases
+\item frequency of effective collisions thus increases
+\item since rate of reaction is proportional to the frequency of effective collisions, rate of reaction increases.
+\end{slinenum}
+
+The pressure of gaseous reactants affects the rate of reaction as (similar to concentration) \begin{slinenum}
+\item when pressure is increased, gaseous reactant particles are brought closer together
+\item number of gaseous reactant particles per unit volume increases
+\item frequency \ldots{}.
+\end{slinenum}
+
+The temperature of reactants affects the rate of reaction as \begin{slinenum}
+\item when temperature is increased, the Maxwell-Boltzmann curve is skewed to the right
+\item since the area under the curve is proportional to the number of reactant particles, the number of reactant particles with \(E \ge \slEa\) increases
+\item frequency \ldots{}.
+\end{slinenum} By increasing temperature, the rate constant \(k\) is increased.
+
+The surface area of reactants affects the rate of reaction as \begin{slinenum}
+\item when surface area is increased, there is a larger accessible area for collision since a larger total surface area is exposed
+\item frequency \ldots{}.
+\end{slinenum} Increasing the surface area increases \(A\) (the Arrhenius constant), in turn increasing \(k\).
+
+The level of light received by a photochemical reaction affects the rate of reaction as \begin{slinenum}
+\item when light intensity in a photochemical reaction is increased, amount of light energy absorbed by reactant particles increases;
+\item number of reactant particles with \(E \ge \slEa\) increases
+\item frequency \ldots{}.
+\end{slinenum}
+\section{Catalysts}
+A \sldef{catalyst} is a substance that increases the rate of reaction by providing an alternative reaction pathway with lower activation energy while remaining chemically unchanged at the end of the reaction. It increases the rate of reaction as \begin{slinenum}
+\item a catalyst provides an alternative reaction pathway with lower activation energy
+\item thus when a catalyst is used the number of reactant particles with \(E \ge \slEa\) increases
+\item frequency \ldots{}.
+\end{slinenum} By decreasing the \slEa{}, the rate constant \(k\) of a reaction is increased. The energy profile diagram of a catalysed reaction has a lower peak than the same uncatalysed one.
+\subsection{Autocatalysis}
+An \sldef{autocatalyst} is a catalyst that is one of the products of the chemical reaction itself; it carries out its catalytic action as soon as it is formed in the reaction. E.g. \ch{2 MnO4^- + 5 C2O4^{2-}\aq{} + 16 H^+\aq{} -> 2 Mn^{2+}\aq{} + 10 CO2\gas{} + 8 H2O\lqd{}}. The \slch{Mn^{2+}} ion acts as the autocatalyst. At the beginning of the reaction, the rate of reaction is initially low as the autocatalyst \slch{Mn^{2+}} has not been produced yet. As the reaction proceeds, the rate of reaction increases sharply as the autocatalyst \slch{Mn^{2+}} has been produced; the rate of reaction will eventually peak out. Towards the end of the reaction, the rate of reaction decreases as the concentration of reactants begins to decrease to low levels; near the end, the rate is relatively constant as \conc{Mn^{2+}} is effectively constant and the concentration of reactants is very low.
+\subsection{Homogeneous catalysis}
+A \sldef{homogeneous catalyst} is a catalyst that is in the same physical state as the reactants. They provide an alternative reaction pathway by forming an intermediate that is then consumed to form the products, and are regenerated at the end of the reaction. E.g. \ch{S2O8^{2-}\aq{} + 2 I^{-}\aq{} -> 2 SO4^{2-}\aq{} + I2\aq{}} with catalyst \slch{Fe^{3+}\aq{}}.
+\subsection{Heterogeneous catalysis}
+A \sldef{heterogeneous catalyst} is a catalyst that is not in the same physical state as the reactants. They provide an alternative reaction pathway by increasing the local concentration of the reactant particles on the catalyst surface as well as weakening the chemical bonds in the reactants for reaction. E.g. Haber process; \ch{N2\gas{} + 3 H2\gas{} -> 2 NH3\gas{}} with catalyst \slch{Fe\solid{}}.
+\subsection{Enzymatic catalysis}
+\sldef{Enzymes} are specialised globular proteins that increase the rate of biological reactions by providing an alternative reaction pathway of lower activation energy. Enzymes are highly specific i.e. they act only on certain substrates. They have enormous catalytic power but only at specific optimal pH and temperatures.
+
+According to the \sldef{Michaelis-Menten theory}, enzymes catalyse reactions by combining with the reactants (substrates) to form enzyme-substrate complexes. The complexes then break down to form the free enzyme and the products.
+
+Substrates must have the right shape to fit into the active sites of enzyme molecules to form the \slch{E-S} complex; this is why they are highly specific. When all active sites are occupied by substrate molecules, the enzyme is said to be saturated.
+
+For enzyme-catalysed reactions, the rate of reaction reaches a limit once reactant concentration reaches a certain level, as the enzyme becomes saturated. At low \conc{substrate}, the rate of reaction increases linearly with \conc{substrate}, and rate is proportional to \conc{substrate} as active sites are not fully occupied; reaction is approximately 1st order w.r.t.\ \conc{substrate}. As \conc{substrate} increases, the rate of reaction increases to a lesser extent and rate is no longer proportional to \(\left[\textrm{substrate}\right]\) as more active sites begin to be occupied; reaction is mixed order w.r.t.\ \conc{substrate}. At high \conc{substrate}, the rate of reaction is constant and independent of \conc{substrate} as all active sites are occupied and the enzyme is saturated; reaction is zero-order w.r.t.\ \conc{substrate}.
+\end{document}

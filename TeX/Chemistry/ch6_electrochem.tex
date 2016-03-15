@@ -1,0 +1,82 @@
+\documentclass[Chemistry.tex]{subfiles}
+\begin{document}
+\chapter{Electrochemistry}
+\section{Oxidation states}
+The \sldef{oxidation state} is an indicator of the degree of oxidation of an atom in a chemical compound. It is the hypothetical charge that an atom would have if all bonds to atoms of other elements were fully ionic. Oxidation states are integers, but some compounds may have elements with fractional average oxidation states e.g. iron(II,III) oxide (\slch{Fe3O4}) where some iron atoms are in +2 state and others are in +3 state.
+
+Oxidation states are assigned based on certain rules, such that \begin{slinenum}
+\item the oxidation state of a free element is zero
+\item for a monatomic ion, the oxidation state is equal to the net charge on the ion
+\item hydrogen has an oxidation state of 1 and oxygen has an oxidation state of -2 when they are present in most compound, except that hydrogen has an oxidation state of -1 in hydrides of active metals, e.g. \slch{LiH}, and oxygen has an oxidation state of -1 in peroxides, e.g. \slch{H2O2}
+\item the algebraic sum of oxidation states of all atoms in a neutral molecule must be zero, or in ions, equal to the charge on the ion
+\item the less electronegative atom has the positive oxidation number.
+\end{slinenum}
+\section{Redox processes}
+\sldef{Oxidation} occurs when the oxidation number of an element increases. It occurs (generally) when an atom loses electrons or hydrogen, or gains oxygen. An \sldef{oxidising agent} is a substance that oxidises some other substance while itself being reduced; in redox reactions, it acts as an electron acceptor.
+
+Conversely, \sldef{reduction} occurs when the oxidation number of an element decreases. It occurs (generally) when an atom gains electrons or hydrogen, or loses oxygen. A \sldef{reducing agent} is a substance that reduces some other substance while itself being oxidised; in redox reactions, it acts as an electron donor.
+
+A \sldef{redox reaction} is one in which oxidation and reduction occurs at the same time. Electrons are always transferred from the reducing agent to the oxidising agent.
+\sldef{Disproportionation} is a redox reaction in which the same element in the same reactant is both oxidised and reduced simultaneously.
+
+If substance A oxidises substance B, A is said to be a stronger oxidising agent than B. B is said to be a stronger reducing agent than A (as if A oxidises B, then B has reduced A).
+\subsection{Redox titrations}
+\slch{MnO4^-} in an acidic medium is generally the strongest oxidising agent in the syllabus. When performing \slch{MnO4^-} titrations, the acidic medium is generally provided by sulfuric acid; acids that are easily oxidisable (e.g. \slch{HCl}) cannot be used as the ion will be oxidised by manganate(VII), interfering with the titration. No indicator is used during the titration, and the colour change is colourless to pale pink. When titrating iron(II), the overall colour change is green to orange (pink + yellow); the end-point colour change is yellow (at the equivalence point) to orange, due to \slch{Fe^{3+}}.
+
+Acidified \slch{Cr2O7^{2-}} is a strong O.A., but weaker than acidified \slch{MnO4^-}. When performing \slch{Cr2O7^{2-}} titrations, the acidic medium is generally provided by sulfuric acid. An indicator, diphenylamine sulfonate is used; the end-point colour change is yellow to violet blue.
+
+\sldef{Iodometric titrations} are used to determine the concentration of iodine, or substances that liberate iodine from potassium iodide. Sodium thiosulfate is usually used as the oxidising agent. The overall colour change is brown (from iodine) to colourless. The end-point colour change is yellow to colourless if no indicator is used. Starch is sometimes used as an indicator. When starch is added, the solution will turn blue-black as starch forms a complex with the iodine in the solution; when all the iodine has been reduced, the solution will sharply decolourise and turn colourless. Starch is only added near the end-point as if added too early, iodine will be strongly adsorbed onto starch, and the accuracy of the end-point will be reduced.
+\section{Electrode potentials}\label{sec:6-2.eo}
+The \sldef{standard electrode potential} \slEo{} is the reduction potential set up when an electrode is in contact with a \SI{1}{\molar} solution of ions at \SI{1}{\atmosphere} and \SI{298}{\kelvin} measured relative to a standard hydrogen electrode.
+
+\slEo{} is a measure of how reducible a species is into another species; the more positive the value, the more reducible the species. Likewise, the more negative the value, the more oxidisable the species.
+
+\slEo{} are taken with reference to the standard hydrogen electrode (S.H.E.). The S.H.E. consists of a platinised \slch{Pt} electrode in a solution containing \SI{1}{\molar} of \slch{H^{+}\aq{}} and \slch{H2} gas at \SI{1}{\atmosphere} and \SI{298}{\kelvin} bubbled through the solution.
+
+To determine \slEo{} of some reduction reaction:
+\begin{enumerate}[start=1]
+\item Use standard conditions of \SI{1}{\atmosphere} and \SI{298}{\kelvin}, with the concentrations of all solutions at \SI{1}{\molar}.
+\item The standard hydrogen electrode is used as the reference electrode and the two half-cells are connected by a salt bridge.
+\item The potential difference set up when the half-cells are connected is measured by a voltmeter, which will show the \slEo{} of that reaction.
+\end{enumerate}
+
+Electrode potentials depend on the position of the equilibrium. For a given reduction reaction, any change that shifts the equilibrium towards the right, favouring reduction, will increase \slEo, and vice versa.
+\section{Applications of electrode potentials}\label{sec:6-2.appeo}
+The \slEo{} of a reduction reaction is an indicator of the strength of the species in the equation as oxidising or reducing agents. The more positive the \slEo, the stronger the reactant species is as a reducing agent; the more negative the \slEo, the stronger the product species is as an oxidising agent.
+
+The \slEo{} of a reaction involving metal ions (like the \slch{Fe^{3+}} and \slch{Fe^{2+}} pair) can predict the stability of the ions in different media. For the case of \slch{Fe^{3+}}/\slch{Fe^{2+}}, it can be seen that \(\slEorr{Fe^{3+}}{Fe^{2+}} = +\SI{0.77}{\volt}\) is more positive while \(\slEorr{Fe(OH)3}{Fe(OH)2} = -\SI{0.56}{\volt}\) is more negative and so \slch{Fe^{2+}} is less likely to be oxidised in acid and thus is more stable than \slch{Fe^{3+}} in acid, while \slch{Fe(OH)2} is likely to be oxidised in alkali and so is less stable than \slch{Fe(OH)3} in a basic medium.
+
+The \sldef{standard cell potential} \slEocell{} given by \begin{equation}\slEocell = \slEo_\text{red} - \slEo_\text{ox}\end{equation} of a reaction or electrochemical cell can determine the thermodynamic feasibility of a reaction. If \slEocell{} is positive, the reaction is feasible; if it is zero, the reaction is at equilibrium; if it is negative, the reaction is not feasible. Typically, if \slEocell{} is positive but close to zero, the extent of the forward reaction is small.
+
+To predict what happens when two species are mixed, we can pick out reduction equations involving the species. Any pair of equations where one species is reduced and the other is oxidised and \(\slEocell \geq 0\) will occur.
+
+However, \slEocell{} only deals with the feasibility of a reaction; it does not predict the rate of reaction. A reaction may not occur even if \(\slEocell > 0\) as it may be kinetically too slow due to high activation energy. Also, \slEocell{} values are only valid for standard conditions.
+\section{Electrolytic cell}
+An \sldef{electrolytic cell} is one in which chemical reactions take place at electrodes as a result of a direct electrical current passing through the \sldef{electrolyte}, which is a molten compound or aqueous solution. The process of using an electric current to bring about chemical change is \sldef{electrolysis}.
+
+In an electrolytic cell, the \sldef{anode} is the positive electrode connected to the positive terminal of the battery, and the \sldef{cathode} is the negative electrode connected to the negative terminal of the battery. Cations are attracted to the cathode where reduction occurs, and anions to the anode where oxidation occurs.
+
+At the cathode, the cation that is most easily reduced i.e. most positive \slEo{}, as in section \ref{sec:6-2.eo}, and at the anode, the anion (or the anode) that is most easily oxidised i.e. most negative \slEo{}, is preferentially discharged, unless a species with an \slEo{} of similar but smaller magnitude is present in much larger concentration, in which case that species is discharged instead -- this usually occurs for anions only.
+
+\sldef{Faraday's 1st law} states that the mass of a substance produced at an electrode during electrolysis is directly proportional to the quantity of electricity passed.
+
+\sldef{Faraday’s 2nd law} states that the number of Faraday required to discharge (i.e. reduce/oxidise) one mole of an ion equals the number of charges on the ion.
+
+Calculations on the amount of substance discharged may not be accurate due to impurities in the electrolyte leading to some current not being used to discharge substances, or fluctuations in the current during electrolysis.
+\section{Applications of electrolysis}
+Aluminium can be \sldef{anodised} i.e. have its oxide layer thickened through electrolysis, in order to protect the metal from corrosion. An electrolyte of \slch{H2SO4\aq{}} is used, with a graphite cathode and the object as the anode. At the cathode, \slch{H+} is discharged to \slch{H2} while at the anode, \slch{H2O} is discharged to \slch{O2} which reacts with \slch{Al} to form the oxide layer.
+
+Copper can be purified through electrolysis. An electrolyte of \slch{CuSO4\aq{}} is used, with the impure copper as the anode and a thin sheet of pure copper as the cathode. At the anode, \slch{Cu} is oxidised to \slch{Cu^{2+}} and at the cathode, \slch{Cu^{2+}} is reduced to \slch{Cu}, with the net result being a transfer of \slch{Cu} from the impure anode to the pure cathode. Metals with \(\slEo{} < \slEorr{Cu^{2+}}{Cu}\) are oxidised at the anode but do not get reduced; metals with \(\slEo > \slEorr{Cu^{2+}}{Cu}\) are not oxidised and fall to the bottom of the tank as anode sludge.
+\section{Galvanic cell}
+A \sldef{galvanic cell} is one that produces an electromotive force as a result of chemical reactions taking place at the electrodes, converting chemical energy to electrical energy. A reaction between two half-cells will occur according to predictions explained in section \ref{sec:6-2.appeo}.
+
+For a galvanic cell, the polarity of the anode is negative since electrons flow away from it, and the polarity of the cathode is positive, since electrons flow towards it.
+\section{Applications of galvanic cells}
+Galvanic cells tend to be used as batteries. \sldef{Primary cells} are electrochemical cells in which redox reactions are spontaneous but irreversible and so they cannot be recharged; \sldef{secondary cells} are cells in which the reactions are reversible and so can be recharged.
+
+A fuel cell consists of a fuel like \slch{H2} that is oxidised by an oxidant e.g. \slch{O2}, with the energy produced converted to electrical energy. Reactants are continuously replaced as they are consumed and the products are continuously removed.
+
+A common fuel cell is the \slch{H2}-\slch{O2} fuel cell. Porous graphite electrodes are used in an electrolyte of \slch{HCl} or \slch{H2SO4}, or hot \slch{KOH} or \slch{NaOH}. At the anode, hydrogen is oxidised and at the cathode, oxygen is reduced, with the overall reaction being that of the formation of water.
+
+Benefits of fuel cells include them being pollution free, having high power-to-mass ratios, and being highly efficient. However, they tend to be expensive due to the \slch{Ni} and \slch{Pt} used as catalysts (that are also easily poisoned due to impurities in the fuels), and the high temperatures required for the reaction to take place.
+\end{document}

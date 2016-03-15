@@ -1,0 +1,44 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Measurement}
+\section{Quantities}
+A \sldef{physical quantity} is a property of a phenomenon, body or substance quantifiable by measurement.
+
+\sldef{Base quantities} are physical quantities that are the most fundamental and independent of each other. \sldef{Derived quantities} are quantities formed by combining base quantities.
+
+A \sldef{scalar} is a physical quantity with magnitude only. A \sldef{vector} is a physical quantity with both magnitude and direction.
+
+A \sldef{homogeneous equation} is one in which every term has the same units. All physical equations are homogenous.
+\section{Error and uncertainty}
+\sldef{Random error} is an error in measurement in which measured quantities differ from the mean value by different magnitudes and directions. Sources of random error include parallax error, environmental variations, inherent irregularities, or equipment limitations (e.g. very sensitive equipment).
+
+\sldef{Systematic error} is an error in measurement in which measured quantities differ from the true value by a fixed magnitude and in the same direction. Sources of systematic error include zero error, parallax error, and the environment (e.g. background radiation when measuring radioactive decay). A zero error occurs when an instrument registers a reading when there should be none.
+
+\sldef{Accuracy} is a measure of how close the results of an experiment agree with the true value (systematic error). \sldef{Precision} is a measure of how close the results of an experiment agree with one another (random error).
+\subsection{Uncertainty propagation}
+For uncertainty propagation, \begin{align}Y &= ma \pm nb \implies {\Delta}Y = m{\Delta}a + n{\Delta}b\\
+Y &= a^mb^n \implies \frac{{\Delta}Y}{Y} = \left|m\frac{{\Delta}a}{a}\right| + \left|n\frac{{\Delta}b}{b}\right|\end{align}
+\section*{Base quantities and units}
+\begin{tabular}[c]{@{}llllll@{}}
+\toprule
+\textbf{Quantity} & & \textbf{Unit} & \tabularnewline
+\midrule
+mass & \(m\) & kilogram & \si{\kilogram}\tabularnewline
+length & \(l\) & metre & \si{\metre}\tabularnewline
+time & \(t\) & second & \si{\second}\tabularnewline
+amount of substance & \(n\) & mole & \si{\mole}\tabularnewline
+temperature & \(T\) & kelvin & \si{\kelvin}\tabularnewline
+current & \(I\) & ampere & \si{\ampere}\tabularnewline
+luminous intensity & \(L\) & candela & \si{\candela}\tabularnewline
+\bottomrule
+\end{tabular}
+\section*{SI prefixes}
+\begin{tabular}[c]{@{}llllll@{}}
+\toprule
+\textbf{Prefix} & \(10^n\) & \textbf{Prefix} & \(10^n\) & \textbf{Prefix} & \(10^n\)\tabularnewline
+\midrule
+pico, \si{\pico} & -12 & nano, \si{\nano} & -9 & micro, \si{\micro} & -6\tabularnewline
+deci, \si{\deci} & -1 & kilo, \si{\kilo} & 3 & mega, \si{\mega} & 6\tabularnewline
+\bottomrule
+\end{tabular}
+\end{document}

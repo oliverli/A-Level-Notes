@@ -1,0 +1,51 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Wave Motion}
+A \sldef{wave} is a disturbance or oscillation that travels through space, accompanied by a transfer of energy, but without any transfer of material between the points.
+
+Waves are mechanical or electromagnetic, transverse or longitudinal, and progressive or stationary.
+
+A mechanical wave requires a medium for propagation, while electromagnetic waves do not. In mechanical waves, particles of the medium oscillate, while in electromagnetic waves, the electric and magnetic fields oscillate. In either case there is no propagation of material.
+
+\sldef{Transverse waves} have particles oscillating perpendicularly to the direction of wave propagation, while \sldef{longitudinal waves} have particles oscillating parallel to the direction of wave propagation.
+
+In a \sldef{progressive wave}, the profile of the wave appears to be moving, and energy is transferred. In a \sldef{standing wave}, the profile of the wave does not appear to move, and energy may or may not be transferred.
+
+The \sldef{crest} on a sinusoidal waveform is the highest point while the \sldef{trough} is the lowest point. The \sldef{wavelength} \(\lambda\) is the distance between two successive points on a wave that are in phase.
+
+The (phase) velocity of a wave is the velocity at which the phase of the wave travels. \begin{slderiv}If we assume it is constant, then velocity is the distance travelled by the wave in one cycle over the time taken for one cycle of the wave. For one cycle of the wave, the distance travelled is the wavelength \(\lambda\) and time taken is the period \(T\). Thus the speed of the wave \begin{equation}v = \frac{\lambda}{T} = f\lambda\qedhere\end{equation}\end{slderiv}
+\section{Graphs}
+The angular wavenumber (or simply wavenumber) \(k\) is the radians per unit distance of the wave. \[k = \frac{2\pi}{\lambda}\]
+
+The displacement-time graph of a single particle in a wave is given by \begin{equation}y = y_0\sin(\frac{2\pi}{T}t) = y_0\sin\omega t\end{equation} It shows the displacement of a single particle along the path of propagation at various times.
+
+The displacement-distance graph of a wave is given by \begin{equation}y = y_0\sin(\frac{2\pi}{\lambda}x) = y_0\sin k\lambda\end{equation} It shows the displacement of all particles along the path of propagation at various distances from the source at an instant in time.
+
+\sldef{Wavefronts} show the position of points of a wave that are in phase. The direction of wave propagation is perpendicular to the wavefronts.
+
+For a longitudinal wave, if displacement to e.g. the left is taken as negative, and to the right as positive, then the displacement-time and displacement-distance graphs can also be plotted.
+\section{Phase}
+Phase and phase difference are as defined in oscillations. However, phase difference can also be determined using the path difference \(\Delta x\): \begin{equation}\Delta\phi = \frac{\Delta x}{\lambda}2\pi\end{equation}
+
+Particles in phase have a phase difference of \SI{0}{\radian} and a path difference that is an integer multiple of the wavelength. Particles in antiphase have a phase difference of \SI{\pi}{\radian} and a path difference that is an odd multiple of \(\lambda/2\) i.e. \((n + \smash{\frac{1}{2}})\lambda\), \(n \in \mathbb{Z}^+_0\).
+\section{Intensity}
+The \sldef{intensity} of a wave is the rate of transfer of energy per unit area, with units \si{\watt\per\square\metre}. In three dimensions, intensity is inversely proportional to the square of distance; in two dimensions, it is inversely proportional to distance only, since the energy spreads out only on the circumference of a circle.
+
+For a point source that spreads out uniformly from the source, energy is spread out in 3 dimensions on an expanding spherical surface. Since the area of a sphere is \(4\pi r^2\), then \begin{equation}I = \frac{P}{4\pi r^2}\end{equation} A directed source spreads out over the area of a hemisphere, and so on.
+
+Intensity is always proportional to the square of amplitude, for both 2 and 3 dimensions i.e. \begin{equation}I \propto {x_0}^2\end{equation}
+\section{Polarisation}
+\sldef{Polarisation} is a property of waves that can oscillate with more than one orientation i.e. for transverse waves. A wave is linearly polarised when it oscillates in a single plane only; it is circularly polarised when the plane of oscillation rotates with time, but waves only oscillate in that plane.
+
+When referring to polarised electromagnetic waves, by convention, we refer to the electric field polarisation.
+
+A polariser blocks waves that do not oscillate along the polarising axis. Electric field waves that are parallel to the polarising axis will be transmitted while those that are perpendicular to the polarising axis will be blocked. For oscillations not parallel or perpendicular to the polarising axis, they can be resolved into the two axes. Light that emerges from a polariser will be polarised along the polariser's polarising axis.
+
+The intensity of polarised light after passing through a polariser \begin{equation}I = I_0\cos^2\theta\end{equation} where \(\theta\) is the angle between the plane the light is polarised in, and the polariser's polarising axis.
+
+Longitudinal waves cannot be polarised as the direction of oscillation of particles is already in a single plane (parallel to the direction of wave propagation), and they will not be restricted by the polarising axis.
+\section{Determination of \(f\) and \(\lambda\)}
+Sound waves create pressure differences in the air that can be detected and converted into electrical signals by a microphone, which is connected to the Y-input of a cathode ray oscilloscope to display the electrical signal. The time-base should be adjusted to a suitable sweep frequency so a sinusoidal trace can be displayed. The period of the trace can be read off after determining the scale of the time-base.
+
+To determine the wavelength of a sound, use a reflector set perpendicularly to the direction the sound is coming from, which will form a stationary sound wave. Use a microphone connected to a cathode ray oscilloscope to find a point (a displacement node) where maximum amplitude is detected on the CRO. Mark this point. Then find the next adjacent point where there is maximum amplitude, and mark this point. Measure the distance between the two marked points and double it; this is the wavelength of the sound wave.
+\end{document}

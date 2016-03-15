@@ -1,0 +1,70 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Thermal Physics}
+The \sldef{internal energy} \(U\) of a system is the energy due to its constituent matter, and is determined by the state of the system. It is the sum of the microscopic kinetic energy of all the atoms or molecules due to their continuous random motion, and the microscopic potential energy of all the atoms or molecules due to their positions relative to each other and the forces between them.
+
+\sldef{Temperature} \(T\) is a measure of the average translational kinetic energy of a system's atoms or molecules. The SI unit of temperature is the kelvin, \si{\kelvin}. When a body's temperature increases, its internal energy increases.
+
+Objects are in \sldef{thermal contact} when heat can be exchanged between them. Objects in thermal contact are in \sldef{thermal equilibrium} when the net exchange of heat between the two is zero.
+
+\sldef{Heat} \(Q\) is the thermal energy exchanged between two objects due to a difference in temperature. Heat always flows from an object of higher temperature to one of lower temperature. Thus, objects with the same temperature are in thermal equilibrium.
+
+The \sldef{thermodynamic} (Kelvin) \sldef{scale} is an absolute scale of temperature that does not depend on the properties of any particular substance, although fixed points are defined based on water. One kelvin is the fraction 1/273.16 of the thermodynamic temperature of the triple point of water. \begin{equation}T/\si{\kelvin} = T/\si{\degreeCelsius} + 273.15\end{equation} On the thermodynamic scale, absolute zero (\SI{0}{\kelvin}) is the temperature at which all substances have a minimum internal energy.
+
+An \sldef{empirical temperature scale} depends on experimental results while the thermodynamic scale is theoretical; the former depends on a thermometric property of some substance, but the thermodynamic scale is independent of the properties of any substance.
+\section{Heat capacity and latent heat}
+The \sldef{heat capacity} \(C\) of a body is the quantity of heat required to produce a unit change in temperature without a change in phase. \begin{equation}Q = C\Delta T\end{equation} Heat capacity is an extensive property.
+
+The \sldef{specific heat capacity} \(c\) of a body is the quantity of heat required to produce a unit change in temperature per unit mass of a substance without a change in phase. \begin{equation}Q = mc\Delta T\end{equation} Specific heat capacity is an intensive property, and is a characteristic of the material of the body.
+
+Heat capacity is not a constant, and is affected by the state of a body -- \(p\), \(V\) and \(T\). Values of heat capacity are generally an average over the temperature range.
+
+The heat capacity (and by extension, specific heat capacity) of a substance can be determined by electrical heating. Generally, the electrical energy supplied \(IVt\) is equated by conservation of energy to energy absorbed by the substance, and possibly heat lost to the environment.
+
+\sldef{Latent heat} is energy required for a substance to change phase. The determination of latent heat by electrical methods follows the same principles as that of heat capacity.
+
+The \sldef{specific latent heat of fusion} \(L_f\) is the quantity of heat required to change a unit mass of a substance from the solid phase to the liquid phase without any change in temperature.
+
+The \sldef{specific latent heat of vaporisation} \(L_v\) is the quantity of heat required to change a unit mass of a substance from the liquid phase to the gaseous phase without any change in temperature.
+
+During melting or boiling, heat is supplied to the system. Microscopic potential energy of the system increases while microscopic kinetic energy remains unchanged. Since microscopic kinetic energy is unchanged, the temperature of the system remains unchanged.
+
+Molecules in a solid are bound by intermolecular forces and vibrate around their equilibrium position in a crystalline structure. When melting, there is no increase in temperature until the entire solid has melted; molecules gain energy to overcome the intermolecular forces that hold them together. They then acquire a greater degree of freedom and disorder that characterises the liquid phase. Latent heat of fusion is used to weaken the intermolecular attractive forces and increase the separation between molecules.
+
+Molecules in a liquid are close together, as forces between molecules are stronger than in a gas, where the spacing between molecules is much further apart. When boiling, there is no increase in temperature until all of the liquid has boiled; molecules gain energy to overcome intermolecular forces that hold the molecules together and increase the separation between molecules. Some latent heat of vaporisation is used to allow the vapour to expand against atmospheric pressure.
+
+The latent heat of vaporisation is always greater than the latent heat of fusion, as when melting, molecules need only to break down the structure into a less-ordered arrangement of molecules, but when vaporising, molecular bonds are nearly completely broken and this requires much more energy. Also, when melting, a substance's volume does not increase substantially, but when vaporising, the increase in volume is much greater, and so much more work needs to be done against atmospheric pressure when vaporising than melting, leading to latent heat of vaporisation being greater.
+
+\sldef{Evaporation} is the change in state from liquid to gas at the surface of a liquid at any temperature. It occurs as molecules in a liquid are in continuous random motion and collide frequently with one another, causing the speed of a given molecule to change continually. If at the surface, a molecule moving away from the liquid has enough kinetic energy to do work against intermolecular attractive forces and atmospheric pressure, it can escape from the liquid and become a molecule of the vapour.
+
+Cooling occurs during evaporation as when the more energetic molecules escape from the surface of the liquid, the remaining molecules will have a lower mean translational kinetic energy. The overall mean kinetic energy of the remaining molecules thus decreases, so the temperature decreases, so cooling occurs.
+
+The rate of evaporation can be increased by increasing the temperature or surface area of the liquid, adding wind, or reducing the air pressure above the liquid.
+\section{State equation and the first law of thermodynamics}
+The \sldef{first law of thermodynamics} states that the internal energy of a system is a function of its state; an increase in internal energy of a system is equal to the sum of the heat supplied to the system and the work done on the system. \begin{equation}\Delta U = Q + W\end{equation}
+
+One \sldef{mole} is the amount of substance that contains the same number of elementary entities as there are in \SI{12}{\gram} of carbon-12. This number is known as \sldef{Avogadro's constant}, \(N_A\).
+
+The \sldef{ideal gas law} gives the equation \begin{equation}pV = nRT\end{equation} An ideal gas is one where \begin{slinenum}
+\item particles are all moving randomly and Newton's laws of mechanics can be applied to an individual particle's motion
+\item all atoms or molecules are identical and spherical
+\item the total volume of the particles is negligible compared to the total volume of the container
+\item there are no forces of attraction or repulsion between the particles, except during a collision
+\item collisions between the particles are perfectly elastic
+\item the time taken for a collision is negligible.
+\end{slinenum} These assumptions obviously do not apply to reality; all gases in reality are real gases.
+
+The mean translational kinetic energy of a monatomic ideal gas particle is \begin{equation}T = \frac{1}{2}m\langle\mathbf{c}^2\rangle = \frac{3}{2}kT\end{equation} resulting in the total kinetic energy being \begin{equation}T = \frac{3}{2}NkT = \frac{3}{2}nRT\end{equation}
+
+The internal energy of a monatomic ideal gas is equal to its kinetic energy -- since there are no forces of attraction, there is no potential energy. \begin{equation}U = KE = \frac{3}{2}NkT = \frac{3}{2}nRT\end{equation}
+
+Work done by an ideal gas during expansion is \begin{equation}W = p\Delta V = nR\Delta T = Nk\Delta T\end{equation}
+
+There are generally four types of processes.
+\begin{itemize}
+\item Isochoric: volume is kept constant. \[\Delta V = 0 \implies \Delta W = 0\]
+\item Isobaric: pressure is kept constant \[\Delta p = 0\]
+\item Isothermal: temperature is kept constant. \[\Delta T = 0 \implies \Delta U = 0\]
+\item Adiabatic: there is no heat gained or lost. \[Q = 0\]
+\end{itemize}
+\end{document}

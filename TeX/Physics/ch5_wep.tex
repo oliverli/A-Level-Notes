@@ -1,0 +1,34 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Work, Energy and Power}
+The \sldef{work} done by a force on a body is the product of the force and the displacement of the body in the direction of the force. \begin{equation}W = \mathbf{F}\cdot\mathbf{s} = \left|\mathbf{F}_\parallel\right|\left|\mathbf{s}\right|\end{equation} The SI unit of work done is the \sldef{joule} (\si{\joule}), which is the work done by a force of \SI{1}{\newton} in moving an object by \SI{1}{\metre}.
+
+When a gas is expanding, it does work on external pressure of
+\begin{equation}W = p\mathbf{A}\cdot\mathbf{s} = p\Delta V = p(V_f - V_i)\end{equation} When a gas is compressed, work is done on it by the surroundings, and work done by the gas is negative.
+
+\sldef{Energy} is the stored ability to do work. Energy can be transferred through thermal transfer (heating), or mechanical transfer (by doing work).
+
+There are many forms of energy, including kinetic energy, gravitational potential energy, elastic potential energy, chemical potential energy, electrical potential energy and light energy.
+
+\sldef{Kinetic energy} is the energy possessed by a body due to its motion. \begin{equation}T = \frac{1}{2}m\mathbf{v}^2\end{equation}
+
+\begin{slderiv}Consider a constant net force \(\mathbf{F}\) acting on an object with mass \(m\) with some initial velocity \(\mathbf{u}\). \begin{equation*}\begin{split}\mathbf{v}^2 &= \mathbf{u}^2 + 2\mathbf{a}\mathbf{s}\\\implies W &= \mathbf{F}\cdot\mathbf{s} = m\mathbf{as} \mathrel(\mathrel\because\mathbf{F} = m\mathbf{a}) = \frac{1}{2}m(\mathbf{v}^2 - \mathbf{u}^2)\end{split}\end{equation*} The work done by \(\mathbf{F}\) increases only the kinetic energy of the block, so \[W = \Delta T \mathrel\therefore T_f - T_i = \frac{1}{2}m(\mathbf{v}^2 - \mathbf{u}^2)\] If \(\mathbf{u} = 0\), \[T_i = 0 \mathrel\therefore T_f = \frac{1}{2}m\mathbf{v}^2 \mathrel\therefore T = \frac{1}{2}m\mathbf{v}^2\qedhere\]\end{slderiv}
+
+\sldef{Gravitational potential energy} is the energy a body possesses due to its position relative to something else. \begin{equation}U = mgh\end{equation}
+
+\begin{slderiv}Consider a body of mass \(m\) at height \(h_i\) above the surface of the Earth, with acceleration of free fall \(\mathbf{g}\). A force \(\mathbf{F}\) raises the body vertically at a constant velocity to height \(h_f\). \[\begin{split}\mathbf{a} &= 0 \mathrel\therefore \mathbf{F}_\text{net} = 0 \mathrel\therefore \left|\mathbf{F}\right| - mg = 0 \mathrel\therefore \left|\mathbf{F}\right| = mg\\\mathrel\therefore W &= \left|\mathbf{F}\right|\left|\mathbf{s}\right| = mg(h_f - h_i)\end{split}\] The work done by \(\mathbf{F}\) increases only the gravitational potential energy of the block, so \[W = \Delta U \mathrel\therefore U_{f} - U_{i} = mg(h_f - h_i)\] If we take the gravitational potential energy at \(h_i\) as the reference level i.e. \(U\) at \(h_i = 0\), then an object of mass \(m\) raised by height \(h\) vertically above the reference level has gravitational potential energy of \(U = mgh\).\qedhere\end{slderiv}
+
+\sldef{Elastic potential energy} is the energy possessed by an elastic body when it is subjected to deformation. \begin{equation}E = \frac{1}{2}k(\Delta\mathbf{x})^2\end{equation}
+
+The principle of \sldef{conservation of energy} states that the total energy is constant i.e. energy cannot be created or destroyed, but can be converted from one form to another.
+
+A \sldef{dissipative force} is a resistive force that reduces the energy of a system, like friction.
+
+A non-isolated system is one where the system can interact and exchange energy with its environment. Energy of a non-isolated system is not conserved, but the energy of the system and its environment is always conserved.
+
+\sldef{Power} is the work done per unit time, or the rate at which work is done. \begin{equation}P = \sldd{W}{t}\end{equation}
+
+For a constant force \(\mathbf{F}\) acting on an object such that the object moves with a constant velocity \(\mathbf{v}\), \begin{equation}P = \sldd{W}{t} = \sldd{\mathbf{Fs}}{t} = \mathbf{F}\sldd{s}{t} + \mathbf{s}\sldd{F}{t} = \mathbf{F}\sldd{s}{t} = \mathbf{F}\cdot\mathbf{v}\end{equation}
+
+\sldef{Efficiency} is the ratio between the useful output of an energy conversion and the input.
+\end{document}

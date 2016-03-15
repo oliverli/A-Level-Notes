@@ -1,0 +1,6 @@
+version=0.6.0
+typesetter=pdflatex
+steps=texpdf
+root=/home/yicheng/Documents/Notes/TeX/slnotes.cls
+
+file=/home/yicheng/Documents/Notes/TeX/Chemistry/Chemistry.tex

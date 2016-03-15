@@ -1,0 +1,73 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Lasers and Semiconductors}
+\section{Lasers}
+The word `\sldef{laser}' is an acronym meaning light amplification by stimulated emission of radiation. Light emitted from a laser is monochromatic, coherent, unidirectional and focused.
+\subsection{Principles of the laser}
+Lasers work based on (stimulated) absorption, spontaneous emission, stimulated emission and population inversion.
+
+\sldef{Absorption} occurs when an atom is excited from a lower energy level to a higher energy level due to an electron absorbing an external photon with energy equal to the energy difference between the two energy levels.
+
+\sldef{Spontaneous emission} occurs when an excited atom transits on its own accord to a lower energy level, releasing a photon with energy equal to the energy difference between the initial and final energy levels.
+
+\sldef{Stimulated emission} occurs when an excited atom is induced to transit to a lower energy level through interaction with an incident photon of energy equal to the energy difference between the initial and final energy levels, releasing a photon that has the same energy, phase, polarisation and direction of travel as the incident photon.
+
+\sldef{Population inversion} occurs when the population of atoms at a higher energy level exceeds the population of atoms at a lower energy level. This can be achieved through optical pumping or pumping by electrical discharge.
+\subsection{Laser mechanism}
+The \sldef{laser mechanism} starts with an external energy source, which is used to excite atoms from ground state to an excited state. These atoms de-excite to a metastable state through spontaneous emission, where they stay for a long period of time, such that more atoms are in the higher lasing level than the lower lasing level i.e. population inversion.
+
+When an atom in the metastable state falls back to a lower energy level, a photon is emitted. This photon interacts with another atom in the metastable state, stimulating the atom to de-excite to a lower energy state, emitting another photon in the process. This photon emitted by stimulated emission has the same phase, energy, frequency, polarization and direction of travel as the incoming photon. The incoming photon is not absorbed in the process. These photons then go on to cause other excited atoms in the metastable state to de-excite resulting in the stimulated emission of more photon.
+
+This chain reaction will continue and light of high intensity is produced. Mirrors at both ends reflect the photons through the lasing medium, causing more stimulated emission of photons in the axis parallel to the laser tube. The partially reflective mirror at one end allows a small fraction of laser light to escape to form a useful laser beam that is coherent, collimated and monochromatic.
+\section{Semiconductors}
+\subsection{Energy bands}
+Isolated atoms have discrete electron energy levels. However, when two atoms are brought close, the electric interaction between them causes these two energy levels to split into two levels with energies similar to the original.
+
+When many atoms come together, like in a solid, the original discrete energy level splits into an exceedingly large number of energy levels with similar energies, which coalesce to form a continuous \sldef{energy band}. 
+
+Similar to energy levels in an isolated atom, most energy bands are either filled or empty. Like the valence shell, the \sldef{valence band} is the outermost band containing electrons. The \sldef{conduction band} refers to the next higher energy band after the valence band.
+\subsection{Band theory: electrical conduction}
+The energy gap between the valence and conduction band is termed the \sldef{band gap}. The width of the band gap determines whether a solid is a conductor, semiconductor or insulator.
+
+In metals, the valence band either is incompletely filled or overlaps with the conduction band. Valence electrons can thus easily move to higher unfilled energy levels in the valence or conduction band using little to no energy, and so are free and able to move when there is an external electric field to conduct electricity. Metals are thus good conductors of electricity.
+
+In insulators, the valence band is completely filled while the conduction band is completely vacant; there is also a large band gap. At room temperature a negligible number of atoms have sufficient energy to cross over to the conduction band. Most electrons cannot move to conduct electricity and the material is a insulator.
+
+However, at higher temperatures or in strong electric fields, enough electrons can move to the conduction band and the material starts to conduct. When this happens, the material has `broken down'.
+
+A material that acts as a semiconductor when pure is an \sldef{intrinsic semiconductor}. They have conductivities and band gaps (on the order of \SI{1}{\electronvolt}) between those of conductors and insulators.
+
+At \SI{0}{\kelvin}, there are no free electrons to conduct as all valence electrons are bound in the completely filled valence band and there is no energy to excite them across the energy gap, and so semiconductors are poor conductors at low temperatures.
+
+At higher temperatures, thermal excitation of electrons across the band gap becomes more possible, and so conductivity increases.
+
+When electrons move from the valence band to the conduction band, they become free to move when there is an external electric field in order to conduct a charge. The \sldef{hole} they leave behind in the valence band acts as a charge carrier as a nearby free electron can move into the hole, creating a new hole at the original site of the electron. The hole thus acts as a positively charged particle moving opposite to the electrons.
+
+Both electrons and holes in the conduction and valence bands respectively are responsible for electrical conduction in semiconductors.
+\subsection{Doping}
+The electrical conductivity of an intrinsic semiconductor can be increased by adding impurities called \sldef{dopants}. Doped semiconductors are termed \sldef{extrinsic semiconductors}.
+
+There are two types of dopants. \sldef{N-type dopants} are pentavalent elements from group V like phosphorus and arsenic; they are electron donors. \sldef{P-type dopants} are trivalent elements from group III like boron; they are electron acceptors.
+
+When phosphorus is used as a dopant in silicon, its `extra' electron (compared to silicon) is weakly bonded and can break free and move into the conduction band, helping to conduct. This type of doped semiconductor has mostly electrons as charge carriers, so it is called an n-type semiconductor.
+
+In band theory, the addition of a donor creates \sldef{donor levels} just below the conduction band, which contains the extra electrons from donor atoms. At room temperature, lattice vibrations easily provide the small amount of energy required for donated electrons to cross to the conduction band where the electrons can conduct in the presence of an electric field.
+
+When boron is used as a dopant in silicon, its missing electron forms a hole that can be filled by an electron from a neighbouring atom; when this happens, it creates a hole at the position the electron originated. This movement of electrons conducts electricity; equivalently, this can be seen as holes moving in the opposite direction. Since the charge carriers are mostly holes, this kind of doped semiconductor is a p-type semiconductor. 
+
+In band theory, the addition of an acceptor creates \sldef{acceptor levels} just above the valence band, representing the holes created by the acceptor atoms. At room temperature, acceptor levels are occupied by electrons thermally excited from the valence band, which leave holes in the valence band that can move to conduct electricity.
+
+The addition of dopants does not disrupt the regular lattice of the silicon atoms, nor does it cause the material as a whole to have an overall charge.
+\section{p-n junction}
+A \sldef{p-n junction} is formed when a p-type conductor is joined to an n-type. The difference in concentration of electrons between the n-type and p-type causes electrons to diffuse across the junction from the n-type filling the holes in the p-type. This depletes the electrons and holes in the n-type and p-type respectively, creating a \sldef{depletion region} almost devoid of charge carriers.
+
+When electrons diffuse away from the n-type, they leave behind immobile cations, while the filling of holes in the p-type creates anions. This results in an internal electric field being created across the depletion region.
+
+As the diffusion continues, the depletion region widens and the charge difference across the junction increases, and eventually the internal electric field becomes so strong that further diffusion across the junction is prevented, an an equilibrium is reached.
+
+When the p-type is connected to the positive terminal and the n-type to the negative terminal of a voltage source, the p-n junction is under forward bias. The internal potential difference decreases as its polarity is opposite to that of the external voltage source, and so the depletion region becomes narrower and stops inhibiting the flow of electrons from n-type to p-type. Electrons can now flow to conduct the current and current increases exponentially with increasing forward voltage.
+
+When the p-type is connected to the negative terminal and the n-type is connected to the positive terminal of a voltage source, the p-n junction is under reverse bias. The internal potential difference increases with increasing reverse bias, widening the depletion region and further inhibiting the flow of current across the junction. Only a small reverse current can flow through, carried by the small number of n-type electrons in the conduction band and p-type holes in the valence band.
+
+The p-n junction thus conducts current in one direction and resists current in the other; this can be used to rectify alternating currents. When the AC is flowing in the forward bias direction of the diode, the diode has low resistance and allows the current to flow. When the AC is flowing in the reverse bias direction of the diode, the diode has very high resistance, only allowing negligible current to flow. Effectively, the current is forced to flow in only one direction.
+\end{document}

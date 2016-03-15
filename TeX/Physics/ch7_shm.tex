@@ -1,0 +1,55 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Oscillations}
+Oscillation is the repetitive variation, typically in time, of some measure about a central value (often a point of equilibrium) or between two or more different states.
+\section{Simple harmonic motion}
+\sldef{Simple harmonic motion} is the oscillatory motion of a particle whose acceleration is always directed towards a fixed point and is directly proportional to its displacement from that fixed point i.e. it is the motion that satisfies the equation \begin{equation}\mathbf{a} = -\omega^2\mathbf{x}\end{equation}
+
+The \sldef{period} \(T\) of an object in simple harmonic motion is the time it takes to make one complete oscillation. Likewise, the frequency \(f\), with units \si{\hertz}, is the number of complete oscillations per unit time.
+
+\sldef{Phase} \(\varphi\) is the wave angle, or the fraction of, which has elapsed relative to some defined point, typically the last complete oscillation. It is usually given in radians, between \SIrange{0}{2\pi}{\radian}. \begin{equation}\varphi = 2\pi\frac{t}{T}\end{equation} Phase difference is simply the difference in phase between two particles, or one particle at different times.
+
+The \sldef{amplitude} \(x_0\) is the maximum magnitude of displacement of the oscillating particle from equilibrium.
+
+The displacement of a particle at a given time is \begin{equation}\begin{split}\mathbf{x}(t) &= x_0\sin(\omega t)\\&= x_0\cos(\omega t)\end{split}\end{equation}
+
+The velocity of a particle is given by \begin{equation}\begin{split}\mathbf{v}(t) &= \frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t} = \omega x_0\cos(\omega t)\\&= -\omega x_0\sin(\omega t)\\\mathbf{v}(\mathbf{x}) &= \pm \omega\sqrt{{x_0}^2 - \mathbf{x}^2}\end{split}\end{equation}
+
+The acceleration of a particle is given by \begin{equation}\begin{split}\mathbf{a}(t) &= \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t} = -\omega^2x_0\sin(\omega t)\\&= -\omega^2x_0\cos(\omega t)\\\mathbf{a}(\mathbf{x}) &= -\omega^2x\end{split}\end{equation}
+
+Based on the above equations, it can be said that \begin{align*}\mathbf{x} &= 0 \implies v = \max_\mathbf{x} v = \omega x_0 \vee \mathbf{a} = 0\\
+\mathbf{x} &= \pm x_0 \implies \mathbf{v} = 0 \vee a = \max_\mathbf{x} a = \omega^2x_0\end{align*}
+
+If the displacement an object in uniform circular motion is broken into two perpendicular axes coplanar with the plane of circular motion, the motion in both axes separately are simple harmonic.
+
+Examples of simple harmonic motion include the simple pendulum for small angles, where \begin{equation}\omega^2 = \frac{g}{l}\end{equation} and a mass on a spring for a spring obeying Hooke's law, where \begin{equation}\omega^2 = \frac{k}{m}\end{equation}
+
+The energies of an object in simple harmonic motion are given by \begin{equation}\begin{split}T &= \frac{1}{2}m\omega^2{x_0}^2\cos^2(\omega t)\\
+&= \frac{1}{2}m\omega^2{x_0}^2\sin^2(\omega t)\\
+&= \frac{1}{2}m\omega^2({x_0}^2-\mathbf{x}^2)\end{split}\end{equation} If we assume the potential energy at equilibrium to be zero, then \begin{equation}\begin{split}U &= \frac{1}{2}m\omega^2{x_0}^2\sin^2(\omega t)\\
+&= \frac{1}{2}m\omega^2{x_0}^2\cos^2(\omega t)\\
+&= \frac{1}{2}m\omega^2\mathbf{x}^2\end{split}\end{equation} This gives us total energy \begin{equation}E = \frac{1}{2}m\omega^2{x_0}^2\end{equation}
+\section{Damping}
+Dissipative forces like air resistance and friction typically oppose oscillating systems in real life. The amplitude and total mechanical energy of real systems generally decrease with time i.e. they are damped.
+
+Examples of damped oscillations include a note played on a piano gradually fading away after being played, or a bell being loud when it is struck but gradually fades away after.
+
+There are three degrees of damping. \begin{itemize}
+\item \sldef{Light damping} occurs when there are still oscillations, but the amplitude of oscillation decreases gradually over time.
+\item \sldef{Critical damping} occurs when the system returns to its equilibrium position in the shortest possible time without any oscillation i.e. it does not cross the equilibrium position at all.
+\item \sldef{Heavy damping} occurs when the system returns to its equilibrium position very slowly, without any oscillation. The system does not cross the equilibrium position either.\end{itemize}
+
+Critical damping is important and seen in many places in our daily lives. In instruments like balances and electric meters, the pointer is critically damped so that it moves quickly to the reading without oscillating. In car suspension systems, the shock absorbers critically damp the suspension and resist the setting up of vibrations that could impair control or cause damage.
+\section{Forced oscillations and resonance}
+A system undergoing free oscillation will oscillate with a frequency known as its \sldef{natural frequency} \(f_0\).
+
+A \sldef{forced oscillation} is the motion produced when a system (the driven oscillator) is acted upon by an external periodic force (the driving force). The system will oscillate at the driving frequency.
+
+The amplitude of oscillation of a system depends on the driving frequency, and reaches a maximum when the driving frequency matches the natural frequency. When this occurs, it is known as \sldef{resonance}, and there is a maximum transfer of energy from the driving system into the oscillating system.
+
+If the system is not damped, the amplitude of the driven system in resonance will tend towards infinity. Otherwise, the peak amplitude and natural frequency decreases as the degree of damping increases, as greater damping means a greater period and smaller frequency.
+
+Resonance can be useful. It is exploited to produce sound in wind instruments and is also the basis of modern radio telecommunications, where electromagnetic resonance occurs between the radio circuit and the signal. It also allows for cooking of food using microwaves, where microwaves resonate with water molecules.
+
+However, resonance can be harmful. It can cause damage to human organs -- internal organs can resonate with sounds of frequency below \SI{100}{\hertz}. It can also cause bridges to collapse due to resonance -- like with the wind e.g. the Tacoma Narrows Bridge, or when people march in step over bridges (which is why armies break step when crossing bridges).
+\end{document}

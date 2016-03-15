@@ -1,0 +1,33 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{DC Circuits}
+A \sldef{direct current} is a current whose direction does not change with time.
+
+A circuit is a network of components that forms a closed loop, allowing current to return to its source.
+
+When components are connected in sequence i.e. with only a single current path between the components, they are connected in \sldef{series}. When components are connected such that current can flow through either one but not both, they are connected in \sldef{parallel}.
+
+Multiple resistances connected in series and in parallel can be simplified to a single resistance with an equivalent or effective resistance.
+
+For resistances in series, \begin{equation}R_{\text{eff}} = R_1 + R_2 + R_3 + \cdots + R_n\end{equation} For resistances in parallel, \begin{equation}\frac{1}{R_{\text{eff}}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots + \frac{1}{R_n}\end{equation}
+
+\sldef{Kirchoff's current law} states that the algebraic sum of currents into any junction is zero i.e. \begin{equation}\sum I = 0\end{equation}
+
+\sldef{Kirchoff's voltage law} states that the algebraic sum of p.d. in any loop must equal zero i.e. \begin{equation}\sum V = 0\end{equation}
+
+Any two points in a circuit (or between circuits) with the same potential can be considered as connected. There will be no current flowing between the two points.
+\section{Circuit components}
+A \sldef{voltmeter} is a circuit component that measures the p.d. across two points in a circuit. Typically, it is connected in parallel at the two points across which the p.d. is to be measured. An ideal voltmeter should have an infinite resistance so that the circuit behaves as if the voltmeter was absent. Of course, real voltmeters cannot have infinite resistance.
+
+An \sldef{ammeter} is a circuit component that measures the current through a point in a circuit. It is connected in series at the point current is to be measured. An ideal ammeter would have zero resistance, but this is similarly impossible in reality.
+
+A \sldef{thermistor} is a semiconductor whose resistance changes with temperature. Thermistors usually have a negative temperature coefficient such that their resistance decreases as temperature increases.
+
+A \sldef{light-dependent resistor} (LDR) is a semiconductor whose resistance decreases as light intensity increases.
+
+Thermistors and LDRs can be used to divide potential in a circuit, by placing another resistor in series, and then an external circuit across either resistor.
+
+A \sldef{potentiometer} is a resistor made using a long resistance wire. Different lengths of the resistance wire will have different resistances proportional to the length, and so this can also be used to divide potential.
+
+A potentiometer can also be used to measure a p.d. (and consequently a current) accurately (without the problems of voltmeters or ammeters) by varying the length of the potentiometer across which the p.d. is connected until there is no current between the p.d. and the potentiometer circuit (as this will be when the p.d. are equal). This length is known as the balance length, and the p.d. can be determined from there.
+\end{document}

@@ -1,0 +1,31 @@
+\documentclass[Chemistry.tex]{subfiles}
+\onecolumn
+\begin{document}
+\newcommand{\slfigcap}[2]{\parbox{46mm}{\centering\vskip1mm#1\vskip3pt#2\vskip1mm}}
+\def\slfig{\chemfig[][scale=1.7]}
+\chapter{Annex: Shapes of Molecules}
+\begin{longtable}[c]{ccccccc}
+\toprule
+\textbf{e.p.} & \textbf{Basic shape} & \textbf{l.p.} & \textbf{Shape} & \(\angle\) & \textbf{P} & \textbf{E.g.}\\
+\midrule\endhead
+2 & \slfigcap{\slfig{X-A-X}}{linear} & 0 & (same) & \ang{180} & N & \ch{CO2}\\
+\midrule
+\multirow{2}{*}{3} & \multirow{2}{*}{\slfigcap{\slfig{X-A(<:[:30]X)(<[:330]X)}}{trigonal planar}} & 0 & (same) & \ang{120} & N & \ch{BF3}\\
+\cmidrule{3-7}
+& & 1 & \slfigcap{\slfig{\Lewis{2:,A}(-[:210]X)(-[:330]X)}}{bent} & \ang{119} & Y & \ch{SnCl2}\\
+\midrule
+4 & tetrahedral & 0 & (same) & \ang{109.5} & N & \ch{CH4}\\
+& & 1 & trigonal pyramidal & \ang{107} & Y & \ch{NH3}\\
+& & 2 & bent & \ang{104.5} & Y & \ch{H2O}\\
+\midrule
+5 & trigonal bipyramidal & 0 & (same) & \begin{tabular}[c]{@{}c@{}} \ang{120} on plane; \\ \ang{90} on perp. axis \end{tabular} & N & \ch{PCl5}\\
+& & 1 & distorted tetrahedral & \begin{tabular}[c]{@{}c@{}} \ang{119} on plane; \\ \(< \ang{90}\) on perp. axis \end{tabular} & Y & \ch{SF4}\\
+& & 2 & T-shaped & \(< \ang{90}\) on perp. axis & Y & \ch{ClF3}\\
+& & 3 & linear & \ang{180} & N & \ch{XeF2}\\
+\midrule
+6 & octahedral & 0 & (same) & \ang{90} & N & \ch{SF6}\\
+& & 1 & square pyramidal & \(< \ang{90}\) & Y & \ch{IF5}\\
+& & 2 & square planar & \ang{90} & N & \ch{XeF4}\\
+\bottomrule
+\end{longtable}
+\end{document}

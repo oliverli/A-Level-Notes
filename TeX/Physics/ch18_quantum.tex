@@ -1,0 +1,72 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Quantum Physics}
+\section{Wave-particle duality}
+Classical particles exhibit wavelike properties when conditions are appropriate, while classical waves i.e. light can exhibit particle-like properties. This is wave-particle duality. For any particle, the de Broglie wavelength \begin{equation}\lambda = \frac{h}{p}\end{equation} Wave properties start to show at lengths of similar order of magnitude as the wavelength of a particle.
+
+Phenomena like the photoelectric effect show that light has a particulate nature, while phenomena like interference and diffraction show that light has a wave nature.
+
+A \sldef{photon} is a discrete quantum of electromagnetic energy. Photons have energy dependent on their frequency and momentum \begin{align}E &= hf = \frac{hc}{\lambda}\\\left|\mathbf{p}\right| &= \frac{E}{c} = \frac{h}{\lambda}\end{align}
+\subsection{Electron diffraction}
+When electrons are fired at appropriate velocities at a metal foil, they diffract to form a pattern of rings which are similar to the pattern obtained when X-rays are fired at similar foil.
+
+In this case, the metal crystals in the foil act as a diffraction grating for the electrons to diffract. A normal grating will not work as the slit is too large -- as in superposition, the slit must be about the same order as the wavelength of the particles.
+\section{Photoelectric effect}
+The \sldef{photoelectric effect} is the phenomenon where electrons are emitted from a clean metal surface when electromagnetic radiation of sufficiently high frequency is incident on the surface. The emission of photons is instantaneous once suitable light strikes the surface. Electrons emitted through the photoelectric effect are \sldef{photoelectrons}, and the current created by the movement of electrons is the \sldef{photocurrent}.
+
+The effect occurs because electrons absorb photons and convert their energy into kinetic energy, with which the electrons escape. The absorption of a photon in the photoelectric effect is an all-or-nothing process: either all the energy of a photon is absorbed by one electron, or none.
+
+The \sldef{work function} of a material is the minimum energy necessary to remove a free electron from the surface of the material. This energy is used in overcoming attractive forces between an electron and the material.
+
+For photoelectrons to be emitted, incident photons must have energy of at least the work function of the metal i.e. the photons must have frequency higher than a threshold frequency, or wavelength shorter than a threshold wavelength.
+
+Since an electron absorbs all the energy of a photon, and the only energy loss is the work function of the metal, we have \begin{equation}hf = \Phi + T_\text{max}\label{eq:18.pe.coe}\end{equation} i.e. the maximum kinetic energy of the photoelectrons depends only on the incident frequency and the work function.
+
+If photoelectrons are decelerated through a potential difference of \(V\), then the minimum potential to stop all photoelectrons is when \[T_\text{max} = eV\] and substituting into \eqref{eq:18.pe.coe} we get \begin{equation}eV_s = hf - \Phi\end{equation} where \(V_s\) is the stopping potential.
+
+The intensity of a beam of photons is \[I = \frac{E_\text{total}}{tA} = \frac{N}{tA}hf = nhf\qquad n = \frac{N}{tA}\] thus an increase in intensity, holding \(f\) constant, means an increase in \(n\) i.e. there are more incident photons per unit area per unit time, and correspondingly there will be more photoelectrons and a higher photocurrent.
+\section{Atomic structure}
+Isolated atoms have discrete electron energy levels i.e. electrons in an atom can only possess certain specific energies. Similar to the potential of attractive fields, the energies of energy levels are negative, and infinity has zero energy.
+
+Energy levels can be mostly taken to correspond to quantum electron shells, where \(n=1\) is the innermost quantum shell and thus the lowest energy level, and so on for \(n \in \mathbb{Z}^+\).
+
+The \sldef{ground state} of an atom is when all its electrons are at their lowest possible energy levels. The ionisation energy of an atom is the energy needed to remove an electron from the outermost energy level containing an electron to infinity (to form an ion).
+
+Electrons can be excited from one energy level to a higher one by the absorption of a photon with energy equal to the difference in energy between the two energy levels, or through energy imparted by collision with a high-energy particle, which can have any energy as long as it is sufficient. (The particle can retain some energy and fly off.)
+
+Electrons can de-excite from one energy level to a lower one by the emission of a photon with energy equal to the difference in energy between the two energy levels.
+\section{Line spectra}
+Discrete electron energy levels in isolated atoms means that an electron in an atom can only have specific energies. When an electron falls from one energy level to another, energy is released in the form of a photon with energy equal to the difference in energy between the two levels. Since the energy levels are discrete, photons of only certain frequencies can be released, hence forming a line spectrum.
+
+For an \sldef{emission spectrum}, atoms are first excited using a high voltage or by heating. When the atoms go back to the ground state, either directly or via intermediate energy levels, photons of only certain frequencies are emitted due to the discrete energy levels, so only certain frequencies of light are observed, forming an emission spectrum i.e. discrete bright coloured lines on a dark background.
+
+For an \sldef{absorption spectrum}, white light is used to excite atoms. Incident photons with energies exactly equal to the difference between two of an atom's energy levels are absorbed. Since energy levels are discrete, only photons of certain frequencies are absorbed. When the atoms go back to the ground state, photons of the same frequencies are emitted but in all directions. As these frequencies of light now have much lower intensity, they account for the dark lines in the absorption spectrum i.e. discrete dark lines on a continuous spectrum.
+\section{X-ray production}
+X-rays can be produced when a beam of high-energy electrons, created through thermionic emission by heating a metal cathode and then accelerated through a potential difference, strikes a metal anode. This produces an X-ray spectrum consisting of the continuous spectrum and the characteristic spectrum.
+
+The \sldef{continuous spectrum} is produced when emitted electrons accelerate suddenly due to attraction from metal nuclei in the anode, emitting photons with energy equal to the change in kinetic energy, while some electrons will come to a stop and so emit photons with energy equal to their kinetic energy. Radiation produced in this way is known as bremsstrahlung i.e. braking radiation.
+
+As electrons approach the target at different positions and angles, there is a distribution of photon energies and thus wavelengths, forming a continuous spectrum. The photon of highest energy is formed by electrons that come to a complete stop, and so we have \begin{equation}eV = hf_\text{max}\end{equation} This maximum energy is independent of the target material.
+
+The \sldef{characteristic spectrum} is formed when emitted electrons collide into electrons bound to target atoms and cause them to be ejected, leaving vacancies that are then filled by electrons in higher energy levels, emitting a photon due to the transition, with energy equal to the difference in energy between the energy levels, creating sharp peaks in the X-ray spectrum.
+
+When the vacancy is formed in the K (\(n=1\)) shell and is filled by an electron from the L (\(n=2\)) shell, the photon is termed a K\textsubscript{\upalpha} X-ray. If the same vacancy is filled by an electron from the M shell, the photon is termed a K\textsubscript{\upbeta} X-ray.
+
+Generally, K\textsubscript{\upalpha} X-rays have higher intensity than K\textsubscript{\upbeta} X-rays as electrons in the L shell are closer to the K shell, so there is higher probability of a K shell vacancy being filled by an L electron versus an M electron. Characteristic X-rays have shorter wavelengths for targets of higher proton number, as the energy differences between shells increase.
+\section{Heisenberg's uncertainty principle}
+Quantum mechanics tells us that there is a limit to how precisely we can know a particle's momentum and position, given by Heisenberg's uncertainty principle. This principle also relates energy and time e.g. in the case of energy emitted by de-excitation of atoms over a specified time interval. \begin{align}\Delta x\Delta p &\geq \frac{\hbar}{2} = \frac{h}{4\pi}\\\Delta E\Delta t &\geq \frac{\hbar}{2} = \frac{h}{4\pi}\end{align}
+\section{Wavefunctions}
+The Schr\"odinger's equation describes quantum systems much like Newton's laws describe classical systems. Where Newton's laws deals with position and time, Schr\"odinger's equation deals with wavefunctions \(\Psi\).
+
+The wavefunction contains all the information about a quantum system at all times. The wavefunction gives us the probability density function weighing all measurements made of the system, and from this we can derive the probability of finding a particle between positions \(a\) and \(b\): \begin{equation}P(a \leq \mathbf{x} \leq b) = \int_a^b\left|\Psi\right|^2\slid\mathbf{x}\end{equation}
+\section{Quantum tunneling}
+Suppose an electron is travelling in a straight line towards a region of negative potential. The electron must do work to pass this region, and so this region is a potential barrier to the electron.
+
+Clasically, if the electron does not have enough energy to overcome this barrier, it will never do so. Quantum mechanically, there is a probability for the electron to tunnel through the barrier even when its energy is lower than that of the potential barrier, akin to when some light passes through an interface between two materials while some light is reflected back into the material in which the incident beam is in. This is \sldef{quantum tunneling}.
+
+When this happens, the matter wave before the barrier becomes a standing wave arising from the interference between the incident and reflected matter wave, while the wavefunction after the barrier is a wave of lower amplitude but equal energy (frequency), indicating a small probability of the electron being transmitted. Within the barrier, the wavefunction undergoes exponential decay.
+
+The probability that an incident electron tunnels the barrier through is known as the \sldef{transmission coefficient} \(T\), while the probability that it reflects is known as the \sldef{reflection coefficient} \(R\). Since the electron must either be reflected or transmitted, \[R+T=1\]
+
+\(T\) in this syllabus is given as \begin{equation}T \propto \exp(-2kd)\qquad k = \sqrt{\frac{8\pi^2m(U-E)}{h^2}}\end{equation}
+\end{document}

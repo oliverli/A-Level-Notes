@@ -1,0 +1,42 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Kinematics}
+\sldef{Distance} \(x\) is the total length covered by a moving object irrespective of the direction of motion.
+
+\sldef{Displacement} or position \(\mathbf{x}\) is the shortest linear distance of a moving object from a given reference point.
+
+\sldef{Speed} is the rate of change of distance travelled with respect to time. \begin{equation}v = \frac{\mathrm{d}x}{\mathrm{d}t}\end{equation} 
+
+\sldef{Velocity} is the rate of change of displacement with respect to time. \begin{equation}\mathbf{v} = \frac{\mathrm{d}\mathbf{x}}{\mathrm{d}t}\end{equation}
+
+\sldef{Acceleration} is the rate of change of velocity with respect to time. \begin{equation}\mathbf{a} = \frac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}\end{equation}
+
+\sldef{Average speed} is the total distance travelled over the total time taken. \begin{equation}\langle v \rangle = \frac{\Delta x}{\Delta t}\end{equation}
+
+\sldef{Average velocity} is the total change in displacement over total time taken. \begin{equation}\langle\mathbf{v}\rangle = \frac{\Delta \mathbf{x}}{\Delta t}\end{equation}
+
+\sldef{Average acceleration} is the total change in velocity over total time taken. \begin{equation}\langle\mathbf{a}\rangle = \frac{\Delta \mathbf{v}}{\Delta t}\end{equation}
+\section{Freefall}
+An object that experiences no force other than its weight and possibly drag is in freefall. Neglecting air resistance, an object in freefall near the Earth's surface experiences a constant downward acceleration \(\mathbf{g} = \SI{9.81}{\metre\per\square\second}\) towards the Earth's centre of mass.
+
+In reality, an object will experience a drag force \(\mathbf{F}_D \propto \mathbf{v}\) for small \(\mathbf{v}\), and \(\mathbf{F}_D \propto \mathbf{v}^2\) for larger \(\mathbf{v}\). The drag force opposes the object's motion. Terminal velocity is the velocity an object reaches when drag exactly balances the object's weight.
+\section{Projectile motion}
+In \sldef{projectile motion}, it is assumed that
+\begin{slinenum}
+\item the acceleration due to gravity is constant throughout the motion, i.e. \(\mathbf{g}\) is constant
+\item there is no horizontal acceleration, i.e. \(\mathbf{a}_x = 0\)
+\item air resistance is negligible, i.e. \(\mathbf{F}_D = 0\).
+\end{slinenum}
+Projectile motion with the above assumptions generally creates a parabolic trajectory that is symmetric; the \sldef{trajectory} is the path described by a projectile. \sldef{Range} is the distance on the plane between the point of projection and point of impact.
+
+With air resistance, projectile motion describes an asymmetric trajectory. Air resistance also decreases the object's time of flight, horizontal range and maximum height reached.
+\section{Kinematics equations}
+The following equations apply only when acceleration is constant.
+\begin{align}
+\mathbf{a} &= \frac{\Delta\mathbf{v}}{\Delta t} = \frac{\mathbf{v} - \mathbf{u}}{t} \mathrel{\therefore} \mathbf{v} - \mathbf{u} = \mathbf{a}t \mathrel{\therefore} \mathbf{v} = \mathbf{u} + \mathbf{a}t\\
+\mathbf{s} &= \int_{}^{}{\mathbf{v}\mathrm{d}t} = \int_{}^{}{(\mathbf{u} + \mathbf{a}t)\mathrm{d}t} = \mathbf{u}t + \frac{1}{2}\mathbf{a}t^{2}\\
+\begin{split}\mathbf{s} &= \mathbf{u}t + \frac{1}{2}\mathbf{a}t^{2} = \mathbf{u}t + \frac{1}{2}\frac{( \mathbf{v} - \mathbf{u})}{t}t^{2}%= \mathbf{u}t + \frac{1}{2}t(\mathbf{v} - \mathbf{u})
+\\ &= \mathbf{u}t + \frac{1}{2}\mathbf{v}t - \frac{1}{2}\mathbf{u}t = \frac{1}{2}\mathbf{u}t + \frac{1}{2}\mathbf{v}t\\&= \frac{1}{2}(\mathbf{v} + \mathbf{u})t\end{split}\\
+\begin{split}\mathbf{v}^{2} &= ( \mathbf{u} + \mathbf{a}t )^{2} = \mathbf{u}^{2} + 2\mathbf{ua}t + \mathbf{a}^{2}t^{2}\\&= \mathbf{u}^{2} + 2\mathbf{a}( \mathbf{s} - \frac{1}{2}\mathbf{a}t^{2} ) + \mathbf{a}^{2}t^{2}\\&= \mathbf{u}^{2} + 2\mathbf{as} - \mathbf{a}^{2}\mathbf{t}^{2} + \mathbf{a}^{2}\mathbf{t}^{2}\\&= \mathbf{u}^{2} + 2\mathbf{as}\end{split}
+\end{align}
+\end{document}

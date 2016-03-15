@@ -1,0 +1,218 @@
+\documentclass{slnotes}
+\newcommand*{\slbx}[1]{{\ifmmode\smash{\boxed{#1\vphantom{X}}}\else\smash{\fbox{#1\vphantom{X}}}\fi}}
+\newcommand*{\ve}[1]{\mathbf{#1}}
+\newcommand*\cve[3][]{\begin{pmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{pmatrix}}
+\newcommand*{\im}{\mathrm{i}}
+\DeclareMathOperator*{\Prb}{P}
+\DeclareMathOperator*{\Pois}{Po}
+\DeclareMathOperator*{\Binom}{B}
+\DeclareMathOperator*{\Norm}{N}
+\DeclareMathOperator*{\Exp}{E}
+\DeclareMathOperator*{\Var}{Var}
+\begin{document}
+\chapter{Functions}
+A relation \(f \colon X \to Y\) where \(X, Y \subseteq \mathbb R\) is a function if, \(\mathrel\forall a \in X\), the vertical line \(x = a\) cuts the graph of \(f\) at exactly one point.
+
+A relation \(f\) can be proven to be not a function if there is some \(a \in X\) for which the vertical line \(x = a\) cuts the graph of \(f\) zero times or more than once.
+
+A function \(f\) is one-one if, \(\mathrel\forall a \in \mathbb R\), the horizontal line \(y = a\) cuts the graph of \(f\) at most once.
+
+A function \(f\) can be proven to be not one-one if there is some \(a \in \mathbb R\) for which the horizontal line \(y = a\) cuts the graph of \(f\) more than once.
+\chapter{APGP}
+For a series \(S_n\), the \(n\)th term of the corresponding progression \[T_n = S_n - S_{n-1}\]
+
+For an arithmetic progression \(T_n\) and an arithmetic series \(S_n\) the \(n\)th term \begin{align*}T_n &= a + (n-1)d\\S_n &= \frac{n}{2}(a + l)\\&= \frac{n}{2}(2a+(n-1)d)\end{align*} where \(a\) is the first term, \(l\) is the last term and \(d\) is the common difference. To prove that a series \(S_n\) is an arithmetic series, \[T_n - T_{n-1}\text{ is a constant} \iff S_n\text{ is an arithmetic series}\]
+
+For a geometric progression \(T_n\) and a geometric series \(S_n\) the \(n\)th term \begin{align*}T_n &= ar^{n-1}\\S_n &= a\frac{r^n-1}{r-1}\end{align*} where \(a\) is the first term and \(r\) is the common ratio. To prove that a series \(S_n\) is a geometric series, \[\frac{T_n}{T_{n-1}}\text{ is a constant} \iff S_n\text{ is a geometric series}\]
+
+For a geometric progression with \(|r| < 1\) the sum to infinity \[S_\infty = \frac{a}{1-r}\]
+\chapter{Induction format}
+Let \(P_n\) be the statement \(\slbx{\text{LHS}} = \slbx{\text{RHS}}\text{, }n \in \slbx{X}\).
+
+\begin{tabbing}
+When \(n = \slbx{n}\), \=\(\text{LHS} = \slbx{\text{LHS}} = \slbx{\text{LHS value}}\).\\
+\>\(\text{RHS} = \slbx{\text{RHS}} = \slbx{\text{RHS value}} = \text{LHS}\).\\
+\>\(\mathrel\therefore P_\slbx{n}\text{ is true.}\)\\
+\end{tabbing}
+
+Assume \(P_k\) is true for some \(k \in \slbx{X}\) i.e. \(\slbx{\text{LHS}} = \slbx{\text{RHS}}\).
+
+To prove \(P_{k+1}\) is also true i.e. \(\slbx{\text{LHS}} = \slbx{\text{RHS}}\) \begin{align*}\text{LHS} &= \slbx{\text{LHS}} = \cdots\\&= \slbx{\text{RHS}} = \text{RHS}\end{align*} \(\mathrel\therefore P_k\text{ is true} \implies P_{k+1}\text{ is true}\).
+
+Since \(P_\slbx{n}\) is true, and \(P_k\text{ is true} \implies P_{k+1}\text{ is true}\), by mathematical induction, \(P_n\text{ is true}\mathrel\forall n \in \slbx{\mathrm X}\).
+\chapter{Vectors}
+Let there be two points \(A\) and \(B\) which have position vectors \(\ve a\) and \(\ve b\).
+
+For the vectors \(\ve a\) and \(\ve b\), their dot product where \(\theta\) is the angle between them \begin{align*}\ve a \cdot \ve b &= |\ve a||\ve b|\cos\theta\\&=\cve[x_{\ve a}]{y_{\ve a}}{\vdots} \cdot \cve[x_{\ve b}]{y_{\ve b}}{\vdots} = x_{\ve a}x_{\ve b} + y_{\ve a}y_{\ve b} + \cdots\end{align*}
+
+Their cross product where \(\theta\) is the angle between them and \(\ve{\hat n}\) is a unit vector perpendicular to both in the direction of a right-handed screw turned from \(\ve a\) to \(\ve b\) \begin{align*}\ve a \times \ve b &= \ve{\hat n}|\ve a||\ve b|\sin\theta\\&= \cve[x_{\ve a}]{y_{\ve a}}{z_{\ve a}} \times \cve[x_{\ve b}]{y_{\ve b}}{z_{\ve b}} = \cve[y_{\ve a}z_{\ve b} - y_{\ve b}z_{\ve a}]{z_{\ve a}x_{\ve b} - z_{\ve b}x_{\ve a}}{x_{\ve a}y_{\ve b} - x_{\ve b}y_{\ve a}}\end{align*}
+
+From the above definitions \begin{align*}\ve a \mathrel\bot \ve b &\iff \ve a \cdot \ve b = 0\\\ve a \parallel \ve b &\iff \mathrel\exists \lambda \in (\mathbb{R} \setminus \{0\}): \ve b = \lambda\ve a\end{align*}
+
+The angle between the vectors \[\theta = \cos^{-1}\frac{\ve a \cdot \ve b}{|\ve a||\ve b|}\]
+
+The length of projection and the projection vector of \(\ve a\) onto \(\ve b\) where \(F\) is the foot of the perpendicular from \(A\) to \(OB\)\begin{align*}OF &= |\ve a \cdot \ve{\hat b}|\\\overrightarrow{OF} &= (\ve a \cdot \ve{\hat b})\ve{\hat b}\end{align*} The perpendicular distance from \(A\) to \(OB\) \[AF = |\ve a \times \ve{\hat b}|\]
+
+A vector normal to \(\ve a\) and \(\ve b\) is simply \(\ve a \times \ve b\).
+
+If \(ABCD\) is a parallelogram then \begin{align*}\text{area of }ABD &= \frac{1}{2}\left|\overrightarrow{AB} \times \overrightarrow{AD}\right|\\\text{area of }ABCD &=  \left|\overrightarrow{AB} \times \overrightarrow{AD}\right|\end{align*}
+
+For three points \(A\), \(B\) and \(C\), {\jot0pt\begin{multline*}A\text{, }B\text{ and }C\text{ are collinear}\\\iff \mathrel\exists\lambda\in(\mathbb R \setminus \{0\}): \overrightarrow{AB} = \lambda\overrightarrow{AC}\end{multline*}}
+
+The general equation of a line is \[\ve r = \ve a + \lambda\ve d\quad\lambda\in\mathbb R\] where \(\ve d\) is the direction vector of the line.
+
+The parametric equation of a plane is \[\ve r = \ve a + \lambda\ve m_1 + \mu\ve m_2\quad\lambda,\mu\in\mathbb R\] The vector equation of the same plane is \[\ve r \cdot \ve n = D\quad D = \ve a \cdot \ve n\] The cartesian equation of the plane is \[\ve r = \cve[x]{y}{z} \wedge \ve a = \cve[a]{b}{c} \implies ax+by+cz = D\]
+\chapter{Complex Numbers}
+For a complex number \begin{align*}z &= x + \im y\\&= |z|(\cos(\arg z) + \im\sin(\arg z)) \\&= |z|e^{\im(\arg z)}\end{align*} its conjugate and magnitude \begin{align*}z^* &= x - \im y\\zz^* &= |z|^2 = x^2 + y^2 \implies |z| = \sqrt{x^2+y^2}\end{align*} and its argument \[\arg z = \begin{cases}\tan^{-1} \frac{y}{x} & x > 0\\\pi + \tan^{-1} \frac{y}{x} & x < 0 \wedge y \geq 0\\-\pi + \tan^{-1} \frac{y}{x} & x < 0 \wedge y < 0\end{cases}\]
+
+The properties of the argument \(\arg z\) are identical to the properties of the logarithm.
+
+If a polynomial with real coefficients has complex root \(\alpha\), then \(\alpha^*\) is also a root.
+
+The fundamental theorem of algebra states that every polynomial equation of degree \(n\) has \(n\) roots that may not be distinct.
+\chapter{Probability}
+Some useful results are \begin{gather*}\Prb(A') = 1-\Prb(A)\\\Prb(A\cup B) = \Prb(A) + \Prb(B) - \Prb(A \cap B)\\\Prb(A | B) = \frac{\Prb(A \cap B)}{\Prb(B)}\end{gather*}
+
+If \(A\) and \(B\) are independent events then \[\Prb(A|B) = \Prb(A) \wedge \Prb(B|A) = \Prb(B) \wedge \Prb(A\cap B) = \Prb(A)\Prb(B)\]
+
+If \(A\) and \(B\) are mutually exclusive events then \[\Prb(A\cap B) = 0 \wedge \Prb(A \cup B) = \Prb(A) + \Prb(B)\]
+\chapter{Distributions}
+For an random variable to be modelled by a binomial distribution, it must have \begin{slinenum}
+\item a fixed number of trials
+\item independent trials
+\item identical trials
+\item the same probability of success for each trial
+\item two possible outcomes.
+\end{slinenum}
+
+For an event to be modelled by a Poisson distribution, it must \begin{slinenum}
+\item occur at a constant average rate
+\item occur singly
+\item have independent occurrences.
+\end{slinenum}
+
+For an event \(X\) \begin{gather*}X \sim \Norm(\mu, \sigma^2) \implies Z = \frac{X-\mu}{\sigma} \sim\Norm(0, 1)\\\Prb(X \leq x) = \Prb(Z \leq \frac{x- \mu}{\sigma})\end{gather*}
+\chapter{Expectation and Variance}
+The expected value of a random variable is the prob\-ability-weighted average of all possible values: \[\Exp(X) = \sum x \Prb(X = x) = \int_{-\infty}^\infty xf(x)\slid x\] where \(f(x)\) is the probability density function of weighing \(X\), if it is a continuous random variable..
+
+If \(X\) and \(Y\) are independent random variables, \(X_1\) and \(X_2\) are independent observations of \(X\), and \(a\) and \(b\) are constants then \begin{align*}\Exp(a) &= a\\\Exp(aX + bY) &= a\Exp(X) + b\Exp(Y)\\\Var(a) &= 0\\\Var(aX + bY) &= a^2\Var(X) + b^2\Var(Y)\\\Var(X_1 + X_2) &= \Var(X_1) + \Var(X_2) = 2\Var(X)\end{align*}
+\chapter{Approximations}
+If \(X\) is a random discrete variable such that \[X \sim \Binom(n, p)\] then if \(n\) is large and \(p\) is small such that \(np < 5\), \[X \sim \Pois(np)\text{ approximately}\]
+
+If \(X\) is a random discrete variable such that \[X \sim \Binom(n, p)\] then if \(n\) is large such that \(np > 5 \wedge nq > 5\), \[X \sim \Norm(np,npq)\text{ approximately}\]
+
+If \(X\) is a random discrete variable such that \[X \sim \Pois(\lambda)\] then if \(\lambda > 10\), \[X \sim \Norm(\lambda,\lambda)\text{ approximately}\]
+
+When a normal distribution is used to approximate a discrete distribution, continuity correction must be done.
+\chapter{Sampling}
+If \(X\) is a random variable with unknown or non-normal distribution where \[\Exp(X) = \mu\text{ and }\Var(X) = \sigma^2\] central limit theorem states that if sample size \(n\) is large, \[\overline{X} \sim \Norm(\mu,\frac{\sigma^2}{n})\text{ approximately}\]
+
+Unbiased estimates of \(\mu\) and \(\sigma^2\) are sample mean \(\overline{x}\) and \(s^2\) respectively. \[s^2 = \frac{n}{n-1}(\text{sample variance})\]
+\chapter{Hypothesis Testing}
+\section{Format}
+Let \(X\) be the \slbx{something} of a randomly chosen \slbx{thing}.
+
+Let \(\mu\) be the population mean \slbx{something} of \slbx{things}.
+
+{\fboxsep=3pt\fbox{\begin{varwidth}{0.5\textwidth}\begin{tabbing}
+\textbf{One of} \=Given \(X \sim \Norm(\mu, \sigma^2)\),\\
+\textbf{or}\>Assume \(X \sim \Norm(\mu, \sigma^2)\),\\
+\textbf{or}\>Since \(n = \slbx{n}\), by central limit theorem,\end{tabbing}\end{varwidth}}}
+\[\overline{X} \sim \Norm\left(\mu, \frac{\sigma^2}{n}\right)\ \slbx{\text{approximately}}\]
+
+\textbf{H}\textsubscript0: \(\mu = \mu_0\); \textbf{H}\textsubscript1: \slbx{\(\mu < \mu_0\) \textbf{or} \(\mu > \mu_0\) \textbf{or} \(\mu \neq \mu_0\)}
+
+Test statistic:
+
+{\fboxsep=3pt\fbox{\begin{varwidth}{0.5\textwidth}\begin{tabbing}
+\textbf{One of} \=\(T = \dfrac{\overline{X}-\mu}{S/\sqrt{n}} \sim t_{n-1}\)\\\\
+\textbf{or}\>\(Z = \dfrac{\overline{X}-\mu}{\sigma/\sqrt{n}}\)\\\\
+\textbf{or}\>\(Z = \dfrac{\overline{X}-\mu}{S/\sqrt{n}}\)\end{tabbing}\end{varwidth}}}
+
+Level of significance: \slbx{\(100\alpha\%\)}; reject H\textsubscript0 if p-value < \slbx{\(\alpha\)}.
+
+Under H\textsubscript0, p-value = \slbx{p-value}.
+
+Since p-value = \slbx{p-value} \slbx{\(<\) \textbf{or} \(>\)} \(\alpha\), we \slbx{do not} reject H\textsubscript0 and conclude that there is \slbx{in}sufficient evidence, at \slbx{\(100\alpha\%\)} level, that \slbx{H\textsubscript1}.
+\section{Definitions}
+If the level of significance is \(100\alpha\%\), there is a probability of \(\alpha\) of concluding that H\textsubscript1 is true when in fact, H\textsubscript0 is true.
+
+The p-value is the probability of obtaining a sample mean \textbf(less than or equal to \textbf{or} more than or equal to \textbf{or} as extreme or more extreme than\textbf) \(\overline{x}\), assuming H\textsubscript0 is true.
+\chapter{Sampling Methods}
+A population is a collection of individuals or objects from which we may collect data.
+
+A random sample is a small representative of the population in which every member in the population has an equal probability of being selected.
+
+We often take a sample instead of collecting data from the entire population as \begin{slinenumor}
+\item it may be too costly or time consuming to collect the information from the whole population
+\item the population may be infinite or too large.
+\end{slinenumor}
+\section{Quota sampling}
+To take a quota sample, we \begin{slinenum}
+\item divide the population into mutually exclusive subgroups called strata, namely \slbx{group} and \slbx{group}
+\item select \slbx{number} \slbx{group} and \slbx{number} \slbx{group} to form the sample. The sample from each stratum is non-random.
+\end{slinenum}
+
+Quota sampling is advantageous as \begin{slinenum}
+\item it is easy to select the sample and administer the survey
+\item no sampling frame needed
+\item it incurs low cost.
+\end{slinenum}
+
+However, it is bad in that \begin{slinenum}
+\item the sample obtained is non-random
+\item it is likely to result in selection bias as interviewer may select those who are easier to interview.
+\end{slinenum}
+\section{Simple random sampling}
+To take a simple random sample, we \begin{slinenum}
+\item obtain the list of \slbx{samplees} and number all \slbx{samplees} from 1 to \slbx{number}
+\item use a random number generator to randomly select \slbx{number} numbers
+\item select the \slbx{samplees} corresponding to the numbers to form the sample.
+\end{slinenum}
+
+Simple random sampling is advantageous as \begin{slinenum}
+\item the data collected generally free from bias
+\item analysis of data is relatively easy.
+\end{slinenum}
+
+However, it is bad in that \begin{slinenum}
+\item it may be difficult to draw up the sampling frame as it is difficult to identify every member of the population
+\item it may be difficult to get access to members who have been chosen for the sample
+\end{slinenum}
+\section{Systematic sampling}
+To take a systematic sample, we \begin{slinenum}
+\item obtain the list of \slbx{samplees} and number all \slbx{samplees} from 1 to \slbx{number}
+\item compute the sampling interval \(k = \slbx{\text{calculation}}\)
+\item randomly select an integer from 1 to \slbx{number} as the start
+\item select every \slbx{\(k\)}th member of the population thereafter until the sample of \slbx{number} is obtained.
+\end{slinenum}
+
+Systematic sampling is advantageous as \begin{slinenum}
+\item the data collected is generally free from bias
+\item analysis of data is relatively easy.
+\end{slinenum}
+
+However, it is bad in that \begin{slinenum}
+\item it may be difficult to draw up the sampling frame as it is difficult to identify every member of the population
+\item it may be difficult to get access to members who have been chosen for the sample
+\item there may be selection bias if the members of the population is arranged in a periodic or cyclic pattern.
+\end{slinenum}
+\section{Stratified sampling}
+To take a stratified sample, we \begin{slinenum}
+\item obtain the list of \slbx{samplees} and divide the population into mutually exclusive subgroups called strata, namely \slbx{group} and \slbx{group}
+\item calculate the sample size that should be taken for each stratum, proportional to their size i.e. \(\slbx{\text{calculation}} = \slbx{\text{number}}\) for \slbx{group}, and \slbx{number} for \slbx{group}
+\item select the sample from each stratum using simple random sampling.
+\end{slinenum}
+
+Stratified sampling is advantageous as \begin{slinenum}
+\item it is more likely to give a good representative sample of the population
+\item when there are clear strata present, it usually gives more reliable estimates of the population parameters than random or systematic sampling.
+\end{slinenum}
+
+However, it is bad in that \begin{slinenum}
+\item it may be difficult to draw up the sampling frame as it is difficult to identify every member of the population
+\item it is more difficult to conduct than random sampling
+\item it may be difficult to identify appropriate strata
+\item strata may not be clearly defined.
+\end{slinenum}
+\end{document}

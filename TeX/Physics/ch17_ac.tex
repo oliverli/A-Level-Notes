@@ -1,0 +1,26 @@
+\documentclass[Physics.tex]{subfiles}
+\begin{document}
+\chapter{Alternating Currents}
+\sldef{An alternating current} is one in which the direction of current flow alternates between forward and backward with time. In the context of alternating currents, \begin{slinenum}
+\item \sldef{period} is the time taken to complete one complete alternation of current
+\item \sldef{frequency} is the number of complete alternations per unit time
+\item \sldef{peak value} is the maximum value
+\item \sldef{peak to peak value} is the difference between the positive and negative peak values
+\item \sldef{root-mean-square} (r.m.s.) value is equivalent to the steady direct current that converts electrical energy to other forms of energy at the same average rate as the alternating current in a given resistance.
+\end{slinenum}
+
+The r.m.s. value is the square root of the mean of the squared value. Mathematically and for current, \begin{equation}I_{rms} = \sqrt{\langle I^2\rangle} = \frac{1}{T}\int_{0}^{T}I^2\slid t\end{equation} For sinusoidal A.C., \begin{align}I_{rms} &= \frac{I_0}{\sqrt{2}}\\V_{rms} &= \frac{V_0}{\sqrt{2}}\end{align}
+
+Since power \(P = IV\), \begin{equation}\begin{split}P_{rms} &= I_{rms}V_{rms} = \frac{I_0}{\sqrt{2}}\frac{V_0}{\sqrt{2}}\\&= \frac{1}{2}I_0V_0 = \frac{1}{2}P_0\end{split}\end{equation}
+
+Alternating currents can be rectified into a direct current using diodes.
+\section{Transformers}
+A \sldef{transformer} is a device which allows an alternating voltage to be increased or decreased, keeping the frequency the same. It consists of \begin{slinenum}
+\item a laminated soft iron core to confine the magnetic flux and ensure maximum magnetic flux linkage
+\item a primary winding, connected to the input A.C. supply
+\item a secondary winding, connected to the output.\end{slinenum}
+
+An ideal transformer has no resistance, loses no magnetic flux, and so is \SI{100}{\percent} efficient. For an ideal transformer, \begin{equation}\frac{N_s}{N_p} = \frac{V_s}{V_p} = \frac{I_p}{I_s}\end{equation}
+
+Energy losses in transformers can occur due to resistance of the windings around the iron core, flux leakage, eddy currents in the iron core, and hysteresis, which is heat generated due to the repeated reversal of the magnetisation of the core.
+\end{document}

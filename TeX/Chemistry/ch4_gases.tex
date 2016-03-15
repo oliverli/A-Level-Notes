@@ -1,0 +1,59 @@
+\documentclass[Chemistry.tex]{subfiles}
+\begin{document}
+\chapter{The Gaseous State}
+When dealing with gases, two sets of conditions are commonly used. \sldef{Standard temperature and pressure} (s.t.p.) refers to temperature and pressure of \SI{273}{\kelvin} and \SI{101}{\kilo\pascal} respectively, while \sldef{room temperature and pressure} (r.t.p.) \SI{298}{\kelvin} and \SI{101}{\kilo\pascal} respectively.
+\section{Gas Laws}
+\sldef{Avogadro's law} states that equal volumes of all gases under the same conditions of temperature and pressure contain the same number of particles, i.e. \begin{equation}V \propto n\end{equation} for constant \(T\) and \(p\). It also means the volume ratio of reacting gases is equal to the mole ratio.
+
+\sldef{Boyle's law} states that the volume of a fixed mass of gas is inversely proportional to its pressure at constant temperature, i.e. \begin{equation}p_1V_1=p_2V_2\end{equation} for constant \(T\) and \(n\).
+
+\sldef{Charles's law} states that the volume of a fixed mass of gas is directly proportional to its thermodynamic absolute temperature at constant pressure, i.e. \begin{equation}\frac{V_1}{T_1} = \frac{V_2}{T_2}\end{equation} for constant \(n\) and \(p\).
+
+The \sldef{combined gas law} is a combination of Boyle's law and Charles's law, which gives the relationship \begin{equation}\frac{p_1V_1}{T_1} = \frac{p_2V_2}{T_2}\end{equation}
+
+The \sldef{ideal gas law} can be seen as a combination of the combined gas law and Avogadro's law, resulting in \begin{equation}pV = nRT\end{equation} where \(R\) is the molar gas constant, approximately \SI{8.31}{\joule\per\kelvin\per\mole}.
+
+From the ideal gas law, we have molar mass and density \begin{align}M &= \frac{mRT}{pV}\\\rho &= \frac{pM}{RT}\end{align}
+
+\sldef{Dalton's law} states that in a mixture of gases that do not react chemically, the total pressure of the mixture is equal to the sum of the partial pressures exerted by the constituent gases.
+
+The \sldef{partial pressure} of a gas is the pressure that the gas would exert if it alone occupied the volume it currently occupies.
+\section{Ideal Gas Behaviour}
+An \sldef{ideal gas} is a gas that obeys the ideal gas law exactly. Ideal gases do not exist in reality.
+
+A \sldef{real gas} is a gas that does not obey the ideal gas law. Under conditions of high temperature and low pressure, real gases approximate the behaviour of an ideal gas.
+
+The ideal gas law describes gases that satisfy assumptions that \begin{slinenum}
+\item intermolecular forces of attraction between gas particles are negligible
+\item the total volume of gas particles is negligible compared to the volume of the container
+\item gas particles are in continuous random linear motion
+\item all collisions between gas particles and between gas particles and the walls of their container are perfectly elastic, such that no kinetic energy is lost in a collision, so the total kinetic energy of gas particles at a constant temperature is constant.
+\end{slinenum}
+
+At high temperatures, real gases tend toward ideal behaviour as \begin{slinenum}
+\item gas particles have high kinetic energy and do not attract each other as much during collisions
+\item so the assumption that intermolecular forces of attraction between gas particles are negligible is valid.
+\end{slinenum}
+
+At low temperatures, real gases deviate from ideal behaviour as \begin{slinenum}
+\item gas particles possess less kinetic energy so particles tend to attract each other more during collisions
+\item the intermolecular forces of attraction between gas particles become significant
+\item the impact of a given particle on the walls of the container during a collision is reduced
+\item this causes \(p\) and thus \(pV\) to be smaller than if the gas was ideal.
+\end{slinenum}
+
+At low pressures, real gases tend toward ideal behaviour as \begin{slinenum}
+\item gas particles are far apart and there are effectively no forces of attraction between gas particles
+\item the assumption that the total volume of gas particles is negligible compared to the volume of the container is valid.
+\end{slinenum}
+
+At high pressures, real gases deviate from ideal behaviour as \begin{slinenum}
+\item the volume of the container is decreased and gas particles come closer together
+\item the volume occupied by the gas particles becomes significant compared to the container's volume
+\item this causes \(V\) and thus \(pV\) to be larger than if the gas was ideal.
+\end{slinenum}
+
+The extent of deviation of a gas from ideal behaviour depends on 3 factors. The lower the temperature or the higher the pressure, the greater the deviation, and the stronger the intermolecular forces of attraction between gas particles, the greater the deviation.
+
+On a plot of \(pV/RT\) against \(p\), the negative deviation is due to intermolecular forces between gas particles, while the positive deviation is due to the volume of the gas particles becoming significant.
+\end{document}
