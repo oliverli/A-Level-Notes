@@ -1,0 +1,98 @@
+% mental note to run makeindex on final compilation
+
+\documentclass[a5paper]{memoir}
+
+\usepackage{parskip}
+\usepackage{makeidx}
+\usepackage{amssymb}
+
+\pretitle{\begin{center}\Huge\bfseries}
+	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
+	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
+\author{Sun Yudong, Li Yicheng \\ 15S6G, Hwa Chong Institution (College)}
+\predate{\vfill\begin{center}\large}
+
+\def\code#1{\texttt{#1}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\newcommand{\addtoindex}[1]{#1\index{#1}}
+
+\begin{document}
+
+\begin{titlingpage}\code{\addtoindex{NormCD}}
+	\maketitle
+\end{titlingpage}
+
+\chapter{The Basics}
+Every command you will ever need is organized neatly in the \code{[OPTN]} button on your calculator.
+
+Unfortunately there are some areas where the CASIO calculator done goofed and we need some documentation.
+
+\section{Taking Integrals}
+
+\section{Solving an Equation}
+2 ways.
+plot graph
+use equa
+note that typing X in run mat will give back ans
+
+
+\chapter{Statistics}
+One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}.
+
+\section{Normal Distribution}
+A (continuous) random variable X that follows a normal distribution with mean $\mu$ and standard deviation $\sigma$ has a \textit{probability density function} (PDF) given by:
+
+\begin{equation}
+	f(x)=\frac{1}{\sigma\sqrt{2\pi}} \cdot e^{\frac{-(x-\mu)^2}{2\sigma^2}}
+\end{equation}
+
+We write $X \sim \mathrm{N} (\mu,\sigma^2)$
+
+\subsection{Normal Distribution PDF}
+There are one of 2 ways to plot a graph of the normal distribution PDF:
+
+\begin{itemize}
+	\item Plot the actual equation
+	\item Use the in-built \code{NormPD} function
+\end{itemize}
+
+However, it must be noted that the \code{NormPD} plots slower than using the actual equation. Using \code{G-Solv} is also slower.
+
+The usage of \code{\addtoindex{NormPD}} is 
+\begin{center}
+	\code{NormPD(X,$\sigma$,$\mu$)}
+\end{center}
+
+This is the same command you type if you want to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$.
+
+\subsection{Normal Distribution CDF}
+CDF stands for \textit{Cumulative Distribution Function}. This can be calculated by taking the integral of the normal PDF from 0 to $x$. One can take integral by plotting the graph out (refer to previous section), and then \code{G-Solv > $\int$dx}.
+
+Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
+\begin{center}
+	\code{NormCD([Lower],[Upper],$\sigma$,$\mu$)}
+\end{center}
+
+To plot the Normal Distribution CDF, you can use:
+\begin{center}
+	\code{Y = NormCD(0,X,$\sigma$,$\mu$)}
+\end{center}
+
+Note that unlike TI, you need not set the lower bound to \code{-1E99}
+
+\subsection{Finding the value given the probability}
+One sometimes need to find $a$ given $\textrm{P}(X < a) = b$ where $a,b \in \mathbb{R}$ and $b$ is the probability of $X$ being less than $a$. 
+
+To do this, we need the \code{\addtoindex{InvNormCD}} function built into the calculator. The usage of \code{InvNormCD} is as follows:
+\begin{center}
+	\code{InvNormCD($b$,$\sigma$,$\mu$)}
+\end{center}
+
+This will give you back $a$.
+
+\printindex
+
+
+\end{document}
