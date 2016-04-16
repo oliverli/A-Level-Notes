@@ -5,43 +5,158 @@
 \usepackage{parskip}
 \usepackage{makeidx}
 \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabu}
 
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
-	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
-\author{Sun Yudong, Li Yicheng \\ 15S6G \\ Hwa Chong Institution (College Section)}
+	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for the H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
+\author{Sun Yudong, Li Yicheng, Walter Kong \\ 15S6G/S60 \\ Hwa Chong Institution (College Section)}
 \predate{\vfill\begin{center}\large}
 
 \def\code#1{\texttt{#1}}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
+%\setcounter{tocdepth}{2} % which level the sectioning commands are printed in the ToC
+%\setcounter{secnumdepth}{4} %up to what level the sectioning titles are numbered
+
 \newcommand{\addtoindex}[1]{#1\index{#1}}
 
 \begin{document}
 
-\begin{titlingpage}%\code{\addtoindex{NormCD}}
+\begin{titlingpage}
 	\maketitle
 \end{titlingpage}
 
+\frontmatter
+
+\tableofcontents
+
+\chapter{Preface}
+This guide is provided as-is and was compiled by a bunch of students in 2016. We tried our best to be mathematically and technically accurate. But software versions do change, and this guide may not be valid indefinitely. However, the source of this file is publically available on GitHub. Feel free to contact us.
+
+If there are anything you want to do, but you can't seem to know how to, try Google, or RTFM. Otherwise, just experiment a bit. The CASIO interface should be intuitive enough.
+
+Do note that some notes inside this guide was taken from the H2 Mathematics notes provided by the Hwa Chong Institution (College Section) Math Department. 
+
+\vspace{1cm}
+
+\begin{tabular}{l l}
+	Sun Yudong: & sunjerry019 [at] gmail [dot] com \\
+	Li Yicheng: & yicheng340 [at] gmail [dot] com \\
+	Walter Kong: & wwwwaltwater [at] gmail [dot] com
+\end{tabular}
+
+
+\mainmatter
 \chapter{The Basics}
-Every command you will ever need is organized neatly in the \code{[OPTN]} button on your calculator.
+Every command you will ever need is organized neatly in the \code{[OPTN]} button on your graphing calculator (GC).
 
-Unfortunately there are some areas where the CASIO calculator done goofed and we need some documentation.
+Unfortunately there are some areas where the CASIO calculator isn't very intuitive and we need some documentation.
 
-\section{Taking Integrals}
+\section{Graphing} \label{graphing}
+To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
+\begin{itemize}
+	\item The \code{Y} and \code{X}, etc. at the bottom of the screen is for entering the functions \code{Y1, Y2, \dots} and \code{X1, X2, \dots}. For the variable $x$, use the \code{[X,$\theta$,T]} button instead
+	\item To restrict the domain of the function, type:
+	\begin{center}
+		\code{Y1 = $f(x)$,[start,end]}
+	\end{center}
+\end{itemize}
 
-\section{Solving an Equation}
-2 ways.
-plot graph
-use equa
+After pressing \code{DRAW}, you can press \code{[AC/on]} to break the plotting script.
+
+To solve for anything, use \code{[G-Solv]}
+
+
+\section{Solving for the roots of a polynomial}
+There are mainly 2 ways to solve for the roots of a polynomial using the GC:
+\begin{itemize}
+	\item Using the \code{EQUA > Poly} app
+	\item Plot a graph and solve for roots
+\end{itemize}
+
+The \code{EQUA > Poly} is quite intuitive, and similar to the standard issue CASIO fx-95SG scientific calculator, so we will just note some limitation/features of this GC:
+\begin{itemize}
+	\item The polynomial solver only accepts real coefficients
+	\item You can change the \code{Set Up > Complex Mode} setting to \code{$a+bi$} for imaginary roots (but not imaginary coefficients)
+\end{itemize}
+
+To plot a graph, you go to \code{Graph}. Refer to Section \ref{graphing} (Graphing) for more information.
+
+\section{Solving a 1-variable Equation}
+There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) using the GC:
+\begin{itemize}
+	\item Using the \code{EQUA > Solver} app
+	\item Plotting a graph
+	\begin{itemize}
+		\item Move everything to one side and solve for root
+		\item Solve for the intersections of 2 or more graphs
+	\end{itemize}
+\end{itemize}
+
+\subsection{Solving using \code{EQUA > Solver}}
+
 note that typing X in run mat will give back ans
 
-\chapter{Statistics}
-One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}.
+\section{Taking Integrals}
+introduce the Math functions in the main RUNMAT
 
-\section{Normal Distribution}
-A (continuous) random variable X that follows a normal distribution with mean $\mu$ and standard deviation $\sigma$ has a \textit{probability density function} (PDF) given by:
+\chapter{Vectors} \label{vectors}
+
+\chapter{Statistics}
+One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
+
+\section{Discrete Random Variable}
+A discrete (countable) random variable $X \in \mathbb{Z}^*$ has expectation (or expected value or mean) $\mu$
+\begin{equation}
+	\mathrm{E}(X)=\mu=\sum_{\mathrm{all}~x}^{}x\mathrm{P}(X=x)
+\end{equation}
+(You can think of this as the weighted sum of all the possibilities for $X$)
+
+and variance $\sigma^2=\mathrm{stddev}^2$
+\begin{equation}
+	\mathrm{Var}(X)=\sigma^2=\mathrm{E}(X-\mu)^2=\mathrm{E}(X^2)-\mu^2
+\end{equation}
+Note that the above does not apply to continuous random variables.
+
+\section{Using Data}
+If given a set of histogram data (i.e. categories and its corresponding frequencies), one can calculate statistical properties of it.
+
+For example, given the following data:
+$$
+\setlength\tabulinesep{2mm}
+\begin{tabu}{ |c|c|c|c|c| }
+	\hline
+	x & 0 & 1 & 2 & 3 \\
+	\hline 
+	\mathrm{P}(X=x)  & \frac{1}{8}  & \frac{3}{8}  & \frac{3}{8} &\frac{1}{8}  \\
+	\hline
+\end{tabu}
+$$
+
+You can do 1-Variable Statistical calculations by:
+\begin{enumerate}
+	\item Go into \code{STAT} and then enter the X-values into \code{List 1} and its frequency into \code{List 2}
+	\item go to \code{CALC > SET} and adjust the settings accordingly for 1-Var (\code{XList:List1, Freq:List2})
+	\item \code{[EXIT]} and then choose \code{1VAR}
+\end{enumerate}
+
+You can then access in these calculated values \code{RUN$\cdot$MAT} by going to \code{[VARS] > [STAT] > [X]} and finding the value you wanted.
+
+
+
+\section{Continuous Random Variable}
+The probability for a continuous variable $X$ to fall within a particular region $[a,b]$ is given by:
+$$\mathrm{P}(a \leq X \leq b) = \int_{a}^{b} f(x)$$
+where $f(x)$ is the \textit{probability density function} (PDF) of X.
+
+Moreover, 
+$$\mathrm{P}(a \leq X \leq b) = \mathrm{P}(a \leq X < b) = \mathrm{P}(a < X \leq b) = \mathrm{P}(a < X < b)$$
+
+\subsection{Normal Distribution}
+A (continuous) random variable $X\in \mathbb{R}$ that follows a normal distribution with mean $\mu$ and standard deviation $\sigma$ has a \textit{probability density function} (PDF) given by:
 
 \begin{equation}
 	f(x)=\frac{1}{\sigma\sqrt{2\pi}} \cdot e^{\frac{-(x-\mu)^2}{2\sigma^2}}
@@ -49,7 +164,7 @@ A (continuous) random variable X that follows a normal distribution with mean $\
 
 We write $X \sim \mathrm{N} (\mu,\sigma^2)$
 
-\subsection{Normal Distribution PDF}
+\subsubsection{Normal Distribution PDF}
 There are one of 2 ways to plot a graph of the normal distribution PDF:
 
 \begin{itemize}
@@ -66,7 +181,7 @@ The usage of \code{\addtoindex{NormPD}} is
 
 This is the same command you type if you want to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$.
 
-\subsection{Normal Distribution CDF}
+\subsubsection{Normal Distribution CDF}
 CDF stands for \textit{Cumulative Distribution Function}. This can be calculated by taking the integral of the normal PDF from 0 to $x$. One can take integral by plotting the graph out (refer to previous section), and then \code{G-Solv > $\int$dx}.
 
 Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
@@ -76,12 +191,12 @@ Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
 
 To plot the Normal Distribution CDF, you can use:
 \begin{center}
-	\code{Y = NormCD(0,X,$\sigma$,$\mu$)}
+	\code{Y = NormCD(-1E99,X,$\sigma$,$\mu$)}
 \end{center}
 
-Note that unlike TI, you need not set the lower bound to \code{-1E99}
+Note that \code{-1E99} is to simulate $-\infty$.
 
-\subsection{Finding the value given the probability}
+\subsubsection{Finding the value given the probability}
 One sometimes need to find $a$ given $\textrm{P}(X < a) = b$ where $a,b \in \mathbb{R}$ and $b$ is the probability of $X$ being less than $a$. 
 
 To do this, we need the \code{\addtoindex{InvNormCD}} function built into the calculator. The usage of \code{InvNormCD} is as follows:
@@ -90,6 +205,24 @@ To do this, we need the \code{\addtoindex{InvNormCD}} function built into the ca
 \end{center}
 
 This will give you back $a$.
+
+\section{Use for Experimental Data/SPA}
+lin regression -> ref to lin alg best approximations
+
+\chapter{Linear Algebra}
+Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
+
+You may find certain concepts here useful for H2 Mathematics as well, especially in terms of matrix manipulations. I suggest you read this chapter as a complement of Chapter \ref{vectors} (Vectors). 
+
+\section{Storing Matrices}
+accessing individual matrix elements
+
+\section{Solving Linear Systems}
+introduce augemented matrix
+how to augment if 2
+
+\subsection{Elementary Row Operations and Row-Echelon Forms}
+row equiv
 
 \printindex
 
