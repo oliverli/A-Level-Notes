@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{tabu}
+\usepackage{tabularx}
 
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
@@ -15,11 +16,13 @@
 \predate{\vfill\begin{center}\large}
 
 \def\code#1{\texttt{#1}}
+\def\note#1{\textbf{\textit{Note:}} #1}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 %\setcounter{tocdepth}{2} % which level the sectioning commands are printed in the ToC
-%\setcounter{secnumdepth}{4} %up to what level the sectioning titles are numbered
+%\setcounter{secnumdepth}{4} %up to what level the sectioning titles are numbered\makeatletter
+\setsecnumdepth{subsection}
 
 \newcommand{\addtoindex}[1]{#1\index{#1}}
 
@@ -34,13 +37,13 @@
 \tableofcontents
 
 \chapter{Preface}
-This guide is provided as-is and was compiled by a bunch of students in 2016. We tried our best to be mathematically and technically accurate. But software versions do change, and this guide may not be valid indefinitely. However, the source of this file is publically available on GitHub. Feel free to contact us.
+This guide is provided as-is and was compiled by a bunch of students in 2016. We tried our best to be mathematically and technically accurate. But software versions (Ver 2.04 now) do change, and this guide may not be valid indefinitely. However, the source of this file is publically available on GitHub. Feel free to contact us.
 
 If there are anything you want to do, but you can't seem to know how to, try Google, or RTFM. Otherwise, just experiment a bit. The CASIO interface should be intuitive enough.
 
 Do note that some notes inside this guide was taken from the H2 Mathematics notes provided by the Hwa Chong Institution (College Section) Math Department. 
 
-\vspace{1cm}
+\vspace{0.7cm}
 
 \begin{tabular}{l l}
 	Sun Yudong: & sunjerry019 [at] gmail [dot] com \\
@@ -67,7 +70,10 @@ To graph a function, go to \code{GRAPH} in the main menu. Enter the functions in
 
 After pressing \code{DRAW}, you can press \code{[AC/on]} to break the plotting script.
 
-To solve for anything, use \code{[G-Solv]}
+To solve for anything, use \code{[G-Solv]}.
+
+\subsection{Plotting a table from function} \label{plottable}
+Plot using function
 
 
 \section{Solving for the roots of a polynomial}
@@ -119,9 +125,9 @@ and variance $\sigma^2=\mathrm{stddev}^2$
 \begin{equation}
 	\mathrm{Var}(X)=\sigma^2=\mathrm{E}(X-\mu)^2=\mathrm{E}(X^2)-\mu^2
 \end{equation}
-Note that the above does not apply to continuous random variables.
+\note{The above does not apply to continuous random variables.}
 
-\section{Using Data}
+\subsection{Using Data}
 If given a set of histogram data (i.e. categories and its corresponding frequencies), one can calculate statistical properties of it.
 
 For example, given the following data:
@@ -143,9 +149,58 @@ You can do 1-Variable Statistical calculations by:
 	\item \code{[EXIT]} and then choose \code{1VAR}
 \end{enumerate}
 
-You can then access in these calculated values \code{RUN$\cdot$MAT} by going to \code{[VARS] > [STAT] > [X]} and finding the value you wanted.
+If you want to further manipulate these calculated values (such as squaring $\sigma$ to find variance), you can go to \code{RUN$\cdot$MAT} and then \code{[VARS] > [STAT] > [X]} to finding the value(s) you wanted.
 
+Refer to Section \ref{plotstat} (Plotting Statistics/Visualization) for plotting statistical data.
 
+\subsection{Binomial Distribution} 
+A binomial random variable $X$ has the following characteristics:
+\begin{enumerate}
+	\item The experiment consists of $n$ repeated independent trials
+	\item Each trial only has 2 outcomes: "success" or "failure"
+	\item The probability of a 'success' $p$ is constant in each trial
+\end{enumerate}
+
+% The probability distribution of $X$ is called the \textit{binomial distribution}, and 
+The probability $\textrm{P}(X = x)$ of obtaining $x$ successes in $n$ trials is given by:
+
+\begin{equation}
+	\mathrm{P}(X=x) = {n \choose x} p^x(1-p)^{n-x},~x \in \mathbb{Z}^*
+\end{equation}
+
+and has $\mathrm{E}(X) = np$ and $\mathrm{Var}(X)=np(1-p)$.
+
+We write $X \sim \mathrm{B}(n, p)$.
+
+\note{the probability is only non-zero when $0 \leq x \leq n$ (i.e. there is an upper bound).}
+
+To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or use the in-built \code{\addtoindex{BinomialPD}} function:
+\begin{center}
+	\code{BinomialPD(X,$n$,$p$)}
+\end{center}
+
+To obtain the probability $\textrm{P}(X \leq x)$ (\textit{cumulative distribution function} of $x$), we can use the in-built \code{\addtoindex{BinomialCD}} function:
+
+\begin{center}
+	\code{BinomialCD(X,$n$,$p$)}
+\end{center}
+
+As a general rule of thumb:
+\begin{center}
+	\setlength{\tabcolsep}{10pt}
+	\renewcommand{\arraystretch}{1.1}
+	\begin{tabular}{|c|c|}
+		\hline
+		Answer in:		& Use: \\
+		\hline
+		$\mathbb{Z}$	& Table \\
+		\hline
+		$\mathbb{R}$	& Graph \\
+		\hline
+	\end{tabular}
+\end{center}
+
+Refer to Section \ref{plottable} for plotting results from a table, which might be useful for plotting the PDF/CDF of a binomial distribution, since $\mathrm{P}(X=x)$ is undefined when $x \notin \mathbb{Z}^*$
 
 \section{Continuous Random Variable}
 The probability for a continuous variable $X$ to fall within a particular region $[a,b]$ is given by:
@@ -194,7 +249,7 @@ To plot the Normal Distribution CDF, you can use:
 	\code{Y = NormCD(-1E99,X,$\sigma$,$\mu$)}
 \end{center}
 
-Note that \code{-1E99} is to simulate $-\infty$.
+\note{\code{-1E99} is to simulate $-\infty$.}
 
 \subsubsection{Finding the value given the probability}
 One sometimes need to find $a$ given $\textrm{P}(X < a) = b$ where $a,b \in \mathbb{R}$ and $b$ is the probability of $X$ being less than $a$. 
@@ -208,6 +263,8 @@ This will give you back $a$.
 
 \section{Use for Experimental Data/SPA}
 lin regression -> ref to lin alg best approximations
+
+\subsection{Plotting Statistics/Visualization} \label{plotstat}
 
 \chapter{Linear Algebra}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
