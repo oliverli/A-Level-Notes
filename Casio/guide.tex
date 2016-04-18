@@ -36,12 +36,16 @@
 	% plus info from Alan Munn at http://tex.stackexchange.com/questions/290165/how-do-i-get-a-nicer-lambda?noredirect=1#comment702120_290165
 	\newcommand{\pilambdaup}{\Pimathsymbol[\mathord]{txmia}{21}}
 
-%linear algebra
+% linear algebra
+	% http://tex.stackexchange.com/questions/2233/whats-the-best-way-make-an-augmented-coefficient-matrix
 	\newenvironment{amatrix}[1]{%
 		\left(\hspace{0.15cm}\begin{array}{@{}*{#1}{c}|c@{}}
 		}{%
 	\end{array}\hspace{0.15cm}\right)
 	}
+	
+	\def\VR{\kern-\arraycolsep\strut\vrule &\kern-\arraycolsep}
+	\def\vr{\kern-\arraycolsep & \kern-\arraycolsep}
 
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
@@ -82,7 +86,7 @@ Do note that some notes inside this guide was taken from the H2 Mathematics note
 \begin{tabular}{l l}
 	Sun Yudong: & sunjerry019 [at] gmail [dot] com \\
 	Li Yicheng: & liyicheng340 [at] gmail [dot] com \\
-	Walter Kong: & wwwwaltwater [at] gmail [dot] com
+	Walter Kong: & wwwwaltwalter [at] gmail [dot] com
 \end{tabular}
 
 
@@ -154,14 +158,14 @@ To solve a multi-variable system of linear equations using your GC, there are 2 
 	\item Using matrices
 \end{enumerate}
 
-\subsubsection{Solving a Linear System using the \code{EQUA > Siml} app}
+\subsubsection{Using the \code{EQUA > Siml} app}
 While you can use matrices to solve any kind of linear system, you can use the \code{EQUA > Siml} app \textit{\textbf{only if the linear system has a unique solution}}.
 
 \note{Should you try to use the \code{EQUA > Siml} app to solve for a linear system with no solution, or infinitely many solutions, the calculator would just throw a \code{Ma Error} at you while you stare, bemused, wondering why the calculator is so bad to you.}
 
 Anyhow, the app is intuitive enough, so I shall skip it.
 
-\subsubsection{Solving a Linear System using Matrices}
+\subsubsection{Using Matrices}
 
 To solve a linear system the matrix way, let's first consider the following linear system:
 \begin{center}
@@ -182,12 +186,129 @@ By taking the coefficients of the variables $x$, $y$ and $z$, we can form the fo
 	\end{amatrix}
 \]
 
-To solve for $x$, $y$ and $z$:
+To solve for $x$, $y$ and $z$:\footnote{ Fn Keys have been left out to save space.}
 \begin{enumerate}
-	\item 
+	\item Go to \code{RUN$\cdot$MAT > $\triangleright$MAT}
+	\item Select \code{Mat A} and enter the dimensions
+	\begin{itemize}
+		\item $m$ is the number of rows, in this case 3
+		\item $n$ is the number of columns, in this case 4
+	\end{itemize}
+	\item Enter the augmented matrix above accordingly, putting the augmented column into the 4th column:
+	\begin{equation*}
+		\left[
+			\begin{array}{cccc}
+			1 & 1 & 2  & 9 \\  
+			2 & 4 & -3 & 1 \\
+			3 & 6 & -5 & 0
+			\end{array}
+		\right]
+	\end{equation*}
+	\item Press \code{[EXIT]} then \code{[EXIT]} to go back to the main \code{RUN$\cdot$MAT} screen
+	\item Go to \code{[OPTN] > MAT > $\triangleright$ > Rref}
+	\item Then \code{ $\triangleright \times 3$ > Mat}, then \code{[ALPHA] + A}, giving the following:
+	\begin{center}
+		\code{Rref Mat A}
+	\end{center}
+	\item Press \code{[EXE]}, and then you should be able to get the following matrix:
+	\begin{equation*}
+		\left[
+			\begin{array}{cccc}
+			1 & 0 & 0 & 1 \\  
+			0 & 1 & 0 & 2 \\
+			0 & 0 & 1 & 3
+			\end{array}
+		\right]
+	\end{equation*}
 \end{enumerate}
 
-\note{You can extend this to any number of variables in a linear system.}
+This can then be rewritten as an augmented matrix:
+\begin{equation*}
+\bordermatrix{  & x & y & z & \vr ~ \cr
+			  ~ & 1 & 0 & 0 & \VR 1 \cr
+			  ~ & 0 & 1 & 0 & \VR 2 \cr
+			  ~ & 0 & 0 & 1 & \VR 3 }
+\end{equation*}
+
+which can then be rewritten as:
+\begin{center}
+	\syslineskipcoeff{1.2}
+	\systeme{
+		\hspace{0.2cm} x=1,
+		\hspace{0.2cm} y=2,
+		\hspace{0.2cm} z=3
+	}
+\end{center}
+
+Notice that the left side of the final augmented matrix is the identity matrix. This is what you would typically see for a linear system with a unique solution.
+
+This same procedure can be used to find the solutions of any linear system with any number of variables.
+
+The following are possible matrices you can obtain after the \code{Rref} command for the other types of linear systems:
+\begin{itemize}
+	\item \textbf{No solution}
+	\begin{equation*}
+		\begin{tabu}{ccc}
+			\begin{amatrix}{3}
+			1 & 0 & 2 & 2 \\  
+			0 & 1 & 3 & 3 \\
+			0 & 0 & 0 & 1
+			\end{amatrix} & \rightarrow & \syslineskipcoeff{1.2}
+			\systeme{
+				\hspace{0.2cm} x=2-2t,
+				\hspace{0.2cm} y=3-3t,
+				\hspace{0.2cm} 0z=1
+			}\\
+		\end{tabu}
+	\end{equation*}
+	where $t \in \mathbb{R}$
+	
+	Since $0=1$ is not possible, the above linear system is inconsistent and has no solutions.
+	\item \textbf{Infinitely many solutions}
+	\begin{equation*}
+		\begin{tabu}{ccc}
+			\begin{amatrix}{3}
+			1 & 0 & 2 & 2 \\  
+			0 & 1 & 3 & 3 \\
+			0 & 0 & 0 & 0
+			\end{amatrix} & \rightarrow & \syslineskipcoeff{1.2}
+			\systeme{
+				\hspace{0.2cm} x=2-2t,
+				\hspace{0.2cm} y=3-3t,
+				\hspace{0.2cm} z=t
+			}\\
+		\end{tabu}
+	\end{equation*}
+	where $t \in \mathbb{R}$
+	
+	In this case, the answer is obtained easily through back-substitution. Rewriting the augmented matrix, we observe that:
+	\begin{center}
+		\syslineskipcoeff{1.2}
+		\systeme{
+			\hspace{0.2cm} x+2z=2,
+			\hspace{0.2cm} y+3z=3
+		}
+	\end{center}
+	
+	By letting $z$ be a parameter $t$ ($t \in \mathbb{R}$), we observe that:
+	\begin{equation*}
+	\begin{tabu}{ccc}
+		\syslineskipcoeff{1.2}
+		\systeme{
+			\hspace{0.2cm} x+2t=2,
+			\hspace{0.2cm} y+3t=3,
+			\hspace{0.2cm} z=t
+		} & \rightarrow & \syslineskipcoeff{1.2}
+			\systeme{
+				\hspace{0.2cm} x=2-2t,
+				\hspace{0.2cm} y=3-3t,
+				\hspace{0.2cm} z=t
+			}\\
+		\end{tabu}
+	\end{equation*}
+	
+	Thus obtaining the general solution. 
+\end{itemize}
 
 You will find this useful for both "System of Linear Equations" and "Vectors" (See Chapter \ref{vectors}). 
 
