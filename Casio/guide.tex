@@ -1,6 +1,6 @@
 % mental note to run makeindex on final compilation
 
-\documentclass[a5paper]{memoir}
+\documentclass[a5paper,draft]{memoir}
 
 \usepackage{parskip}
 \usepackage{makeidx}
@@ -47,7 +47,7 @@ Do note that some notes inside this guide was taken from the H2 Mathematics note
 
 \begin{tabular}{l l}
 	Sun Yudong: & sunjerry019 [at] gmail [dot] com \\
-	Li Yicheng: & yicheng340 [at] gmail [dot] com \\
+	Li Yicheng: & liyicheng340 [at] gmail [dot] com \\
 	Walter Kong: & wwwwaltwater [at] gmail [dot] com
 \end{tabular}
 
@@ -262,7 +262,88 @@ To do this, we need the \code{\addtoindex{InvNormCD}} function built into the ca
 This will give you back $a$.
 
 \section{Use for Experimental Data/SPA}
-lin regression -> ref to lin alg best approximations
+The calculator can be used to determine the equation of a best fit line/parabola etc. from a set of data from experiments. From the main menu, enter the \code{S-SHT} app (\code{4}). 
+
+In the app, simply enter each set of data into each row. Enter the data on the same axis under the same column.
+
+For example, consider the following experimental data for an experiment involving electrical current ($I$) and potential difference ($V$): 
+
+\begin{center}
+	\setlength{\tabcolsep}{10pt}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{|c|c|}
+		\hline
+		\textbf{V/V}	& \textbf{I/A} \\
+		\hline
+		0.7148			& 0.0588 \\
+		\hline
+		0.7372			& 0.0633 \\
+		\hline
+		0.7780			& 0.0752 \\
+		\hline
+		1.058			& 0.143 \\
+		\hline
+		1.200			& 0.170 \\
+		\hline
+		1.340			& 0.210 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+\pagebreak
+Enter this set of data into the GC as follows:
+
+\begin{center}
+	\setlength{\tabcolsep}{10pt}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{|r|c|c|}
+		\hline
+		{\tiny SHEET}& \textbf{A}	& \textbf{B} \\
+		\hline
+		\textbf{1}	& 0.7148		& 0.0588 \\
+		\hline
+		\textbf{2}	& 0.7372		& 0.0633 \\
+		\hline
+		\textbf{3}	& 0.7780		& 0.0752 \\
+		\hline
+		\textbf{4}	& 1.058			& 0.143 \\
+		\hline
+		\textbf{5}	& 1.200			& 0.170 \\
+		\hline
+		\textbf{6}	& 1.340			& 0.210 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+To plot the points onto a graph, first press the right arrow key ($\triangleright$, \code{F6}) and select the \code{GRPH} option (\code{F1}).
+
+Once in the \code{GRPH} menu, we will first configure the graph options. 
+\begin{enumerate}
+	\item Press \code{SET} (\code{F6}) and ensure that \code{StatGraph1} is shown on the first line and the \code{Graph Type} is \code{Scatter}.
+	\item Move to \code{XCellRange} and enter \code{B1:B6}. This means that the values from cells \code{B1} to \code{B6} inclusive are that for the horizontal $x$-axis.
+	\item Move to \code{YCellRange} and enter \code{A1:A6}.
+	\item Finally, ensure that the \code{Frequency} option is \code{1}.
+	\begin{itemize}
+		\item You may select any \code{Mark Type} that suits your personal preferences.
+	\end{itemize}
+	\item Press \code{EXIT} to leave the configuration menu and return to the spreadsheet.
+\end{enumerate}
+
+Now, press \code{GPH1} (\code{F1}). A graph with markings corresponding to the points on the spreadsheet should be yield.
+
+You calculator can find the equation of a best fit line or curve. In this case, the data is expected to be linearly related (and it is linearly related).
+
+\begin{enumerate}
+	\item Press \code{CALC} (\code{F1}).
+	\item There are now a number of options corresponding to different types of graphs and relationships such as $x^2$, $\ln$, and $e^x$. In this case, our data is linear, so select \code{X} (\code{F2}).
+	\item Select $\code{ax+b}$ (\code{F1}).
+	\item A table with various values is yield. The value $a$ corresponds to the gradient, and $b$ is the $y$-intercept. $r^2$ represents how closely the data fit to the line, with the value of $1$ corresponding to a perfect, ideal fit.
+	\item To view the graph visually, select \code{DRAW} (\code{F6}). To generate $y$-values using the equation, select \code{COPY} (\code{F5}), and select one of the \code{Y1/2\dots} to copy to.
+\end{enumerate}
+
+\note{You will need to add an $\times$ between the gradient and the $x$, or it will cause the function to error out.}
+
+%lin regression -> ref to lin alg best approximations
 
 \subsection{Plotting Statistics/Visualization} \label{plotstat}
 
