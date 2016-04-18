@@ -9,6 +9,31 @@
 \usepackage{tabu}
 \usepackage{tabularx}
 
+% http://tex.stackexchange.com/questions/290165/how-do-i-get-a-nicer-lambda
+% ref.: egreg at http://tex.stackexchange.com/a/14406/
+\usepackage{pifont}
+\makeatletter
+\newcommand\Pimathsymbol[3][\mathord]{%
+	#1{\@Pimathsymbol{#2}{#3}}}
+\def\@Pimathsymbol#1#2{\mathchoice
+	{\@Pim@thsymbol{#1}{#2}\tf@size}
+	{\@Pim@thsymbol{#1}{#2}\tf@size}
+	{\@Pim@thsymbol{#1}{#2}\sf@size}
+	{\@Pim@thsymbol{#1}{#2}\ssf@size}}
+\def\@Pim@thsymbol#1#2#3{%
+	\mbox{\fontsize{#3}{#3}\Pisymbol{#1}{#2}}}
+\makeatother
+% the next two lines are needed to avoid LaTeX substituting upright from another font
+\input{utxmia.fd}
+\DeclareFontShape{U}{txmia}{m}{n}{<->ssub * txmia/m/it}{}
+% you may also want
+\DeclareFontShape{U}{txmia}{bx}{n}{<->ssub * txmia/bx/it}{}
+% just in case
+%\DeclareFontShape{U}{txmia}{l}{n}{<->ssub * txmia/l/it}{}
+%\DeclareFontShape{U}{txmia}{b}{n}{<->ssub * txmia/b/it}{}
+% plus info from Alan Munn at http://tex.stackexchange.com/questions/290165/how-do-i-get-a-nicer-lambda?noredirect=1#comment702120_290165
+\newcommand{\pilambdaup}{\Pimathsymbol[\mathord]{txmia}{21}}
+
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
 	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for the H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
@@ -202,13 +227,40 @@ As a general rule of thumb:
 
 Refer to Section \ref{plottable} for plotting results from a table, which might be useful for plotting the PDF/CDF of a binomial distribution, since $\mathrm{P}(X=x)$ is undefined when $x \notin \mathbb{Z}^*$
 
+\subsection{Poisson Distribution}
+A random variable that follows a Poisson distribution has the following characteristics:
+\begin{itemize}
+	\item Events occur randomly in a fixed interval and independently of one another.
+	\item The mean rate of occurrence of the event is \textbf{constant} in the given interval.
+	\item The probability of more than 1 event occuring within a short interval is \textbf{negligible}. 
+\end{itemize}
+
+The probability $\textrm{P}(X = x)$ of obtaining $x$ successes in a fixed interval is given by:
+\begin{equation}
+	\textrm{P}(X=x)=e^{-\pilambdaup}\frac{\pilambdaup^x}{x!},~x \in \mathbb{Z}^*
+\end{equation}
+
+We write $X \sim \textrm{Po}(\pilambdaup)$, where $\pilambdaup$ is the mean number of occurrence of the event in that fixed interval. 
+
+\note{}
+\begin{itemize}
+	\item $X$ ranges over an infinite number of integer values (i.e. there is no upper bound)
+	\item $\pilambdaup \propto t$, where $t$ is the length of the interval
+\end{itemize}
+
+
+
 \section{Continuous Random Variable}
 The probability for a continuous variable $X$ to fall within a particular region $[a,b]$ is given by:
 $$\mathrm{P}(a \leq X \leq b) = \int_{a}^{b} f(x)$$
 where $f(x)$ is the \textit{probability density function} (PDF) of X.
 
 Moreover, 
-$$\mathrm{P}(a \leq X \leq b) = \mathrm{P}(a \leq X < b) = \mathrm{P}(a < X \leq b) = \mathrm{P}(a < X < b)$$
+\begin{align*}
+	\mathrm{P}(a \leq X \leq b) &= \mathrm{P}(a \leq X < b)\\
+	&= \mathrm{P}(a < X \leq b) \\
+	&= \mathrm{P}(a < X < b)
+\end{align*}
 
 \subsection{Normal Distribution}
 A (continuous) random variable $X\in \mathbb{R}$ that follows a normal distribution with mean $\mu$ and standard deviation $\sigma$ has a \textit{probability density function} (PDF) given by:
@@ -338,14 +390,15 @@ You calculator can find the equation of a best fit line or curve. In this case, 
 	\item There are now a number of options corresponding to different types of graphs and relationships such as $x^2$, $\ln$, and $e^x$. In this case, our data is linear, so select \code{X} (\code{F2}).
 	\item Select $\code{ax+b}$ (\code{F1}).
 	\item A table with various values is yield. The value $a$ corresponds to the gradient, and $b$ is the $y$-intercept. $r^2$ represents how closely the data fit to the line, with the value of $1$ corresponding to a perfect, ideal fit.
-	\item To view the graph visually, select \code{DRAW} (\code{F6}). To generate $y$-values using the equation, select \code{COPY} (\code{F5}), and select one of the \code{Y1/2\dots} to copy to.
+	\item To view the graph visually, select \code{DRAW} (\code{F6}). To generate $y$-values using the equation, select \code{COPY} (\code{F5}), and select one of the \code{Y1}/\code{Y2\dots} to copy to.
 \end{enumerate}
 
-\note{You will need to add an $\times$ between the gradient and the $x$, or it will cause the function to error out.}
+\note{You will need to add an $\times$ between the gradient and the $x$, or it will cause the function to error out.}'
 
-%lin regression -> ref to lin alg best approximations
+The linear regression result can also be obtained using the concept of best approximations, covered in Section \ref{bestapprox} under Linear Algebra.
 
 \subsection{Plotting Statistics/Visualization} \label{plotstat}
+
 
 \chapter{Linear Algebra}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
@@ -361,6 +414,8 @@ how to augment if 2
 
 \subsection{Elementary Row Operations and Row-Echelon Forms}
 row equiv
+
+\section{Best Approximations} \label{bestapprox}
 
 \printindex
 
