@@ -79,7 +79,7 @@ This guide is provided as-is and was compiled by a bunch of students in 2016. We
 
 If there are anything you want to do, but you can't seem to know how to, try Google, or RTFM. Otherwise, just experiment a bit. The CASIO interface should be intuitive enough.
 
-Do note that some notes inside this guide was taken from the H2 Mathematics notes provided by the Hwa Chong Institution (College Section) Math Department. 
+Do note that some notes inside this guide were taken from the H2 Mathematics notes provided by the Hwa Chong Institution (College Section) Math Department. 
 
 \vspace{0.7cm}
 
@@ -316,7 +316,44 @@ You will find this useful for both "System of Linear Equations" and "Vectors" (S
 For a more in-depth understanding of what is going on here, you may wish to refer to Section \ref{solvLinSys}.
 
 \section{Taking Integrals}
-introduce the Math functions in the main RUNMAT
+\subsection{Definite Integrals}
+Your calculator can be used to solve definite integrals.
+
+One way is to find the area under the graph after plotting the equation.
+
+\begin{enumerate}
+	\item Plot the graph following the instructions from Section \ref{graphing}.
+	\item Press \code{G-Solv} (\code{F5}), followed by $\triangleright$ (\code{F6}) and \code{$\int$dx} (\code{F3}).
+	\item A cursor on the curve will now appear on the graph, along with $x$ and $y$ values. Move the cursor to the lower bound of the definite integral you're trying to find, and press \code{EXE}, followed by the upper bound, and press \code{EXE} again.
+	\item The area under the graph should now be shaded and the value of the area is displayed as \code{$\int$dx}.
+\end{enumerate}
+
+This method is great if you already have the graph plotted and want to find the integral quickly without entering the equation again. If you do not need to plot the graph and simply want to find the definite integral directly, you may find the integration function in the \code{RUN$\cdot$MAT} app more useful.
+
+\begin{enumerate}
+	\item From the main menu, enter the \code{RUN$\cdot$MAT} app (\code{1}).
+	\item Press the \code{OPTN} button and select the \code{CALC} option (\code{F4}).
+	\item Under the \code{CALC} submenu, choose the \code{$\int$dx} option (\code{F4}).
+	\item Enter the equation as per standard Mathematical notation. 
+	
+	\note{You should change the variable to be integrated from whatever letter it was originally to $x$ since the calculator forces the integral to be integrated with respect to $x$ as can be seen by the $dx$ at the back.}
+\end{enumerate}
+
+\subsection{Indefinite Integrals}
+SEAB bans all calculators capable of direct symbolic integration and differentiation. In other words, you cannot enter $3x^2$ into your graphing calculator and get $x^3$ or vice versa. To be fair, this feature was never in the international version of the Casio anyway.
+
+Thankfully, even in the Singaporean version of the Casio, you can plot the graph of the integral visually.
+
+For example, we will try to plot the integral of $2x$. Assuming that your GC is working properly and the Laws of Mathematics have not changed in drastic ways, the graph should be identical to that of $x^2$.
+
+\begin{enumerate}
+	\item From the main menu, enter the \code{GRAPH} app (\code{5}).
+	\item Under \code{Y1}, enter the function $2x$.
+	\item Move to \code{Y2}. Enter the following function:
+	\begin{equation*}
+	\int_{0}^{x} \text{Y}1 \, dx
+	\end{equation*}
+\end{enumerate}
 
 \chapter{Vectors} \label{vectors}
 
@@ -354,7 +391,7 @@ $$
 You can do 1-Variable Statistical calculations by:
 \begin{enumerate}
 	\item Go into \code{STAT} and then enter the X-values into \code{List 1} and its frequency into \code{List 2}
-	\item go to \code{CALC > SET} and adjust the settings accordingly for 1-Var (\code{XList:List1, Freq:List2})
+	\item Go to \code{CALC > SET} and adjust the settings accordingly for 1-Var (\code{XList:List1, Freq:List2})
 	\item \code{[EXIT]} and then choose \code{1VAR}
 \end{enumerate}
 
@@ -507,7 +544,7 @@ The usage of \code{\addtoindex{NormPD}} is
 	\code{NormPD(X,$\sigma$,$\mu$)}
 \end{center}
 
-This is the same command you type if you want to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$.
+\note{You should not use this command to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$. This is because for a continuous random variable, this does not make sense. It should always be a range. (i.e. use the CDF in the next section)}
 
 \subsubsection{Normal Distribution CDF}
 CDF stands for \textit{Cumulative Distribution Function}. This can be calculated by taking the integral of the normal PDF from 0 to $x$. One can take integral by plotting the graph out (refer to previous section), and then \code{G-Solv > $\int$dx}.
