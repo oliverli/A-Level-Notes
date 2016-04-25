@@ -403,7 +403,7 @@ If you want to further manipulate these calculated values (such as squaring $\si
 
 Refer to Section \ref{plotstat} (Plotting Statistics/ Visualization) for plotting statistical data.
 
-\subsection{Binomial Distribution} 
+\subsection{Binomial Distribution} \label{binom}
 A binomial random variable $X$ has the following characteristics:
 \begin{enumerate}
 	\item The experiment consists of $n$ repeated independent trials
@@ -431,6 +431,37 @@ To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or
 	\code{BinomialPD(X,$n$,$p$)}
 \end{center}
 
+Alternatively, we can use the \code{STAT} app to obtain the probability:
+\begin{enumerate}
+	\item Go into \code{STAT} (\code{2} in the menu)
+	\item Press \code{DIST}(\code{F5})\code{ > BINM}(\code{F5})\code{ > Bpd}(\code{F1})
+	\item Set the following:
+	\begin{center}
+		\setlength{\tabcolsep}{10pt}
+		\renewcommand{\arraystretch}{1.1}
+		\begin{tabular}{|l|l|}
+			\hline
+			Data		& Variable \\
+			\hline
+			$x$			& X \\
+			\hline
+			Numtrial	& $n$ \\
+			\hline
+			$p$			& $p$ \\
+			\hline
+			Save Res	& \code{None} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item You can do further manipulation of the value obtained by:
+	\begin{enumerate}
+		\item Going to \code{RUN$\cdot$MAT}
+		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
+		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+	\end{enumerate} 
+\end{enumerate}
+
 \subsubsection{Binomial CDF}
 
 To obtain the probability $\textrm{P}(X \leq x)$ (\textit{cumulative distribution function} of $x$), we can use the in-built \code{\addtoindex{BinomialCD}} function:
@@ -438,6 +469,8 @@ To obtain the probability $\textrm{P}(X \leq x)$ (\textit{cumulative distributio
 \begin{center}
 	\code{BinomialCD(X,$n$,$p$)}
 \end{center}
+
+Alternatively, following instructions in the previous section (Section \ref{binom} $\Rightarrow$ Binomial PDF), and choosing \code{Bcd} instead. 
 
 As a general rule of thumb:
 \begin{center}
@@ -497,6 +530,35 @@ To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or
 \begin{center}
 	\code{PoissonPD(x,$\pilambdaup$)}
 \end{center}
+
+Alternatively, we can use the \code{STAT} app to obtain the probability:
+\begin{enumerate}
+	\item Go into \code{STAT} (\code{2} in the menu)
+	\item Press \code{DIST}(\code{F5})\code{ > POISN}(\code{$\triangleright$ F1})\code{ > Ppd}(\code{F1})
+	\item Set the following:
+	\begin{center}
+		\setlength{\tabcolsep}{10pt}
+		\renewcommand{\arraystretch}{1.1}
+		\begin{tabular}{|l|l|}
+			\hline
+			Data		& Variable \\
+			\hline
+			$x$			& X \\
+			\hline
+			$\mu$		& $\pilambdaup$ \\
+			\hline
+			Save Res	& \code{None} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item You can do further manipulation of the value obtained by:
+	\begin{enumerate}
+		\item Going to \code{RUN$\cdot$MAT}
+		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
+		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+	\end{enumerate} 
+\end{enumerate}
 
 \subsubsection{Poisson CDF}
 The cumulative probability $\textrm{P}(X \leq x)$ can be calculated by using the in-built \code{\addtoindex{PoissonCD}} function:
