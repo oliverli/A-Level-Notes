@@ -50,7 +50,7 @@
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
 	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for the H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
-\author{Sun Yudong, Li Yicheng, Walter Kong \\ 15S6G/S60 \\ Hwa Chong Institution (College Section)}
+\author{Sun Yudong, Li Yicheng \\ 15S6G \\ Hwa Chong Institution (College Section)}
 \predate{\vfill\begin{center}\large}
 
 \def\code#1{\texttt{#1}}
@@ -85,8 +85,7 @@ Do note that some notes inside this guide were taken from the H2 Mathematics not
 
 \begin{tabular}{l l}
 	Sun Yudong: & sunjerry019 [at] gmail [dot] com \\
-	Li Yicheng: & liyicheng340 [at] gmail [dot] com \\
-	Walter Kong: & wwwwaltwalter [at] gmail [dot] com
+	Li Yicheng: & liyicheng340 [at] gmail [dot] com 
 \end{tabular}
 
 
@@ -364,6 +363,10 @@ While this function is unable to give you the equation of the integral directly,
 \chapter{Statistics}
 One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
 
+In this chapter, all random variables are represented by capital letters (usually $X$ or $Y$). Small letters are reserved to represent values (e.g. $x$).
+
+\note{However, please do not use $Z$, as it is reserved for the standard normal distribution.}
+
 \section{Discrete Random Variable}
 A discrete (countable) random variable $X \in \mathbb{Z}^*$ has expectation (or expected value or mean) $\mu$
 \begin{equation}
@@ -489,7 +492,7 @@ As a general rule of thumb:
 
 Refer to Section \ref{plottable} for plotting results from a table, which might be useful for plotting the PDF/CDF of a binomial distribution, since $\mathrm{P}(X=x)$ is undefined when $x \notin \mathbb{Z}^*$
 
-\subsection{Poisson Distribution}
+\subsection{Poisson Distribution} \label{poisson}
 A random variable that follows a Poisson distribution has the following characteristics:
 \begin{itemize}
 	\item Events occur randomly in a fixed interval and independently of one another.
@@ -538,7 +541,7 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 	\item Set the following:
 	\begin{center}
 		\setlength{\tabcolsep}{10pt}
-		\renewcommand{\arraystretch}{1.1}
+		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular}{|l|l|}
 			\hline
 			Data		& Variable \\
@@ -565,6 +568,8 @@ The cumulative probability $\textrm{P}(X \leq x)$ can be calculated by using the
 \begin{center}
 	\code{PoissonCD(x,$\pilambdaup$)}
 \end{center}
+
+Alternatively, following instructions in the previous section (Section \ref{poisson} $\Rightarrow$ Poisson PDF), and choosing \code{Pcd} instead. 
 
 \subsubsection{Additive Property of Poisson Random Variable}
 If $X \sim \textrm{Po}(\pilambdaup)$ and $Y \sim \textrm{Po}(\mu)$, where $X$ and $Y$ are \textbf{independent}, then:
@@ -595,6 +600,8 @@ A (continuous) random variable $X\in \mathbb{R}$ that follows a normal distribut
 
 We write $X \sim \mathrm{N} (\mu,\sigma^2)$
 
+\note{$Z$ is reserved to represent the standard normal distribution. Do not use it to represent your variables (that do not follow standard normal distribution).}
+
 \subsubsection{Normal Distribution PDF}
 There are one of 2 ways to plot a graph of the normal distribution PDF:
 
@@ -613,7 +620,7 @@ The usage of \code{\addtoindex{NormPD}} is
 \note{You should not use this command to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$. This is because for a continuous random variable, this does not make sense. It should always be a range. (i.e. use the CDF in the next section)}
 
 \subsubsection{Normal Distribution CDF}
-CDF stands for \textit{Cumulative Distribution Function}. This can be calculated by taking the integral of the normal PDF from 0 to $x$. One can take integral by plotting the graph out (refer to previous section), and then \code{G-Solv > $\int$dx}.
+CDF stands for \textit{Cumulative Distribution Function}. This can be calculated by taking the integral of the normal PDF from $-\infty$ to $x$. One can take integral by plotting the graph out (refer to previous section), and then \code{G-Solv > $\int$dx}.
 
 Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
 \begin{center}
@@ -626,6 +633,40 @@ To plot the Normal Distribution CDF, you can use:
 \end{center}
 
 \note{\code{-1E99} is to simulate $-\infty$.}
+
+Alternatively, we can use the \code{STAT} app to obtain the probability:
+\begin{enumerate}
+	\item Go into \code{STAT} (\code{2} in the menu)
+	\item Press \code{DIST}(\code{F5})\code{ > NORM}(\code{F1})\code{ > Ncd}(\code{F1})
+	\item Set the following:
+	\begin{center}
+		\setlength{\tabcolsep}{10pt}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{|l|l|}
+			\hline
+			Data		& Variable \\
+			\hline
+			Lower		& \textit{Lower} \\
+			\hline
+			Upper		& \textit{Upper} \\
+			\hline
+			$\sigma$	& $\sigma$ \\
+			\hline
+			$\mu$		& $\mu$ \\
+			\hline
+			Save Res	& \code{None} \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item You can do further manipulation of the value obtained by:
+	\begin{enumerate}
+		\item Going to \code{RUN$\cdot$MAT}
+		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
+		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+	\end{enumerate} 
+\end{enumerate}
+\note{You cannot use this method for plotting}
 
 \subsubsection{Finding the value given the probability}
 One sometimes need to find $a$ given $\textrm{P}(X < a) = b$ where $a,b \in \mathbb{R}$ and $b$ is the probability of $X$ being less than $a$. 
