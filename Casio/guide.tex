@@ -9,6 +9,10 @@
 \usepackage{tabu}
 \usepackage{tabularx}
 \usepackage{systeme}
+\usepackage{graphicx}
+
+%\graphicspath{{subdir1/}{subdir2/}{subdir3/}...{subdirn/}}
+\graphicspath{{screenshots/}}
 
 % lambda
 	% http://tex.stackexchange.com/questions/290165/how-do-i-get-a-nicer-lambda
@@ -55,6 +59,8 @@
 
 \def\code#1{\texttt{#1}}
 \def\note#1{\textbf{\textit{Note:}} #1}
+\def\tip#1{\textbf{\textit{Tip:}} #1}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
@@ -95,6 +101,13 @@ Every command you will ever need is organized neatly in the \code{[OPTN]} button
 
 Unfortunately there are some areas where the CASIO calculator isn't very intuitive and we need some documentation.
 
+\tip{You can just press the button that corresponds to the number/letter at the bottom right of the icons in the menu:}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{mainmenu}
+\end{figure}
+
 \section{Graphing} \label{graphing}
 To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} (\code{F6}) or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
 \begin{itemize}
@@ -132,6 +145,7 @@ To plot a graph, you go to \code{Graph}. Refer to Section \ref{graphing} (Graphi
 There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) using the GC:
 \begin{itemize}
 	\item Using the \code{EQUA > Solver} (\code{F3}) app
+	\item Using \code{Solve} or \code{SolveN}
 	\item Plotting a graph
 	\begin{itemize}
 		\item Move everything to one side and solve for root
@@ -140,8 +154,62 @@ There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) usi
 \end{itemize}
 
 \subsection{Solving using \code{EQUA > Solver}}
+To use the built-in equation solver:
+\begin{enumerate}
+	\item Go to \code{EQUA > Solver} (\code{F3})
+	\item Enter the equation you would like to solve under \code{Eq}. Remember to put the = sign.
+	\begin{itemize}
+		\item Alternatively, you can use \code{RCL} (\code{F1}) to recall functions entered into \code{GRAPH} or \code{TABLE}
+	\end{itemize}
+	\item Press \code{[EXE]} and put your initial guess under \code{X}. An example can be as such:
+	\begin{center}
+		\code{
+			\begin{tabular}{|r|l|}
+				\hline
+				X 		& 0 \\
+				\hline
+				Lower 	& -9E+99 \\
+				\hline
+				Upper	& 9E+99 \\
+				\hline
+			\end{tabular}
+		}
+	\end{center}
+	\item Press \code{Solv} (\code{F6})	
+\end{enumerate}
 
-note that typing X in run mat will give back ans
+\note{}The initial guess isn't very important for equations with unique solutions. However, if the equation has multiple solutions, it will give the answer closer to the original guess.
+
+For example, given the equation $(x-1)(x-3)=0$, entering the following will give the corresponding answers:
+\begin{center}
+	\renewcommand{\arraystretch}{1.2}
+	\begin{tabular}{|c|c|}
+		\hline
+		$X$ 	& Answer \\
+		\hline
+		0		& 1 \\
+		\hline
+		1.5 	& 1 \\
+		\hline
+		2		& 1 \\
+		\hline
+		2.5		& 3 \\
+		\hline
+		4		& 3 \\
+		\hline
+	\end{tabular}
+\end{center}
+
+After solving the equation, you can always access the value again by going to \code{RUN$\cdot$MAT} and typing \code{X}.
+
+\subsection{Solving using \code{Solve} or \code{SolveN}}
+Alternatively, you can use the \code{Solve} or \code{SolveN} functions to obtain the solution. They can be found under \code{[OPTN] > CALC}(\code{F4}).
+
+Their usage is as follows, as far as we have discovered:
+\begin{center}
+	\code{Solve(<equation>,<initial guess>)} \\
+	\code{SolveN(<equation>)}
+\end{center}
 
 \section{Solving a Multi-variable Linear System}
 There are 3 types of linear systems, namely systems with:
@@ -380,6 +448,8 @@ and variance $\sigma^2=\mathrm{stddev}^2$
 \end{equation}
 \note{The above does not apply to continuous random variables.}
 
+The function that gives the probability that a discrete random variable is exactly equal to some value is called the \textit{Probability Mass Function} (PMF). However, we will write PDF throughout this section instead, so as to be in-line with the curriculum/ calculator functions.
+
 \subsection{Using Data}
 If given a set of histogram data (i.e. categories and its corresponding frequencies), one can calculate statistical properties of it.
 
@@ -583,6 +653,11 @@ The probability for a continuous variable $X$ to fall within a particular region
 	\mathrm{P}(a \leq X \leq b) = \int_{a}^{b} f(x)
 \end{equation}
 where $f(x)$ is the \textit{probability density function} (PDF) of X.
+
+In particular,
+\[
+\int_{-\infty}^{\infty}f(x) = 1
+\]
 
 Moreover, 
 \begin{align*}
