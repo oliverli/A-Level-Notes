@@ -543,7 +543,7 @@ A binomial random variable $X$ has the following characteristics:
 \begin{enumerate}
 	\item The experiment consists of $n$ repeated independent trials
 	\item Each trial only has 2 outcomes: "success" or "failure"
-	\item The probability of a 'success' $p$ is constant in each trial
+	\item The probability of a `success' $p$ is constant in each trial
 \end{enumerate}
 
 % The probability distribution of $X$ is called the \textit{binomial distribution}, and 
@@ -563,8 +563,10 @@ We write $X \sim \mathrm{B}(n, p)$.
 
 To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or use the in-built \code{\addtoindex{BinomialPD}} function:
 \begin{center}
-	\code{BinomialPD(X,$n$,$p$)}
+	\code{BinomialPD([X],$n$,$p$)}
 \end{center}
+
+When \code{X} is not provided, the output answer will be a \code{List}.
 
 Alternatively, we can use the \code{STAT} app to obtain the probability:
 \begin{enumerate}
@@ -602,8 +604,10 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 To obtain the probability $\textrm{P}(X \leq x)$ (\textit{cumulative distribution function} of $x$), we can use the in-built \code{\addtoindex{BinomialCD}} function:
 
 \begin{center}
-	\code{BinomialCD(X,$n$,$p$)}
+	\code{BinomialCD([X],$n$,$p$)}
 \end{center}
+
+Similarly, if \code{X} is not provided, the output answer will be a \code{List}.
 
 Alternatively, following instructions in the previous section (Section \ref{binom} $\Rightarrow$ Binomial PDF), and choosing \code{Bcd} instead. 
 
@@ -751,8 +755,12 @@ However, it must be noted that the \code{NormPD} plots slower than using the act
 
 The usage of \code{\addtoindex{NormPD}} is 
 \begin{center}
-	\code{NormPD(X,$\sigma$,$\mu$)}
+	\code{NormPD(X,[$\sigma$,$\mu$])}
 \end{center}
+
+In this case, \code{X} can be either a single value, or a \code{List}. The corresponding $p$-value will also be adjusted accordingly.
+
+If $\sigma$ and $\mu$ are not provided, the standard normal distribution with $\sigma=1$ and $\mu=0$ is assumed.
 
 \note{You should not use this command to calculate the probability of a certain random variable $\textrm{P}(X = x)$ where $x \in \mathbb{R}$. This is because for a continuous random variable, this does not make sense. It should always be a range. (i.e. use the CDF in the next section)}
 
@@ -761,12 +769,14 @@ CDF stands for \textit{Cumulative Distribution Function}. This can be calculated
 
 Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
 \begin{center}
-	\code{NormCD([Lower],[Upper],$\sigma$,$\mu$)}
+	\code{NormCD(<Lower>,<Upper>,[$\sigma$,$\mu$])}
 \end{center}
+
+If $\sigma$ and $\mu$ are not provided, the standard normal distribution with $\sigma=1$ and $\mu=0$ is assumed.
 
 To plot the Normal Distribution CDF, you can use:
 \begin{center}
-	\code{Y = NormCD(-1E99,X,$\sigma$,$\mu$)}
+	\code{Y = NormCD(-1E99,X,[$\sigma$,$\mu$])}
 \end{center}
 
 \note{\code{-1E99} is to simulate $-\infty$.}
@@ -810,7 +820,7 @@ One sometimes need to find $a$ given $\textrm{P}(X < a) = b$ where $a,b \in \mat
 
 To do this, we need the \code{\addtoindex{InvNormCD}} function built into the calculator. The usage of \code{InvNormCD} is as follows:
 \begin{center}
-	\code{InvNormCD($b$,$\sigma$,$\mu$)}
+	\code{InvNormCD($b$,[$\sigma$,$\mu$])}
 \end{center}
 
 This will give you back $a$.
