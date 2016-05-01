@@ -2,6 +2,8 @@
 
 \documentclass[a5paper,draft]{memoir}
 
+\usepackage[english]{babel}
+\usepackage[autostyle, english = american]{csquotes}
 \usepackage{parskip}
 \usepackage{makeidx}
 \usepackage{amssymb}
@@ -10,6 +12,8 @@
 \usepackage{tabularx}
 \usepackage{systeme}
 \usepackage{graphicx}
+
+\MakeOuterQuote{"}
 
 %\graphicspath{{subdir1/}{subdir2/}{subdir3/}...{subdirn/}}
 \graphicspath{{screenshots/}}
@@ -60,6 +64,7 @@
 \def\code#1{\texttt{#1}}
 \def\note#1{\textbf{\textit{Note:}} #1}
 \def\tip#1{\textbf{\textit{Tip:}} #1}
+\def\runmat{\code{RUN$\cdot$MAT} }
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
@@ -107,6 +112,49 @@ Unfortunately there are some areas where the CASIO calculator isn't very intuiti
 	\centering
 	\includegraphics[width=0.5\textwidth]{mainmenu}
 \end{figure}
+
+\section{Display Modes}
+As a special mention that you probably did not notice, we shall first introduce the different display modes that the calculator is capable of. In the Set Up menu (\code{[SHIFT] + [MENU]}), there are different display options, and we summarize their corresponding functions as follows:
+\begin{center}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|c|p{7.5cm}|}
+		\hline
+		\textbf{Mode}	&	\textbf{What it does} \\
+		\hline
+		\code{Fix}$n$	&	Round off to $n$ decimal places \\
+		\hline
+		\code{Sci}$n$	&	Round off to $n$ significant figures \\
+		\hline
+		\code{Norm}		&	Converts answer to scientific notation when the value $x$ lies outside of the following range: \vspace{2mm} \newline \hspace*{5mm} \textbf{\code{Norm1}}: $10^{-3}>|x|>10^{10}$ \newline \hspace*{5mm} \textbf{\code{Norm2}}: $10^{-9}>|x|>10^{10}$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+In addition to these options, there is also a \code{Eng} mode that adds on to those above mentioned modes. The \code{/E} indicator is on display while the engineering notation is in effect (e.g. \code{Norm1/E}). 
+
+In this mode, answers are displayed with standard order-of-magnitude prefixes, and the symbol that makes the mantissa a value from 1 to 1000 is automatically chosen:
+\begin{center}
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{|c|c||c|c|}
+		\hline
+		E (Exa)		& $\times10^{18}$	& m (milli)	& $\times10^{-3}$ \\
+		\hline
+		P (Peta)	& $\times10^{15}$	& $\mu$ (micro)	& $\times10^{-6}$ \\
+		\hline
+		T (Tera)	& $\times10^{12}$	& n (nano)	& $\times10^{-9}$ \\
+		\hline
+		G (Giga)	& $\times10^{9}$	& p (pico)	& $\times10^{-12}$ \\
+		\hline
+		M (Mega)	& $\times10^{6}$	& f (femto)	& $\times10^{-15}$ \\
+		\hline
+		k (kilo)	& $\times10^3$		& 	&  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+You can also type these prefixes when doing calculations. The prefixes are available under \code{[OPTN] > $\triangleright\times$2 > ESYM} (\code{F1}). You might find these extremely useful when doing calculations for Physics.
+
+Under that same menu, there is also the \code{ENG} and $\overleftarrow{\texttt{ENG}}$ which shifts the decimal place of the displayed value 3 digits to the (left/right), and (decreases/increases) the exponent by 3 respectively.
 
 \section{Graphing} \label{graphing}
 To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} (\code{F6}) or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
@@ -200,16 +248,18 @@ For example, given the equation $(x-1)(x-3)=0$, entering the following will give
 	\end{tabular}
 \end{center}
 
-After solving the equation, you can always access the value again by going to \code{RUN$\cdot$MAT} and typing \code{X}.
+After solving the equation, you can always access the value again by going to \runmat and typing \code{X}.
 
 \subsection{Solving using \code{Solve} or \code{SolveN}}
-Alternatively, you can use the \code{Solve} or \code{SolveN} functions to obtain the solution. They can be found under \code{[OPTN] > CALC}(\code{F4}).
+Alternatively, you can use the \code{Solve} or \code{SolveN} functions in \runmat to obtain the solution. They can be found under \code{[OPTN] > CALC}(\code{F4}).
 
 Their usage is as follows, as far as we have discovered:
 \begin{center}
 	\code{Solve(<equation>,<initial guess>)} \\
 	\code{SolveN(<equation>)}
 \end{center}
+
+Both \code{Solve} and \code{SolveN} will give you only 1 answer, and works similar to how the \code{EQUA > Solver} works.
 
 \section{Solving a Multi-variable Linear System}
 There are 3 types of linear systems, namely systems with:
@@ -255,7 +305,7 @@ By taking the coefficients of the variables $x$, $y$ and $z$, we can form the fo
 
 To solve for $x$, $y$ and $z$:\footnote{ Fn Keys have been left out to save space.}
 \begin{enumerate}
-	\item Go to \code{RUN$\cdot$MAT > $\triangleright$MAT}
+	\item Go to \runmat \code{> $\triangleright$MAT}
 	\item Select \code{Mat A} and enter the dimensions
 	\begin{itemize}
 		\item $m$ is the number of rows, in this case 3
@@ -271,7 +321,7 @@ To solve for $x$, $y$ and $z$:\footnote{ Fn Keys have been left out to save spac
 			\end{array}
 		\right]
 	\end{equation*}
-	\item Press \code{[EXIT]} then \code{[EXIT]} to go back to the main \code{RUN$\cdot$MAT} screen
+	\item Press \code{[EXIT]} then \code{[EXIT]} to go back to the main \runmat screen
 	\item Go to \code{[OPTN] > MAT > $\triangleright$ > Rref}
 	\item Then \code{ $\triangleright \times 3$ > Mat}, then \code{[ALPHA] + A}, giving the following:
 	\begin{center}
@@ -395,10 +445,10 @@ One way is to find the area under the graph after plotting the equation.
 	\item The area under the graph should now be shaded and the value of the area is displayed as \code{$\int$dx}.
 \end{enumerate}
 
-This method is great if you already have the graph plotted and want to find the integral quickly without entering the equation again. If you do not need to plot the graph and simply want to find the definite integral directly, you may find the integration function in the \code{RUN$\cdot$MAT} app more useful.
+This method is great if you already have the graph plotted and want to find the integral quickly without entering the equation again. If you do not need to plot the graph and simply want to find the definite integral directly, you may find the integration function in the \runmat app more useful.
 
 \begin{enumerate}
-	\item From the main menu, enter the \code{RUN$\cdot$MAT} app (\code{1}).
+	\item From the main menu, enter the \runmat app (\code{1}).
 	\item Press the \code{OPTN} button and select the \code{CALC} option (\code{F4}).
 	\item Under the \code{CALC} submenu, choose the \code{$\int$dx} option (\code{F4}).
 	\item Enter the equation as per standard Mathematical notation. 
@@ -472,7 +522,7 @@ You can do 1-Variable Statistical calculations by:
 	\item \code{[EXIT]} and then choose \code{1VAR}
 \end{enumerate}
 
-If you want to further manipulate these calculated values (such as squaring $\sigma$ to find variance), you can go to \code{RUN$\cdot$MAT} and then \code{[VARS] > [STAT] > [X]} to finding the value(s) you wanted.
+If you want to further manipulate these calculated values (such as squaring $\sigma$ to find variance), you can go to \runmat and then \code{[VARS] > [STAT] > [X]} to finding the value(s) you wanted.
 
 Refer to Section \ref{plotstat} (Plotting Statistics/ Visualization) for plotting statistical data.
 
@@ -529,7 +579,7 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
-		\item Going to \code{RUN$\cdot$MAT}
+		\item Going to \runmat
 		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
 		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
 	\end{enumerate} 
@@ -627,7 +677,7 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
-		\item Going to \code{RUN$\cdot$MAT}
+		\item Going to \runmat
 		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
 		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
 	\end{enumerate} 
@@ -736,7 +786,7 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
-		\item Going to \code{RUN$\cdot$MAT}
+		\item Going to \runmat
 		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
 		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
 	\end{enumerate} 
