@@ -64,7 +64,16 @@
 \def\code#1{\texttt{#1}}
 \def\note#1{\textbf{\textit{Note:}} #1}
 \def\tip#1{\textbf{\textit{Tip:}} #1}
+
 \def\runmat{\code{RUN$\cdot$MAT} }
+
+%define function buttons
+\def\Fone{(\code{F1}) }
+\def\Ftwo{(\code{F2}) }
+\def\Fthree{(\code{F3}) }
+\def\Ffour{(\code{F4}) }
+\def\Ffive{(\code{F5}) }
+\def\Fsix{(\code{F6}) }
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
@@ -152,12 +161,12 @@ In this mode, answers are displayed with standard order-of-magnitude prefixes, a
 	\end{tabular}
 \end{center}
 
-You can also type these prefixes when doing calculations. The prefixes are available under \code{[OPTN] > $\triangleright\times$2 > ESYM} (\code{F1}). You might find these extremely useful when doing calculations for Physics.
+You can also type these prefixes when doing calculations: they are available under \code{[OPTN] > $\triangleright\times$2 > ESYM} \Fone. You might find these extremely useful when doing calculations for Physics.
 
 Under that same menu, there is also the \code{ENG} and $\overleftarrow{\texttt{ENG}}$ which shifts the decimal place of the displayed value 3 digits to the (left/right), and (decreases/increases) the exponent by 3 respectively.
 
 \section{Graphing} \label{graphing}
-To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} (\code{F6}) or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
+To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} \Fsix or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
 \begin{itemize}
 	\item The \code{Y} and \code{X}, etc. at the bottom of the screen is for entering the functions \code{Y1, Y2, \dots} and \code{X1, X2, \dots}. For the variable $x$, use the \code{[X,$\theta$,T]} button instead
 	\item To restrict the domain of the function, type:
@@ -168,16 +177,19 @@ To graph a function, go to \code{GRAPH} in the main menu. Enter the functions in
 
 After pressing \code{DRAW} (\code{F6} or \code{[EXE]}), you can press \code{[AC/on]} to break the plotting script.
 
-To solve for anything, use \code{[G-Solv]} (\code{F5}).
+To solve for anything, use \code{[G-Solv]} \Ffive.
 
 \subsection{Plotting a table from function} \label{plottable}
-Plot using function
-
+To effectively use your calculator as a function generator, you can use the \code{TABLE} mode available in the menu:
+\begin{enumerate}
+	\item Go to \code{TABLE} and then enter your function just like how you would in \code{GRAPH}
+	\item Go to \code{SET} \Ffive
+\end{enumerate}
 
 \section{Solving for the roots of a polynomial}
 There are mainly 2 ways to solve for the roots of a polynomial using the GC:
 \begin{itemize}
-	\item Using the \code{EQUA > Poly} (\code{F2}) app
+	\item Using the \code{EQUA > Poly} \Ftwo app
 	\item Plot a graph and solve for roots
 \end{itemize}
 
@@ -192,7 +204,7 @@ To plot a graph, you go to \code{Graph}. Refer to Section \ref{graphing} (Graphi
 \section{Solving a 1-variable Equation}
 There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) using the GC:
 \begin{itemize}
-	\item Using the \code{EQUA > Solver} (\code{F3}) app
+	\item Using the \code{EQUA > Solver} \Fthree app
 	\item Using \code{Solve} or \code{SolveN}
 	\item Plotting a graph
 	\begin{itemize}
@@ -204,10 +216,10 @@ There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) usi
 \subsection{Solving using \code{EQUA > Solver}}
 To use the built-in equation solver:
 \begin{enumerate}
-	\item Go to \code{EQUA > Solver} (\code{F3})
+	\item Go to \code{EQUA > Solver} \Fthree
 	\item Enter the equation you would like to solve under \code{Eq}. Remember to put the = sign.
 	\begin{itemize}
-		\item Alternatively, you can use \code{RCL} (\code{F1}) to recall functions entered into \code{GRAPH} or \code{TABLE}
+		\item Alternatively, you can use \code{RCL} \Fone to recall functions entered into \code{GRAPH} or \code{TABLE}
 	\end{itemize}
 	\item Press \code{[EXE]} and put your initial guess under \code{X}. An example can be as such:
 	\begin{center}
@@ -223,7 +235,7 @@ To use the built-in equation solver:
 			\end{tabular}
 		}
 	\end{center}
-	\item Press \code{Solv} (\code{F6})	
+	\item Press \code{Solv} \Fsix	
 \end{enumerate}
 
 \note{}The initial guess isn't very important for equations with unique solutions. However, if the equation has multiple solutions, it will give the answer closer to the original guess.
@@ -251,7 +263,7 @@ For example, given the equation $(x-1)(x-3)=0$, entering the following will give
 After solving the equation, you can always access the value again by going to \runmat and typing \code{X}.
 
 \subsection{Solving using \code{Solve} or \code{SolveN}}
-Alternatively, you can use the \code{Solve} or \code{SolveN} functions in \runmat to obtain the solution. They can be found under \code{[OPTN] > CALC}(\code{F4}).
+Alternatively, you can use the \code{Solve} or \code{SolveN} functions in \runmat to obtain the solution. They can be found under \code{[OPTN] > CALC}\Ffour.
 
 Their usage is as follows, as far as we have discovered:
 \begin{center}
@@ -271,7 +283,7 @@ There are 3 types of linear systems, namely systems with:
 
 To solve a multi-variable system of linear equations using your GC, there are 2 main ways:
 \begin{enumerate}
-	\item Using the \code{EQUA > Siml} (\code{F1}) app
+	\item Using the \code{EQUA > Siml} \Fone app
 	\item Using matrices
 \end{enumerate}
 
@@ -440,7 +452,7 @@ One way is to find the area under the graph after plotting the equation.
 
 \begin{enumerate}
 	\item Plot the graph following the instructions from Section \ref{graphing}.
-	\item Press \code{G-Solv} (\code{F5}), followed by $\triangleright$ (\code{F6}) and \code{$\int$dx} (\code{F3}).
+	\item Press \code{G-Solv} \Ffive, followed by $\triangleright$ \Fsix and \code{$\int$dx} \Fthree.
 	\item A cursor on the curve will now appear on the graph, along with $x$ and $y$ values. Move the cursor to the lower bound of the definite integral you're trying to find, and press \code{EXE}, followed by the upper bound, and press \code{EXE} again.
 	\item The area under the graph should now be shaded and the value of the area is displayed as \code{$\int$dx}.
 \end{enumerate}
@@ -449,7 +461,7 @@ This method is great if you already have the graph plotted and want to find the 
 
 \begin{enumerate}
 	\item From the main menu, enter the \runmat app (\code{1}).
-	\item Press the \code{OPTN} button and select the \code{CALC} option (\code{F4}).
+	\item Press the \code{OPTN} button and select the \code{CALC} option \Ffour.
 	\item Under the \code{CALC} submenu, choose the \code{$\int$dx} option (\code{F4}).
 	\item Enter the equation as per standard Mathematical notation. 
 	
@@ -470,8 +482,8 @@ For example, we will try to plot the integral of $2x$. Assuming that your GC is 
 	\begin{equation*}
 	\code{Y2}=\int_{0}^{x} \code{Y}1 \, dx
 	\end{equation*}
-	\note{\code{Y2} will take a significant amount of time to plot (around 5-10 seconds). It is recommended that you deselect \code{Y1} by pressing \code{SEL} (\code{F1}) to prevent \code{Y1} from being plotted, saving a couple of seconds.}
-	\item Press \code{DRAW} (\code{F6}). A parabola that identical to $y=x^2$ should be yield. You can plot $y=x^2$ on top of the integral to confirm.
+	\note{\code{Y2} will take a significant amount of time to plot (around 5-10 seconds). It is recommended that you deselect \code{Y1} by pressing \code{SEL} \Fone to prevent \code{Y1} from being plotted, saving a couple of seconds.}
+	\item Press \code{DRAW} \Fsix. A parabola that identical to $y=x^2$ should be yield. You can plot $y=x^2$ on top of the integral to confirm.
 \end{enumerate}
 
 While this function is unable to give you the equation of the integral directly, you can use double check your integrals using this method. Plotting the integral using this method can also be useful if you have to find multiple definite integrals (using the trace function in the graph page).
@@ -557,7 +569,7 @@ To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or
 Alternatively, we can use the \code{STAT} app to obtain the probability:
 \begin{enumerate}
 	\item Go into \code{STAT} (\code{2} in the menu)
-	\item Press \code{DIST}(\code{F5})\code{ > BINM}(\code{F5})\code{ > Bpd}(\code{F1})
+	\item Press \code{DIST}\Ffive\code{ > BINM}\Ffive\code{ > Bpd}\Fone
 	\item Set the following:
 	\begin{center}
 		\setlength{\tabcolsep}{10pt}
@@ -576,12 +588,12 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 			\hline
 		\end{tabular}
 	\end{center}
-	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}\Fone
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
 		\item Going to \runmat
-		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
-		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+		\item Go to \code{[VARS] > STAT}\Fthree\code{ > RESLT}\Fsix\code{ > DIST}\Fthree
+		\item There you can find the $p$ value by pressing $p$ \Fone and then \code{[EXE]}
 	\end{enumerate} 
 \end{enumerate}
 
@@ -657,7 +669,7 @@ To obtain the probability $\textrm{P}(X = x)$, we can either use the formula, or
 Alternatively, we can use the \code{STAT} app to obtain the probability:
 \begin{enumerate}
 	\item Go into \code{STAT} (\code{2} in the menu)
-	\item Press \code{DIST}(\code{F5})\code{ > POISN}(\code{$\triangleright$ F1})\code{ > Ppd}(\code{F1})
+	\item Press \code{DIST}\Ffive\code{ > POISN}(\code{$\triangleright$ F1})\code{ > Ppd}\Fone
 	\item Set the following:
 	\begin{center}
 		\setlength{\tabcolsep}{10pt}
@@ -674,12 +686,12 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 			\hline
 		\end{tabular}
 	\end{center}
-	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}\Fone
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
 		\item Going to \runmat
-		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
-		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+		\item Go to \code{[VARS] > STAT}\Fthree\code{ > RESLT}\Fsix\code{ > DIST}\Fthree
+		\item There you can find the $p$ value by pressing $p$ \Fone and then \code{[EXE]}
 	\end{enumerate} 
 \end{enumerate}
 
@@ -762,7 +774,7 @@ To plot the Normal Distribution CDF, you can use:
 Alternatively, we can use the \code{STAT} app to obtain the probability:
 \begin{enumerate}
 	\item Go into \code{STAT} (\code{2} in the menu)
-	\item Press \code{DIST}(\code{F5})\code{ > NORM}(\code{F1})\code{ > Ncd}(\code{F1})
+	\item Press \code{DIST}\Ffive\code{ > NORM}\Fone\code{ > Ncd}\Fone
 	\item Set the following:
 	\begin{center}
 		\setlength{\tabcolsep}{10pt}
@@ -783,12 +795,12 @@ Alternatively, we can use the \code{STAT} app to obtain the probability:
 			\hline
 		\end{tabular}
 	\end{center}
-	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}(\code{F1})
+	\item Press \code{[EXE]} or scroll to \code{Execute} and press \code{CALC}\Fone
 	\item You can do further manipulation of the value obtained by:
 	\begin{enumerate}
 		\item Going to \runmat
-		\item Go to \code{[VARS] > STAT}(\code{F3})\code{ > RESLT}(\code{F6})\code{ > DIST}(\code{F3})
-		\item There you can find the $p$ value by pressing $p$ (\code{F1}) and then \code{[EXE]}
+		\item Go \code{[VARS] > STAT}\Fthree \code{ > RESLT}\Fsix \code{ > DIST}\Fthree
+		\item There you can find the $p$ value by pressing $p$ \Fone and then \code{[EXE]}
 	\end{enumerate} 
 \end{enumerate}
 \note{You cannot use this method for plotting}
@@ -832,7 +844,6 @@ For example, consider the following experimental data for an experiment involvin
 	\end{tabular}
 \end{center}
 
-\pagebreak
 Enter this set of data into the GC as follows:
 
 \begin{center}
@@ -857,11 +868,11 @@ Enter this set of data into the GC as follows:
 	\end{tabular}
 \end{center}
 
-To plot the points onto a graph, first press the right arrow key ($\triangleright$, \code{F6}) and select the \code{GRPH} option (\code{F1}).
+To plot the points onto a graph, first press the right arrow key ($\triangleright$, \code{F6}) and select the \code{GRPH} option \Fone.
 
 Once in the \code{GRPH} menu, we will first configure the graph options. 
 \begin{enumerate}
-	\item Press \code{SET} (\code{F6}) and ensure that \code{StatGraph1} is shown on the first line and the \code{Graph Type} is \code{Scatter}.
+	\item Press \code{SET} \Fsix and ensure that \code{StatGraph1} is shown on the first line and the \code{Graph Type} is \code{Scatter}.
 	\item Move to \code{XCellRange} and enter \code{B1:B6}. This means that the values from cells \code{B1} to \code{B6} inclusive are that for the horizontal $x$-axis.
 	\item Move to \code{YCellRange} and enter \code{A1:A6}.
 	\item Finally, ensure that the \code{Frequency} option is \code{1}.
@@ -871,16 +882,16 @@ Once in the \code{GRPH} menu, we will first configure the graph options.
 	\item Press \code{EXIT} to leave the configuration menu and return to the spreadsheet.
 \end{enumerate}
 
-Now, press \code{GPH1} (\code{F1}). A graph with markings corresponding to the points on the spreadsheet should be yield.
+Now, press \code{GPH1} \Fone. A graph with markings corresponding to the points on the spreadsheet should be yield.
 
 You calculator can find the equation of a best fit line or curve. In this case, the data is expected to be linearly related (and it is linearly related).
 
 \begin{enumerate}
-	\item Press \code{CALC} (\code{F1}).
-	\item There are now a number of options corresponding to different types of graphs and relationships such as $x^2$, $\ln$, and $e^x$. In this case, our data is linear, so select \code{X} (\code{F2}).
-	\item Select $\code{ax+b}$ (\code{F1}).
+	\item Press \code{CALC} \Fone.
+	\item There are now a number of options corresponding to different types of graphs and relationships such as $x^2$, $\ln$, and $e^x$. In this case, our data is linear, so select \code{X} \Ftwo.
+	\item Select $\code{ax+b}$ \Fone.
 	\item A table with various values is yield. The value $a$ corresponds to the gradient, and $b$ is the $y$-intercept. $r^2$ represents how closely the data fit to the line, with the value of $1$ corresponding to a perfect, ideal fit.
-	\item To view the graph visually, select \code{DRAW} (\code{F6}). To generate $y$-values using the equation, select \code{COPY} (\code{F5}), and select one of the \code{Y1}/\code{Y2\dots} to copy to.
+	\item To view the graph visually, select \code{DRAW} \Fsix. To generate $y$-values using the equation, select \code{COPY} \Ffive, and select one of the \code{Y1}/\code{Y2\dots} to copy to.
 \end{enumerate}
 
 \note{You will need to add an $\times$ between the gradient and the $x$, or it will cause the function to error out.}
