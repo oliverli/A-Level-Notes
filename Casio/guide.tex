@@ -75,6 +75,13 @@
 \def\Ffive{(\code{F5}) }
 \def\Fsix{(\code{F6}) }
 
+\def\fone{(\code{F1})}
+\def\ftwo{(\code{F2})}
+\def\fthree{(\code{F3})}
+\def\ffour{(\code{F4})}
+\def\ffive{(\code{F5})}
+\def\fsix{(\code{F6})}
+
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
@@ -489,6 +496,32 @@ For example, we will try to plot the integral of $2x$. Assuming that your GC is 
 While this function is unable to give you the equation of the integral directly, you can use double check your integrals using this method. Plotting the integral using this method can also be useful if you have to find multiple definite integrals (using the trace function in the graph page).
 
 \chapter{Vectors} \label{vectors}
+
+Casio added support for vectors beginning with firmware version \code{02.04.5301}, on top of support for matrices. Matrices will be covered in Chapter \ref{linalge} (Linear Algebra).\footnote{While vectors are also covered in the Linear Algebra syllabus, this chapter will focus more on what is needed to tackle the H2 syllabus.}
+
+\section{Entering a Vector}
+
+To enter a vector into the GC:
+
+\begin{enumerate}
+	\item Enter the \runmat mode and select \code{$\triangleright$MAT} \fthree.
+	\item Select \code{M$\leftrightarrow$V} \fsix. The top row should now say \code{Vector} and the \code{Vct A} row should be highlighted by default.
+	\item Press \code{EXE} and enter the vector's dimensions. For the following example vector, it is a $3\times1$ vector, so enter $m=3$ and $n=1$. 
+	\begin{equation*}
+		\left(
+			\begin{array}{c}
+				3 \\  
+				1 \\
+				4 
+			\end{array}
+		\right)
+	\end{equation*}
+	\item Enter the values in your vector into the three rows as shown on your textbook/exam paper.
+	\item Press \code{EXIT} twice to return to the main \runmat screen.
+	
+\end{enumerate}
+
+\section{Vector Calculations}
 
 \chapter{Statistics}
 One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
@@ -911,7 +944,7 @@ The linear regression result can also be obtained using the concept of best appr
 \subsection{Plotting Statistics/Visualization} \label{plotstat}
 
 
-\chapter{Linear Algebra}
+\chapter{Linear Algebra} \label{linalge}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
 
 You may find certain concepts here useful for H2 Mathematics as well, especially in terms of matrix manipulations. I suggest you read this chapter as a complement of Chapter \ref{vectors} (Vectors). 
