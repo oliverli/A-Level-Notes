@@ -64,6 +64,7 @@
 \def\code#1{\texttt{#1}}
 \def\note#1{\textbf{\textit{Note:}} #1}
 \def\tip#1{\textbf{\textit{Tip:}} #1}
+\def\caution#1{\textbf{\textit{Caution:}} #1}
 
 \def\runmat{\code{RUN$\cdot$MAT} }
 
@@ -84,6 +85,7 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+\setlength{\footnotesep}{\baselineskip}
 
 %\setcounter{tocdepth}{2} % which level the sectioning commands are printed in the ToC
 %\setcounter{secnumdepth}{4} %up to what level the sectioning titles are numbered\makeatletter
@@ -490,14 +492,16 @@ For example, we will try to plot the integral of $2x$. Assuming that your GC is 
 	\code{Y2}=\int_{0}^{x} \code{Y}1 \, dx
 	\end{equation*}
 	\note{\code{Y2} will take a significant amount of time to plot (around 5-10 seconds). It is recommended that you deselect \code{Y1} by pressing \code{SEL} \Fone to prevent \code{Y1} from being plotted, saving a couple of seconds.}
-	\item Press \code{DRAW} \Fsix. A parabola that identical to $y=x^2$ should be yield. You can plot $y=x^2$ on top of the integral to confirm.
+	\item Press \code{DRAW} \fsix. A parabola that identical to $y=x^2$ should be yield. You can plot $y=x^2$ on top of the integral to confirm.
 \end{enumerate}
 
 While this function is unable to give you the equation of the integral directly, you can use double check your integrals using this method. Plotting the integral using this method can also be useful if you have to find multiple definite integrals (using the trace function in the graph page).
 
 \chapter{Vectors} \label{vectors}
 
-Casio added support for vectors with the \code{02.04.5301} firmware update. This is added on top of Matrices, which will be covered mainly in Chapter \ref{linalge} (Linear Algebra).\footnote{While vectors are also covered in the Linear Algebra syllabus, this chapter will focus more on what is needed to tackle the H2 syllabus.}
+Casio added support for vectors with the \code{02.04.5301} firmware update. This is added on top of Matrices, which will be covered mainly in Chapter \ref{chap:linalge} (Linear Algebra).\footnote{While vectors are also covered in the Linear Algebra syllabus, this chapter will focus more on what is needed to tackle the H2 syllabus.}
+
+\caution{Vector capabilities will be disabled in new \textit{Exam Mode} with the Ver. \code{2.09} update\footnote{We will not be covering this as we are covering Ver. \code{2.04.5301}, the latest SEAB approved firmware version.}.}
 
 \section{Entering a Vector}
 
@@ -523,7 +527,7 @@ To enter a vector into the GC:
 
 \section{Vector Calculations}
 
-\chapter{Statistics}
+\chapter{Statistics}Warning
 One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
 
 In this chapter, all random variables are represented by capital letters (usually $X$ or $Y$). Small letters are reserved to represent values (e.g. $x$).
@@ -817,7 +821,7 @@ To plot the Normal Distribution CDF, you can use:
 Alternatively, we can use the \code{STAT} app to obtain the probability:
 \begin{enumerate}
 	\item Go into \code{STAT} (\code{2} in the menu)
-	\item Press \code{DIST}\Ffive\code{ > NORM}\Fone\code{ > Ncd}\Fone
+	\item Press \code{DIST}\Ffive\code{> NORM}\Fone\code{> Ncd}\fone
 	\item Set the following:
 	\begin{center}
 		\setlength{\tabcolsep}{10pt}
@@ -944,7 +948,7 @@ The linear regression result can also be obtained using the concept of best appr
 \subsection{Plotting Statistics/Visualization} \label{plotstat}
 
 
-\chapter{Linear Algebra} \label{linalge}
+\chapter{Linear Algebra} \label{chap:linalge}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
 
 You may find certain concepts here useful for H2 Mathematics as well, especially in terms of matrix manipulations. I suggest you read this chapter as a complement of Chapter \ref{vectors} (Vectors). 
