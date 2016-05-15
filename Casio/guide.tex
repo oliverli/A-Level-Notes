@@ -174,7 +174,7 @@ You can also type these prefixes when doing calculations: they are available und
 
 Under that same menu, there is also the \code{ENG} and $\overleftarrow{\texttt{ENG}}$ which shifts the decimal place of the displayed value 3 digits to the (left/right), and (decreases/increases) the exponent by 3 respectively.
 
-\section{Graphing} \label{graphing}
+\section{Graphing} \label{sec:graphing}
 To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} \Fsix or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
 \begin{itemize}
 	\item The \code{Y} and \code{X}, etc. at the bottom of the screen is for entering the functions \code{Y1, Y2, \dots} and \code{X1, X2, \dots}. For the variable $x$, use the \code{[X,$\theta$,T]} button instead
@@ -188,7 +188,7 @@ After pressing \code{DRAW} (\code{F6} or \code{[EXE]}), you can press \code{[AC/
 
 To solve for anything, use \code{[G-Solv]} \Ffive.
 
-\subsection{Plotting a table from function} \label{plottable}
+\subsection{Plotting a table from function} \label{sec:plottable}
 To effectively use your calculator as a function generator, you can use the \code{TABLE} mode available in the menu:
 \begin{enumerate}
 	\item Go to \code{TABLE} and then enter your function just like how you would in \code{GRAPH}
@@ -208,7 +208,7 @@ The \code{EQUA > Poly} is quite intuitive, and similar to the standard issue CAS
 	\item You can change the \code{Set Up > Complex Mode} setting to \code{$a+bi$} for imaginary roots (but not imaginary coefficients)
 \end{itemize}
 
-To plot a graph, you go to \code{Graph}. Refer to Section \ref{graphing} (Graphing) for more information.
+To plot a graph, you go to \code{Graph}. Refer to Section \ref{sec:graphing} (Graphing) for more information.
 
 \section{Solving a 1-variable Equation}
 There are mainly 2 ways to solve a 1-variable equation (e.g. $e^x + 5x = 1$) using the GC:
@@ -449,9 +449,9 @@ The following are possible matrices you can obtain after the \code{Rref} command
 	Thus obtaining the general solution. 
 \end{itemize}
 
-You will find this useful for both "System of Linear Equations" and "Vectors" (See Chapter \ref{vectors}). 
+You will find this useful for both "System of Linear Equations" and "Vectors" (See Chapter \ref{chap:vectors}). 
 
-For a more in-depth understanding of what is going on here, you may wish to refer to Section \ref{solvLinSys}.
+For a more in-depth understanding of what is going on here, you may wish to refer to Section \ref{sec:solvLinSys}.
 
 \section{Taking Integrals}
 \subsection{Definite Integrals}
@@ -460,7 +460,7 @@ Your calculator can be used to solve definite integrals.
 One way is to find the area under the graph after plotting the equation.
 
 \begin{enumerate}
-	\item Plot the graph following the instructions from Section \ref{graphing}.
+	\item Plot the graph following the instructions from Section \ref{sec:graphing}.
 	\item Press \code{G-Solv} \Ffive, followed by $\triangleright$ \Fsix and \code{$\int$dx} \Fthree.
 	\item A cursor on the curve will now appear on the graph, along with $x$ and $y$ values. Move the cursor to the lower bound of the definite integral you're trying to find, and press \code{EXE}, followed by the upper bound, and press \code{EXE} again.
 	\item The area under the graph should now be shaded and the value of the area is displayed as \code{$\int$dx}.
@@ -497,7 +497,7 @@ For example, we will try to plot the integral of $2x$. Assuming that your GC is 
 
 While this function is unable to give you the equation of the integral directly, you can use double check your integrals using this method. Plotting the integral using this method can also be useful if you have to find multiple definite integrals (using the trace function in the graph page).
 
-\chapter{Vectors} \label{vectors}
+\chapter{Vectors} \label{chap:vectors}
 
 Casio added support for vectors with the \code{02.04.5301} firmware update. This is added on top of Matrices, which will be covered mainly in Chapter \ref{chap:linalge} (Linear Algebra).\footnote{While vectors are also covered in the Linear Algebra syllabus, this chapter will focus more on what is needed to tackle the H2 syllabus.}
 
@@ -573,9 +573,9 @@ You can do 1-Variable Statistical calculations by:
 
 If you want to further manipulate these calculated values (such as squaring $\sigma$ to find variance), you can go to \runmat and then \code{[VARS] > [STAT] > [X]} to finding the value(s) you wanted.
 
-Refer to Section \ref{plotstat} (Plotting Statistics/ Visualization) for plotting statistical data.
+Refer to Section \ref{sec:plotstat} (Plotting Statistics/ Visualization) for plotting statistical data.
 
-\subsection{Binomial Distribution} \label{binom}
+\subsection{Binomial Distribution} \label{sec:binom}
 A binomial random variable $X$ has the following characteristics:
 \begin{enumerate}
 	\item The experiment consists of $n$ repeated independent trials
@@ -646,7 +646,7 @@ To obtain the probability $\textrm{P}(X \leq x)$ (\textit{cumulative distributio
 
 Similarly, if \code{X} is not provided, the output answer will be a \code{List}.
 
-Alternatively, following instructions in the previous section (Section \ref{binom} $\Rightarrow$ Binomial PDF), and choosing \code{Bcd} instead. 
+Alternatively, following instructions in the previous section (Section \ref{sec:binom} $\Rightarrow$ Binomial PDF), and choosing \code{Bcd} instead. 
 
 As a general rule of thumb:
 \begin{center}
@@ -663,9 +663,9 @@ As a general rule of thumb:
 	\end{tabular}
 \end{center}
 
-Refer to Section \ref{plottable} for plotting results from a table, which might be useful for plotting the PDF/CDF of a binomial distribution, since $\mathrm{P}(X=x)$ is undefined when $x \notin \mathbb{Z}^*$
+Refer to Section \ref{sec:plottable} for plotting results from a table, which might be useful for plotting the PDF/CDF of a binomial distribution, since $\mathrm{P}(X=x)$ is undefined when $x \notin \mathbb{Z}^*$
 
-\subsection{Poisson Distribution} \label{poisson}
+\subsection{Poisson Distribution} \label{sec:poisson}
 A random variable that follows a Poisson distribution has the following characteristics:
 \begin{itemize}
 	\item Events occur randomly in a fixed interval and independently of one another.
@@ -742,7 +742,7 @@ The cumulative probability $\textrm{P}(X \leq x)$ can be calculated by using the
 	\code{PoissonCD(x,$\pilambdaup$)}
 \end{center}
 
-Alternatively, following instructions in the previous section (Section \ref{poisson} $\Rightarrow$ Poisson PDF), and choosing \code{Pcd} instead. 
+Alternatively, following instructions in the previous section (Section \ref{sec:poisson} $\Rightarrow$ Poisson PDF), and choosing \code{Pcd} instead. 
 
 \subsubsection{Additive Property of Poisson Random Variable}
 If $X \sim \textrm{Po}(\pilambdaup)$ and $Y \sim \textrm{Po}(\mu)$, where $X$ and $Y$ are \textbf{independent}, then:
@@ -943,27 +943,27 @@ You calculator can find the equation of a best fit line or curve. In this case, 
 
 \note{You will need to add an $\times$ between the gradient and the $x$, or it will cause the function to error out.}
 
-The linear regression result can also be obtained using the concept of best approximations, covered in Section \ref{bestapprox} under Linear Algebra.
+The linear regression result can also be obtained using the concept of best approximations, covered in Section \ref{sec:bestapprox} under Linear Algebra.
 
-\subsection{Plotting Statistics/Visualization} \label{plotstat}
+\subsection{Plotting Statistics/Visualization} \label{sec:plotstat}
 
 
 \chapter{Linear Algebra} \label{chap:linalge}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
 
-You may find certain concepts here useful for H2 Mathematics as well, especially in terms of matrix manipulations. I suggest you read this chapter as a complement of Chapter \ref{vectors} (Vectors). 
+You may find certain concepts here useful for H2 Mathematics as well, especially in terms of matrix manipulations. I suggest you read this chapter as a complement of Chapter \ref{chap:vectors} (Vectors). 
 
 \section{Storing Matrices}
 accessing individual matrix elements
 
-\section{Solving Linear Systems} \label{solvLinSys}
+\section{Solving Linear Systems} \label{sec:solvLinSys}
 introduce augemented matrix
 how to augment if 2
 
 \subsection{Elementary Row Operations and Row-Echelon Forms}
 row equiv
 
-\section{Best Approximations} \label{bestapprox}
+\section{Best Approximations} \label{sec:bestapprox}
 
 \printindex
 
