@@ -57,7 +57,7 @@
 
 \pretitle{\begin{center}\Huge\bfseries}
 	\title{A Comprehensive Guide to the CASIO fx-9860GIIs}
-	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for the H2 Maths Syllabus \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
+	\posttitle{\par\vskip1em{\normalfont\normalsize\scshape The better graphing calculator for H2 Mathematics \\ \vspace{1cm} Quick Reference Math included\par\vfill}\end{center}}
 \author{Sun Yudong, Li Yicheng \\ 15S6G \\ Hwa Chong Institution (College Section)}
 \predate{\vfill\begin{center}\large}
 
@@ -150,7 +150,7 @@ As a special mention that you probably did not notice, we shall first introduce 
 
 In addition to these options, there is also a \code{Eng} mode that adds on to those above mentioned modes. The \code{/E} indicator is on display while the engineering notation is in effect (e.g. \code{Norm1/E}). 
 
-In this mode, answers are displayed with standard order-of-magnitude prefixes, and the symbol that makes the mantissa a value from 1 to 1000 is automatically chosen:
+In the engineering mode, answers are displayed with standard order-of-magnitude prefixes, and the symbol that makes the mantissa a value from 1 to 1000 is automatically chosen:
 \begin{center}
 	\renewcommand{\arraystretch}{1.3}
 	\begin{tabular}{|c|c||c|c|}
@@ -173,6 +173,12 @@ In this mode, answers are displayed with standard order-of-magnitude prefixes, a
 You can also type these prefixes when doing calculations: they are available under \code{[OPTN] > $\triangleright\times$2 > ESYM} \Fone. You might find these extremely useful when doing calculations for Physics.
 
 Under that same menu, there is also the \code{ENG} and $\overleftarrow{\texttt{ENG}}$ which shifts the decimal place of the displayed value 3 digits to the (left/right), and (decreases/increases) the exponent by 3 respectively.
+
+\section{Radian/Degree/Gradian} \label{sec:angleunits}
+
+Like the majority of other scientific calculators, this GC is able is accept input and display the magnitude of angles in either degrees, radians, or gradians. To change between the 3, enter the Set Up menu, and scroll down until you see a row labelled \code{Angle}. The 3 different units are the displayed at the bottom of the screen and can be selected by the \code{[F1]} to \code{[F3]} buttons.
+
+Note that this setting is universal throughout your GC - it will change the units angles are handled in every mode including but not limited to usual calculations, graphing, etc, unless you specifically specify otherwise (not covered in this section). Therefore, it is vital that you check your units before undergoing any calculation, especially before and during examinations.
 
 \section{Graphing} \label{sec:graphing}
 To graph a function, go to \code{GRAPH} in the main menu. Enter the functions into \code{Y1} onwards. Press \code{DRAW} \Fsix or \code{[EXE]} to graph. Most of these are pretty intuitive, just some things you should take note:
@@ -501,7 +507,7 @@ While this function is unable to give you the equation of the integral directly,
 
 Casio added support for vectors with the \code{02.04.5301} firmware update. This is added on top of support for Matrices, which will be covered mainly in Chapter \ref{chap:linalge} (Linear Algebra).\footnote{While vectors are also covered in the Linear Algebra syllabus, this chapter will focus more on what is needed to tackle the H2 syllabus.}
 
-\caution{Vector capabilities will be disabled in the new \textit{Exam Mode} that ships with the Ver. \code{2.09} update\footnote{We will not be covering this as we are covering Ver. \code{2.04.5301}, the latest SEAB approved firmware version.}.}
+\caution{Vector capabilities will be disabled in the new \textit{Exam Mode} that ships with the Ver. \code{2.09} update.\footnote{We will not be covering this as we are covering Ver. \code{2.04.5301}, the latest SEAB approved firmware version.}} However, as of present we are not aware of any requirements to activate \textit{Exam Mode} during SEAB's examinations.
 
 \section{Entering a Vector}
 
@@ -526,6 +532,62 @@ To enter a vector into the GC:
 \end{enumerate}
 
 \section{Vector Calculations}
+
+\subsection{Addition and Subtraction}
+
+To perform addition or subtraction calculations between two vectors:
+
+\begin{enumerate}
+	\item At the main \runmat screen, press \code{[OPTN]}, followed by \code{MAT} (\code{[F2]}). Press \code{$\triangleright$} (\code{[F6]}) twice, then select \code{Vct} (\code{[F1]}).
+	\item Press the \code{[ALPHA]} button, then press the corresponding letter that represents your first vector. For example, if you entered the vector at the first row previously, press the button that corresponds to \code{A} (which is \code{[X,$\theta$,T]}).
+	\item Press the usual addition or subtraction signs at the bottom right of your calculator depending on which calculation you wish to do.
+	\item Repeat steps 1 and 2 for your second vector, then press \code{[EXE]} to calculate the result.
+\end{enumerate}
+
+\subsection{Dot Product}
+
+Vector specific calculations are slightly more complicated than addition or subtraction. To find the dot product of two vectors:
+
+\begin{enumerate}
+	\item In the vector section under \code{OPTN > MAT}, select \code{DotP} (\code{[F2]}).
+	\item Press \code{Vct}, then press the corresponding letter that represents the first vector in your dot product expression.
+	\item Press the \code{[,]} button, then repeat step 2 but for the second vector in your dot product expression. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{DotP(} function.
+	\item Press \code{[EXE]} to calculate the result.
+\end{enumerate}
+
+\subsection{Cross Product}
+
+Cross product calculations are similar to dot products. To find the cross product between two vectors:
+
+\begin{enumerate}
+	\item In the vector section under \code{OPTN > MAT}, select \code{CrsP} (\code{[F3]}).
+	\item Press \code{Vct}, then press the corresponding letter that represents the first vector in your cross product expression.
+	\item Press the \code{[,]} button, then repeat step 2 but for the second vector in your cross product expression. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{CrossP(} function.
+	\item Press \code{[EXE]} to calculate the result.
+\end{enumerate}
+
+It is important to note here that the \code{[$\times$]} button on your calculator will not work as a cross or dot product operator! Should you attempt to use it as such, your GC will return a \code{Dimension ERROR}.
+
+\subsection{Angle Between Two Vectors}
+
+Your GC is also capable of finding the angle between two vectors. To do so:
+
+\begin{enumerate}
+	\item In the vector section under \code{OPTN > MAT}, select \code{Angle} (\code{[F4]}).
+	\item Press \code{Vct}, then press the corresponding letter that represents the first vector.
+	\item Press the \code{[,]} button, then repeat step 2 but for the second vector. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{Angle(} function.
+	\item Press \code{[EXE]} to calculate the result. Note that the angle calculated can be in radians, degrees, or gradians depending on your settings at the moment. Refer to Section \ref{sec:angleunits} if you are not sure how to change the units.
+\end{enumerate}
+
+\subsection{Unit Vectors}
+
+If you ever need to find the unit vector of a particular vector, you can do so directly with your GC. To do so:
+
+\begin{enumerate}
+	\item In the vector section under \code{OPTN > MAT}, select \code{UntV} (\code{[F5]}).
+	\item Press \code{Vct}, then press the corresponding letter that represents your vector. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{UnitV(} function.
+	\item Press \code{[EXE]} to calculate the result.
+\end{enumerate}
 
 \chapter{Statistics}
 One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
