@@ -68,6 +68,30 @@
 
 \def\runmat{\code{RUN$\cdot$MAT} }
 
+% define column vector
+% creds: http://tex.stackexchange.com/questions/2705/typesetting-column-vector#2712
+% usage: \colvec{m}{a}{b}{c}
+\newcount\colveccount
+\newcommand*\colvec[1]{
+	\global\colveccount#1
+	\left(
+	\begin{array}{c}
+	% \begin{pmatrix}
+		\colvecnext
+	}
+	\def\colvecnext#1{
+		#1
+		\global\advance\colveccount-1
+		\ifnum\colveccount>0
+		\\
+		\expandafter\colvecnext
+		\else
+	%\end{pmatrix}
+	\end{array}
+	\right)
+	\fi
+}
+
 %define function buttons
 \def\Fone{(\code{F1}) }
 \def\Ftwo{(\code{F2}) }
@@ -309,7 +333,7 @@ While you can use matrices to solve any kind of linear system, you can use the \
 
 Anyhow, the app is intuitive enough, so I shall skip it.
 
-\subsection{Using Matrices}
+\subsection{Using Matrices} \label{sec:usingMatrices}
 
 To solve a linear system the matrix way, let's first consider the following linear system:
 \begin{center}
@@ -511,25 +535,24 @@ Casio added support for vectors with the \code{02.04.5301} firmware update. This
 
 \section{Entering a Vector}
 
+Functionally, vectors in this GC is no different from a 1 by $n$ or a $n$ by 1 matrix. Hence, you can use \code{Mat} and \code{Vct} interchangeably, so long as they are of the correct order.
+
 To enter a vector into the GC:
 
 \begin{enumerate}
-	\item Enter the \runmat mode and select \code{$\triangleright$MAT} \fthree.
-	\item Select \code{M$\leftrightarrow$V} \fsix. The top row should now say \code{Vector} and the \code{Vct A} row should be highlighted by default.
-	\item Press \code{EXE} and enter the vector's dimensions. For the following example vector, it is a $3\times1$ vector, so enter $m=3$ and $n=1$. 
+	\item Enter the \runmat mode and select \code{$\triangleright$MAT} \fthree
+	\item Select \code{M$\leftrightarrow$V} \fsix. The top row should now say \code{Vector} and the \code{Vct A} row should be highlighted by default
+	\item Press \code{EXE} and enter the vector's dimensions. For the following example vector, it is a $3\times1$ vector, so enter $m=3$ and $n=1$
 	\begin{equation*}
-		\left(
-			\begin{array}{c}
-				3 \\  
-				1 \\
-				4 
-			\end{array}
-		\right)
+		\colvec{3}{3}{1}{4}
 	\end{equation*}
-	\item Enter the values in your vector into the three rows as shown on your textbook/exam paper.
-	\item Press \code{EXIT} twice to return to the main \runmat screen.
-	
+	\item Enter the values in your vector into the three rows as shown on your textbook/exam paper
+	\item Press \code{EXIT} twice to return to the main \runmat screen
 \end{enumerate}
+
+Alternatively, if you are in \runmat and your Input/Output is set to \code{Math} in the settings, you can enter vectors simply by going to \code{MATH} \Ffour \code{>} \code{MAT} and then choosing the appropriately sized matrix. These entered matrices will replace your \code{Vct A}/etc. described in the next few sections.
+
+Note that the labelling follows the conventional $m \times n$ format, where $m$ is the number of rows, and $n$ is the number of columns.
 
 \section{Vector Calculations}
 
@@ -538,7 +561,7 @@ To enter a vector into the GC:
 To perform addition or subtraction calculations between two vectors:
 
 \begin{enumerate}
-	\item At the main \runmat screen, press \code{[OPTN]}, followed by \code{MAT} (\code{[F2]}). Press \code{$\triangleright$} (\code{[F6]}) twice, then select \code{Vct} (\code{[F1]}).
+	\item At the main \runmat screen, press \code{[OPTN]}, followed by \code{MAT} \ftwo. Press \code{$\triangleright$} \Fsix twice, then select \code{Vct} \fone.
 	\item Press the \code{[ALPHA]} button, then press the corresponding letter that represents your first vector. For example, if you entered the vector at the first row previously, press the button that corresponds to \code{A} (which is \code{[X,$\theta$,T]}).
 	\item Press the usual addition or subtraction signs at the bottom right of your calculator depending on which calculation you wish to do.
 	\item Repeat steps 1 and 2 for your second vector, then press \code{[EXE]} to calculate the result.
@@ -549,7 +572,7 @@ To perform addition or subtraction calculations between two vectors:
 Vector specific calculations are slightly more complicated than addition or subtraction. To find the dot product of two vectors:
 
 \begin{enumerate}
-	\item In the vector section under \code{OPTN > MAT}, select \code{DotP} (\code{[F2]}).
+	\item In the vector section under \code{OPTN > MAT}, select \code{DotP} \ftwo.
 	\item Press \code{Vct}, then press the corresponding letter that represents the first vector in your dot product expression.
 	\item Press the \code{[,]} button, then repeat step 2 but for the second vector in your dot product expression. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{DotP(} function.
 	\item Press \code{[EXE]} to calculate the result.
@@ -560,7 +583,7 @@ Vector specific calculations are slightly more complicated than addition or subt
 Cross product calculations are similar to dot products. To find the cross product between two vectors:
 
 \begin{enumerate}
-	\item In the vector section under \code{OPTN > MAT}, select \code{CrsP} (\code{[F3]}).
+	\item In the vector section under \code{OPTN > MAT}, select \code{CrsP} \fthree.
 	\item Press \code{Vct}, then press the corresponding letter that represents the first vector in your cross product expression.
 	\item Press the \code{[,]} button, then repeat step 2 but for the second vector in your cross product expression. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{CrossP(} function.
 	\item Press \code{[EXE]} to calculate the result.
@@ -573,7 +596,7 @@ It is important to note here that the \code{[$\times$]} button on your calculato
 Your GC is also capable of finding the angle between two vectors. To do so:
 
 \begin{enumerate}
-	\item In the vector section under \code{OPTN > MAT}, select \code{Angle} (\code{[F4]}).
+	\item In the vector section under \code{OPTN > MAT}, select \code{Angle} \ffour.
 	\item Press \code{Vct}, then press the corresponding letter that represents the first vector.
 	\item Press the \code{[,]} button, then repeat step 2 but for the second vector. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{Angle(} function.
 	\item Press \code{[EXE]} to calculate the result. Note that the angle calculated can be in radians, degrees, or gradians depending on your settings at the moment. Refer to Section \ref{sec:angleunits} if you are not sure how to change the units.
@@ -584,10 +607,44 @@ Your GC is also capable of finding the angle between two vectors. To do so:
 If you ever need to find the unit vector of a particular vector, you can do so directly with your GC. To do so:
 
 \begin{enumerate}
-	\item In the vector section under \code{OPTN > MAT}, select \code{UntV} (\code{[F5]}).
+	\item In the vector section under \code{OPTN > MAT}, select \code{UntV} \ffive.
 	\item Press \code{Vct}, then press the corresponding letter that represents your vector. It is good practice at this stage to press the \code{[)]} button to close the opening bracket that comes together with the \code{UnitV(} function.
 	\item Press \code{[EXE]} to calculate the result.
 \end{enumerate}
+
+\section{Problems involving Vectors}
+\subsection{Finding the line of intersection between 2 or more planes}
+Let's say you are given 2 planes:
+
+\begin{equation*}
+	\pi_{1}: \textbf{r} \cdot \colvec{3}{3}{1}{5} = 4 \hspace{5mm} \text{ and } \hspace{5mm} \pi_{2}: \textbf{r} \cdot \colvec{3}{5}{1}{3} = 2
+\end{equation*}
+
+First, convert them to linear equations:
+\begin{equation*}
+\syslineskipcoeff{1.2}
+\systeme{
+	\hspace{0.2cm} 3x+y+5z=4,
+	\hspace{0.2cm} 5x+y+3z=2
+}
+\end{equation*}
+
+Then solve for the general solution as described in Section \ref{sec:usingMatrices} (Using Matrices to Solve Multi-variable Linear System):
+\begin{equation*}
+\syslineskipcoeff{1.2}
+\systeme{
+	\hspace{0.2cm} x=t-1,
+	\hspace{0.2cm} y=-8t+7,
+	\hspace{0.2cm} z=t
+}\hspace{5mm} \text{where } t \in \mathbb{R}
+\end{equation*}
+
+Separating out the $t$, we realize that the solution (the line of intersection) can be written as such:
+\begin{equation*}
+\colvec{3}{x}{y}{z} = \textbf{r} = \colvec{3}{1}{-8}{1}t + \colvec{3}{-1}{7}{0} \hspace{5mm} t \in \mathbb{R}
+\end{equation*}
+
+Similarly, you can expand this method to find the point of intersection (unique solution). 
 
 \chapter{Statistics}
 One major use of a graphing calculator is for use in statistics. In the following chapters, we will outline the methods with which we can use our GC. Calculator functions in this section can generally be found under \code{[OPTN] > [STAT]}. Permutation and Combinations will not be covered. Calculated variables can be found under \code{[VARS] > [STAT]}
