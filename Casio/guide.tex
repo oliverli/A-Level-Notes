@@ -1,6 +1,6 @@
 % mental note to run makeindex on final compilation
 
-\documentclass[a5paper,draft]{memoir}
+\documentclass[a5paper]{memoir}
 
 \usepackage[english]{babel}
 \usepackage[autostyle, english = american]{csquotes}
@@ -12,6 +12,7 @@
 \usepackage{tabularx}
 \usepackage{systeme}
 \usepackage{graphicx}
+\usepackage[margin=1cm]{caption}
 
 \MakeOuterQuote{"}
 
@@ -212,11 +213,31 @@ To graph a function, go to \code{GRAPH} in the main menu. Enter the functions in
 	\begin{center}
 		\code{Y1 = $f(x)$,[start,end]}
 	\end{center}
+	\note{Restricting the domain disables the sketching of the inverse of a graph.}
 \end{itemize}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{sinx}
+	\caption{Graph of sin($x$), for $-\pi \leq x \leq \pi$}
+\end{figure}
 
 After pressing \code{DRAW} (\code{F6} or \code{[EXE]}), you can press \code{[AC/on]} to break the plotting script.
 
 To solve for anything, use \code{[G-Solv]} \Ffive.
+
+\subsection{Sketching}
+Once a graph is plotted, you can sketch additional graphs on top of the already plotted graph. This includes sketching the \addtoindex{inverse} of a function, \addtoindex{tangent} and \addtoindex{normal} to a point on the curve.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{normtan_sinx}
+	\caption{Graph of sin($x$), for $-\pi \leq x \leq \pi$, with the normal and tangent drawn at $x=-2.5$}
+\end{figure}
+
+All these are accessible under the Sketch menu (\code{SHIFT > F4}).
+
+When sketching the normal/tangent, just press the number keys if you would like to enter a specific X-value to plot the normal/tangent at.
 
 \subsection{Plotting a table from function} \label{sec:plottable}
 To effectively use your calculator as a function generator, you can use the \code{TABLE} mode available in the menu:
@@ -224,6 +245,10 @@ To effectively use your calculator as a function generator, you can use the \cod
 	\item Go to \code{TABLE} and then enter your function just like how you would in \code{GRAPH}
 	\item Go to \code{SET} \Ffive
 \end{enumerate}
+
+Once in table mode, you can enter values directly into the $X$ column to generate values using the function. 
+
+This is especially useful when you are doing the same operation multiple times on different numbers, or when you are generating solving a Sequences and Series question using the Method of Differences.
 
 \section{Solving for the roots of a polynomial}
 There are mainly 2 ways to solve for the roots of a polynomial using the GC:
@@ -1065,7 +1090,51 @@ You calculator can find the equation of a best fit line or curve. In this case, 
 The linear regression result can also be obtained using the concept of best approximations, covered in Section \ref{sec:bestapprox} under Linear Algebra.
 
 \subsection{Plotting Statistics/Visualization} \label{sec:plotstat}
+In this section, we would explore ways we can use the calculator to help us visualize statistics, just like how it would appear in our lecture notes. The steps here are purely provided as an example, and to expose you to these functions, and you should adapt accordingly for your own use.
 
+\subsubsection{Binomial/Poisson Distribution}
+To visualize a binomial distribution, let's first generate a list of values for a certain binomial distribution. For example, let's say that $X \sim \text{B}(50, \frac{1}{3})$:
+
+We can generate a list of probabilities easily in \runmat:
+
+\begin{center}
+	\code{BinomialPD(50,$\mathtt{\frac{1}{3}}$) $\mathtt{\rightarrow}$ List 1}
+\end{center}
+
+Thereafter, go into \code{STAT} and you'll see the probabilities all listed out for you in the \code{List 1}:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{binom50}
+\end{figure}
+
+We can then easily graph this result:
+\begin{enumerate}
+	\item Go to \code{GRPH} \Fone \code{>} \code{SET} \fsix
+	\item Scroll to \code{Graph Type} and choose \code{Bar} ($\triangleright$ \code{>} \code{F3})
+	\item Select:
+	\begin{tabular}{| l | l |}
+		\hline
+		\code{Data1} 		& \code{List1} \\
+		\hline
+		\code{Stick Type} 	& \code{Length} \\
+		\hline
+	\end{tabular}
+	\item Press \code{EXIT} and then \code{GPH1} \fone
+\end{enumerate}
+
+The graph should have been plotted. You can scroll, zoom in, or out to see more:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{binom50plot}
+\end{figure}
+
+This should look like those graphs they have in your lecture notes.
+
+\note{the x-coordinate of 1 corresponds to $\text{P}(X=0)$}
+
+A similar procedure can be followed to plot a graph of a variable that follows a Poisson distribution.
 
 \chapter{Linear Algebra} \label{chap:linalge}
 Some of you might find yourself doing linear algebra, and needing to do matrix manipulations. In this chapter, I will outline some basic concepts covered in MA1101R (NUS H3 Course), and how you can use your GC to find the answer.
