@@ -13,8 +13,12 @@
 \usepackage{systeme}
 \usepackage{graphicx}
 \usepackage[margin=1cm]{caption}
+\usepackage{hyperref}
+
+\hypersetup{pdftitle={A Comprehensive Guide to the CASIO fx-9860GIIs},pdfauthor={Sun Yudong, Li Yicheng},bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,	colorlinks=true,linkcolor=black,pdfpagemode=UseOutlines,pdfpagelayout=TwoPageRight}
 
 \MakeOuterQuote{"}
+\makeindex
 
 %\graphicspath{{subdir1/}{subdir2/}{subdir3/}...{subdirn/}}
 \graphicspath{{screenshots/}}
@@ -227,7 +231,7 @@ After pressing \code{DRAW} (\code{F6} or \code{[EXE]}), you can press \code{[AC/
 To solve for anything, use \code{[G-Solv]} \Ffive.
 
 \subsection{Sketching}
-Once a graph is plotted, you can sketch additional graphs on top of the already plotted graph. This includes sketching the \addtoindex{inverse} of a function, \addtoindex{tangent} and \addtoindex{normal} to a point on the curve.
+Once a graph is plotted, you can sketch additional graphs on top of the already plotted graph. This includes sketching the inverse\index{Sketching!Inverse} of a function, tangent\index{Sketching!Tangent} and normal\index{Sketching!Normal} to a point on the curve.
 
 \begin{figure}[h]
 	\centering
@@ -1153,7 +1157,8 @@ row equiv
 
 \section{Best Approximations} \label{sec:bestapprox}
 
+\cleardoublepage
+% \addcontentsline{toc}{chapter}{Index}
 \printindex
-
 
 \end{document}
