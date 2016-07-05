@@ -13,6 +13,8 @@
 \usepackage{systeme}
 \usepackage{graphicx}
 \usepackage[margin=1cm]{caption}
+\usepackage[super]{nth}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{hyperref}
 
 \hypersetup{pdftitle={A Comprehensive Guide to the CASIO fx-9860GIIs},pdfauthor={Sun Yudong, Li Yicheng},bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,	colorlinks=true,linkcolor=black,pdfpagemode=UseOutlines,pdfpagelayout=TwoPageRight}
@@ -68,8 +70,10 @@
 
 \def\code#1{\texttt{#1}}
 \def\note#1{\textbf{\textit{Note:}} #1}
+\def\sidenote#1{\textcolor[HTML]{00559e}{\textbf{\textit{Sidenote:}}} \textcolor[HTML]{3c90d8}{#1}}
 \def\tip#1{\textbf{\textit{Tip:}} #1}
 \def\caution#1{\textbf{\textit{Caution:}} #1}
+\def\example#1{{\centering -- \textbf{\textit{Example:}} #1 --\par}}
 
 \def\runmat{\code{RUN$\cdot$MAT} }
 
@@ -119,6 +123,14 @@
 %\setcounter{tocdepth}{2} % which level the sectioning commands are printed in the ToC
 %\setcounter{secnumdepth}{4} %up to what level the sectioning titles are numbered\makeatletter
 \setsecnumdepth{subsection}
+
+\newcommand{\specialcell}[2][c]{%
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+% \specialcell{No. of serious\\accidents in a day}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 \newcommand{\addtoindex}[1]{#1\index{#1}}
 
@@ -717,11 +729,51 @@ You can do 1-Variable Statistical calculations by:
 	\item Go into \code{STAT} and then enter the X-values into \code{List 1} and its frequency into \code{List 2}
 	\item Go to \code{CALC > SET} and adjust the settings accordingly for 1-Var (\code{XList:List1, Freq:List2})
 	\item \code{[EXIT]} and then choose \code{1VAR}
-\end{enumerate}
+\end{enumerate} 
 
 If you want to further manipulate these calculated values (such as squaring $\sigma$ to find variance), you can go to \runmat and then \code{[VARS] > [STAT] > [X]} to finding the value(s) you wanted.
 
-Refer to Section \ref{sec:plotstat} (Plotting Statistics/ Visualization) for plotting statistical data.
+Let's do a simple example to illustrate how to do this:
+
+\example{Expressway accidents}
+
+Over a period of 120 days, the number of serious accidents in a day along a certain expressway are recorded as follows:
+
+\begin{center}
+	\renewcommand*{\arraystretch}{1.2}
+	\begin{tabular}{|C{0.5cm}|C{0.5cm}|C{0.5cm}|C{0.5cm}|C{0.5cm}|C{0.5cm}|C{0.5cm}|c|}
+		\hline
+		0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 or more \\
+		\hline 
+		21 & 36 & 32 & 18 & 9 & 3 & 1 & 0  \\
+		\hline
+	\end{tabular}
+\end{center}
+
+where the \nth{1} row is the number of serious accidents in a day, and the \nth{2}
+
+To find the mean and variance of this dataset:
+\begin{enumerate}
+	\item Go to \code{STAT} and enter the data appropriately:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{expressway_accident_1}
+	\end{figure}
+	\item Go to \code{CALC > SET} and set the \code{1Var XList} as \code{List1} and \code{1Var Freq} as \code{List2}. You need not care about \code{2Var} for this example
+	\item Press \code{[EXIT]} and then \code{1VAR} \Fone and you should get the following:
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{expressway_accident_2}
+	\end{figure}
+	\item You now have the mean $\bar{x}$ and standard deviation $\sigma x$
+	\item To find the variance of this data, go to \runmat and you will find $\sigma x$ under \code{VARS > STAT > X > $\sigma$x}. Enter that and then square it.	
+\end{enumerate}
+
+You have now found that $\bar{x} = 1.7583$ and $\text{Var}(x)=1.7499$. 
+
+\sidenote{Since the variance and the mean is about the same, we can thus conclude that a Poisson model may be valid for this data set.}
+
+Refer to Section \ref{sec:plotstat} (Plotting Statistics/Visualization) for plotting statistical data.
 
 \subsection{Binomial Distribution} \label{sec:binom}
 A binomial random variable $X$ has the following characteristics:
