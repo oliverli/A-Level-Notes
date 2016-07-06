@@ -75,10 +75,13 @@
 
 \def\code#1{\texttt{#1}}
 \def\note#1{\textcolor[HTML]{109fa9}{\textbf{\textit{Note:}}} #1}
-\def\sidenote#1{\textcolor[HTML]{00559e}{\textbf{\textit{Sidenote:}}} \textcolor[HTML]{3c90d8}{#1}}
 \def\tip#1{\textcolor[HTML]{a9109f}{\textbf{\textit{Tip:}}} #1}
 \def\caution#1{\textcolor[HTML]{b02f10}{\textbf{\textit{Caution:}}} #1}
 \def\example#1{{\centering -- \textcolor[HTML]{2a6c06}{\textbf{\textit{Example:}}} #1 --\par}}
+
+\newenvironment{sidenote}%
+{\textcolor[HTML]{00559e}{\textbf{\textit{Sidenote:}}} \color[HTML]{3c90d8}}%
+{\ignorespacesafterend}
 
 \def\runmat{\code{RUN$\cdot$MAT} }
 
@@ -790,7 +793,9 @@ To find the mean and variance of this dataset:
 
 You have now found that $\bar{x} = 1.7583$ and $\text{Var}(x)=1.7499$. 
 
-\sidenote{Since the variance and the mean is about the same, we can thus conclude that a Poisson model may be valid for this data set.}
+\begin{sidenote}
+	Since the variance and the mean is about the same, we can thus conclude that a Poisson model may be valid for this data set.
+\end{sidenote}
 
 Refer to Section \ref{sec:plotstat} (Plotting Statistics/Visualization) for plotting statistical data.
 
@@ -1029,6 +1034,12 @@ Alternatively, you can use the built-in \code{\addtoindex{NormCD}}:
 \end{center}
 
 If $\sigma$ and $\mu$ are not provided, the standard normal distribution with $\sigma=1$ and $\mu=0$ is assumed.
+
+\begin{sidenote}
+	You might realize that the value given by the calculator differs from that given by its Texas Instrument counterpart. This is no error as both calculators probably uses slightly different methods of calculating the probability. 
+	
+	As a yardstick, we have compared the answers given by both calculators to that given by WolframAlpha, and it seems that the Casio calculator gives a more accurate value.
+\end{sidenote}
 
 To plot the Normal Distribution CDF, you can use:
 \begin{center}
