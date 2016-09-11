@@ -1,0 +1,89 @@
+\documentclass[a4paper]{article}
+
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{libertine}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{hyperref}
+\hypersetup{pdftitle={The Definitive Physics Definition List},pdfauthor={Engineers of Dubious Quality},bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,colorlinks=true,allcolors=black,pdfstartview=Fit,pdfpagemode=UseOutlines,pdfpagelayout=TwoPageRight}
+
+\newlength{\oldparskip}
+\setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+
+\title{The Definitive Physics Definition List}
+\author{Engineers of Dubious Quality}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section{Measurements}
+	Express errors/uncertainties to 1 s.f. and write the measured value to the same decimal place as its error/uncertainty
+	
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l p{10.5cm} @{}}
+			\toprule
+			Systematic Error & An error that occurs consistently more or consistently less than the actual reading.\\
+			Random Error & An error that occurs as a scattering (or spreading) of readings about the average or mean value of the measurements. \\
+			\midrule
+			Precision & The \textit{\textbf{reproducibility}} of a measurement. Repeated measurements which are very close to one another are precise measurements. Thus an experiment which has \textit{\textbf{small random errors}} (i.e. small spread of readings) is said to have \textit{\textbf{high precision}}. \\
+			Accuracy & The \textbf{\textit{agreement}} between the measured value and the true or accepted value of a quantity. An experiment which has \textbf{\textit{small systematic errors}} is said to have \textbf{\textit{high accuracy}}. The \textbf{\textit{average value}} is close to the true value. \\
+			\midrule
+			Vector Quantity & A quantity that has a \textbf{\textit{magnitude and direction}}. \\
+			Scalar Quantity & A quantity that has a magnitude only. \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\section{Kinematics}
+	We define a coordinate system with defined reference positive directions and we assume constant acceleration.
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l l p{8.5cm} @{}}
+			\toprule
+			Displacement & $\textbf{s}$ & The distance travelled in a stated direction from a reference point. \\
+			Velocity & $\displaystyle \textbf{v} = \frac{d\textbf{s}}{dt}$ & The rate of change of displacement with respect to time.\\
+			\rule{0pt}{20pt}Speed & $\displaystyle v=\left|\textbf{v}\right| = \left|\frac{d\textbf{s}}{dt}\right|$ & The rate of change of distance travelled with respect to time. \\
+			\rule{0pt}{20pt}Acceleration &  $\displaystyle \textbf{a} = \frac{d\textbf{v}}{dt} = \frac{d^2\textbf{s}}{dt^2}$ & The rate of change of velocity with respect to time. \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\section{Dynamics}
+		\subsection{Newton's Laws of Motion}
+			\oldparskip=\parskip
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\begin{tabular}{@{} l >{\parskip=\oldparskip}p{10.5cm} @{}}
+					\toprule
+					1\textsuperscript{st} Law & A body will continue in its \textit{\textbf{state of rest}}, or \textbf{\textit{move}} at \textbf{\textit{constant speed in a stright line}} unless an \textbf{\textit{external resultant force}} acts on it.\\
+					$\rightarrow$ Inertia & The resistance to change in the state of motion of an object \\
+					$\rightarrow$ Mass & A property of that determines the objects inertia. \\
+					\midrule
+					2\textsuperscript{nd} Law & The \textbf{\textit{rate of change of linear momentum}} of a body is \textbf{\textit{directly proportional}} to the resultant force acting on it, and its direction is in the \textbf{\textit{same direction}} as this resultant force. \par The \textbf{\textit{force acting on an object}} is defined as the \textbf{\textit{rate of change of linear momentum}} of an object. $$F \propto \frac{dp}{dt}, ~F=ma \textrm{ (if constant mass)}$$ \\
+					\midrule
+					3\textsuperscript{rd} Law & If body A exerts a force on body B, then body B will exert an \textbf{\textit{equal and opposite}} force on body A. \par \textit{Note:} Action-Reaction Pairs act on different bodies and are of the same nature.\\
+					\midrule
+					Weight & The gravitational force acting on the object. \\
+					Weightlessness & There is no contact force acting on the object. \textit{A body experiences apparent weightlessness when the resultant force acting on it is its weight, or it is undergoing freefall.} \\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+		\subsection{Momentum}
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\begin{tabular}{@{} p{2.7cm} l p{7cm} @{}}
+					\toprule
+					Linear Momentum & $\textbf{p}=m\textbf{v}$ & The product of an object's mass and its velocity. \\
+					\rule{0pt}{20pt}Impulse & $\displaystyle \textbf{J}=\int_{t1}^{t2}\textbf{F}dt=P_{f}-P_{i}$	& The product of the average force acting on an object and the time interval that the force is being applied.\\	
+					\midrule
+					Principle of Conservation of Linear Momentum & \multicolumn{2}{p{10.9cm}}{The total momentum of the system is a constant when no external resultant force acts on it.}\\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+	\section{Forces}
+		
+\end{document}
