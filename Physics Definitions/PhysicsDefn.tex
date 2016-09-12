@@ -2,15 +2,21 @@
 
 \usepackage[a4paper]{geometry}
 \usepackage{amsmath}
+\usepackage{amsbsy}
 \usepackage{libertine}
 \usepackage{parskip}
 \usepackage{booktabs}
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{makecell}
 \usepackage{hyperref}
 \hypersetup{pdftitle={The Definitive Physics Definition List},pdfauthor={Engineers of Dubious Quality},bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,colorlinks=true,allcolors=black,pdfstartview=Fit,pdfpagemode=UseOutlines,pdfpagelayout=TwoPageRight}
 
 \newlength{\oldparskip}
 \setlength{\parskip}{2ex plus 0.5ex minus 0.2ex}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \title{The Definitive Physics Definition List}
 \author{Engineers of Dubious Quality}
@@ -63,7 +69,7 @@
 					$\rightarrow$ Inertia & The resistance to change in the state of motion of an object \\
 					$\rightarrow$ Mass & A property of that determines the objects inertia. \\
 					\midrule
-					2\textsuperscript{nd} Law & The \textbf{\textit{rate of change of linear momentum}} of a body is \textbf{\textit{directly proportional}} to the resultant force acting on it, and its direction is in the \textbf{\textit{same direction}} as this resultant force. \par The \textbf{\textit{force acting on an object}} is defined as the \textbf{\textit{rate of change of linear momentum}} of an object. $$F \propto \frac{dp}{dt}, ~F=ma \textrm{ (if constant mass)}$$ \\
+					2\textsuperscript{nd} Law & The \textbf{\textit{rate of change of linear momentum}} of a body is \textbf{\textit{directly proportional}} to the resultant force acting on it, and its direction is in the \textbf{\textit{same direction}} as this resultant force. \par The \textbf{\textit{force acting on an object}} is defined as the \textbf{\textit{rate of change of linear momentum}} of an object. $$F \propto \frac{dp}{dt}, ~F=ma \textrm{ (if constant mass)} \vspace*{-\baselineskip}$$ \\
 					\midrule
 					3\textsuperscript{rd} Law & If body A exerts a force on body B, then body B will exert an \textbf{\textit{equal and opposite}} force on body A. \par \textit{Note:} Action-Reaction Pairs act on different bodies and are of the same nature.\\
 					\midrule
@@ -78,22 +84,108 @@
 				\begin{tabular}{@{} p{2.7cm} l p{6.8cm} @{}}
 					\toprule
 					Linear Momentum & $\textbf{p}=m\textbf{v}$ & The product of an object's mass and its velocity. \\
-					\rule{0pt}{20pt}Impulse & $\displaystyle \textbf{J}=\int_{t1}^{t2}\textbf{F}dt=P_{f}-P_{i}$	& The product of the average force acting on an object and the time interval that the force is being applied.\\	
+					\rule{0pt}{20pt}Impulse & $\displaystyle \textbf{J}=\int_{t1}^{t2}\textbf{F}~dt=P_{f}-P_{i}$	& The product of the average force acting on an object and the time interval that the force is being applied.\\	
 					\midrule
 					Principle of Conservation of Linear Momentum & \multicolumn{2}{p{10.7cm}}{The total momentum of the system is a constant when no external resultant force acts on it.}\\
 					\bottomrule
 				\end{tabular}
 			\end{center}
+	\newpage
 	\section{Forces}
+		\begin{center}
+			\renewcommand{\arraystretch}{1.2}
+			\begin{tabular}{@{} l l p{7cm} @{}}
+				\toprule
+				Pressure due to Fluid & $\Delta P = h\rho g$ & The force acting per unit area by the fluid on a body submerged at a depth in the fluid. \\
+				Upthrust & $U=m_{f}g=\rho V_{dis}g$ & The \textbf{\textit{net force exerted by a fluid}} on a body submerged in the fluid. \\
+				Principle of Floatation & $mg=U=\rho V_{dis} g$ & This holds true for an object floating in equillibrium in a fluid.  \\
+				Drag & \multicolumn{1}{p{2.5cm}}{$\textbf{F}_{\textbf{D}}=k\textbf{v}$ \par (Laminar Flow)} & It is the force resisting an object \textbf{\textit{moving relative to a fluid}}. It always \textit{\textbf{opposes}} motion, and its magnitude is \textbf{\textit{dependent on the velocity}} of the object.\\
+				\midrule
+				Moment of a force (Torque) & $\boldsymbol{\tau}=\textbf{r} \times \textbf{F}$ & Moment of a force about a point (the pivot) is the \textit{\textbf{product}} of the magnitude of the force and the \textbf{\textit{perpendicular distance}} of the \textbf{\textit{line of action}} of the force to the point. \\
+				Couple & \multicolumn{2}{p{10.3cm}}{A couple always consists of 2 parallel forces which are equal in magnitude and opposite in direction (their lines of action fo not coincide)} \\
+				Torque of a couple & \multicolumn{2}{p{10.3cm}}{The \textbf{\textit{product}} of the \textbf{\textit{magnitude of one of the forces}} of the couple and the \textbf{\textit{perpendicular distance between the forces.}}} \\
+				Center of gravity of a body & \multicolumn{2}{l}{It is the point at which the weight of the body appears to act.} \\
+				\bottomrule
+			\end{tabular}
+		\end{center}
+		\subsection{Equilibrium of Forces}
+			For a rigid body to be in static equilibrium, 2 conditions must be satisfied:
+			
+			\begin{tabular}{@{} C{0.5\textwidth} C{0.5\textwidth}  @{}}
+				1. \textbf{Translational equilibrium} \par The \textbf{net external} force acting on the body is zero. $$\sum F = 0$$ & 2. \textbf{Rotational Equilibrium} \par The \textbf{net torque} on the body about \textbf{\underline{ANY} point} is zero. $$\sum \tau = 0$$ \vspace*{-\baselineskip} \\
+			\end{tabular}
+			
+			For a 3-forces system in static equilibrium, the 3 forces for \textit{a closed vector triangle}. For 3 forces acting on an \textit{extended body} in static equilibrium, the lines of action of the 3 forces \textit{must intersect at a common point} unless the 3 forces are parallel.
+	\section{Work, Energy, and Power}
+	\section{Circular Motion}
+	\section{Gravitation}
+	\section{Oscillations}
+	\section{Waves}
+	\section{Superposition}
+	\section{Thermal Physics}
 		\begin{center}
 			\renewcommand{\arraystretch}{1.2}
 			\begin{tabular}{@{} l l p{8.5cm} @{}}
 				\toprule
-				Pressure due to Fluid & $\Delta P = h\rho g$ & The force acting per unit area by the fluid on a body submerged at a depth in the fluid. \\
-				Upthrust & The \textbf{\textit{net force exerted by a fluid}} on a body submerged in the fluid. \\
-				Principle of Floatation &  & For an object floating in equillibrium in a fluid $mg=U=\rho V_{dis} g$ \\
+				Temperature & $T$ & The average kinetic energy the molecules in a system possess. \\
+				Heat & $Q$ & Transfer of thermal energy from regions of higher to lower temperature. \\
+				Thermal Equilibrium & & 2 objects in thermal contact with no net exchange of heat. \\
+				Kelvin Scale & & Absolute temperature scale independent of thermometric properties. \\
+				Absolute Zero & 0K & All molecules possess minimal internal energy. \\
+				Specific Heat Capacity & C & Amount of thermal energy per unit substance to increase the temperature of the unit substance by one unit of temperature. \\
+				Specific latent heat of fusion & $L_f$ & Amount of \textbf{thermal energy per unit mass} to convert the substance from solid to liquid without any change in temperature. \\
+				Specific latent heat of vaporisation & $L_v$ & Amount of \textbf{thermal energy per unit mass} to convert the substance from liquid to gas without any change in temperature. \\
+				Internal Energy & $U$ & Sum of microscopic random kinetic energy and microscopic potential energy of molecules in system. For ideal gases: $$U=\frac{3}{2}~nRT$$ \vspace*{-\baselineskip} \\ 
 				\bottomrule
 			\end{tabular}
 		\end{center}
-		
+		\subsection{Laws of Thermodynamics}
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\begin{tabular}{@{} l p{11cm} @{}}
+					\toprule
+					0\textsuperscript{th} & If two systems are in thermal equilibrium with a third system, they are in thermal equilibrium with each other. \\
+					1\textsuperscript{st} & Increase in internal energy of system is sum of heat absorbed by system and work done on system. $$\Delta U = Q + W_{on}$$ \vspace*{-\baselineskip} \\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+			We need not know the 3\textsuperscript{rd} and 4\textsuperscript{th} laws.
+		\subsection{PV Graphs}
+			We assume, for the following, that the arrow points towards the positive-$V$ direction. 
+			\begin{center}
+				\renewcommand{\arraystretch}{1.2}
+				\begin{tabular}{@{} l l l @{}}
+					\toprule
+					Isobaric & Constant Pressure  & $W_{on} < 0 ~,~~ \Delta U > 0$\\
+					Isochoric & Constant Volume & $W_{on} = 0 ~,~~ \Delta U > 0$\\
+					Isothermal & Constant Temperature & $W_{on} < 0 ~,~~ \Delta U = 0$\\
+					Adiabatic & Thermally Insulated & $W_{on} < 0 ~,~~ Q = 0$\\
+					Cyclic & Start and end at the same state & $\Delta U = 0$\\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+	\section{Electric Fields}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l l p{8.5cm} @{}}
+			\toprule
+			Electric Field & $\displaystyle E=\frac{Q}{4\pi \varepsilon_0 r^2}$ & Electric force per unit charge acting on small positive test charge at that point \\
+			Coulomb's Law & $\displaystyle F_E=\frac{|Q_1||Q_2|}{4\pi \varepsilon_0 r^2}$ & Magnitude of the electric force between 2 point charges is directly proportional to the product of the magnitude of their charges and inversely proportional to square of their distance\\
+			\multicolumn{3}{c}{$F_E=qE$} \\
+			\midrule
+			Electric Potential & $\displaystyle V = \frac{Q}{4\pi \varepsilon_0 r}$ & \textbf{Work done per unit charge} by external force to bring small positive test charge from infinity to that point in an electric field without change in kinetic energy \\
+			Electric Potential Energy & $\displaystyle U = \frac{Q_1 Q_2}{4\pi \varepsilon_0 r}$ & \textbf{Work done } by external force to bring small positive test charge from infinity to that point in an electric field without change in kinetic energy\\
+			\multicolumn{3}{c}{$U=qV$} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	
+	\section{Current of Electricity}
+	\section{DC Circuits}
+	\section{EM and EMI}
+	\section{Alternating Current}
+	\section{Quantum Physics}
+	\section{Lasers and Semiconductors}
+	\section{Nuclear Physics}
+	
 \end{document}
