@@ -1,6 +1,7 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,11pt]{article}
 
 \usepackage[a4paper]{geometry}
+\usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsbsy}
 \usepackage{libertine}
@@ -9,6 +10,9 @@
 \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 \usepackage{makecell}
 \usepackage{hyperref}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{float}
 \hypersetup{pdftitle={The Definitive Physics Definition List},pdfauthor={Engineers of Dubious Quality},bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,colorlinks=true,allcolors=black,pdfstartview=Fit,pdfpagemode=UseOutlines,pdfpagelayout=TwoPageRight}
 
 \newlength{\oldparskip}
@@ -19,7 +23,7 @@
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \title{The Definitive Physics Definition List}
-\author{Engineers of Dubious Quality}
+\author{Engineers of Dubious Quality\\Yudong, Yicheng, Samuel, and Walter}
 
 \begin{document}
 	
@@ -30,7 +34,7 @@
 	
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
-		\begin{tabular}{@{} l p{10.5cm} @{}}
+		\begin{tabular}{@{} l p{11.6cm} @{}}
 			\toprule
 			Systematic Error & An error that occurs consistently more or consistently less than the actual reading.\\
 			Random Error & An error that occurs as a scattering (or spreading) of readings about the average or mean value of the measurements. \\
@@ -48,7 +52,7 @@
 	We define a coordinate system with defined reference positive directions and we assume constant acceleration.
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
-		\begin{tabular}{@{} l l p{8.5cm} @{}}
+		\begin{tabular}{@{} l l p{9.1cm} @{}}
 			\toprule
 			Displacement & $\textbf{s}$ & The distance travelled in a stated direction from a reference point. \\
 			Velocity & $\displaystyle \textbf{v} = \frac{d\textbf{s}}{dt}$ & The rate of change of displacement with respect to time.\\
@@ -63,7 +67,7 @@
 			\oldparskip=\parskip
 			\begin{center}
 				\renewcommand{\arraystretch}{1.2}
-				\begin{tabular}{@{} l >{\parskip=\oldparskip}p{10.5cm} @{}}
+				\begin{tabular}{@{} l >{\parskip=\oldparskip}p{11.5cm} @{}}
 					\toprule
 					1\textsuperscript{st} Law & A body will continue in its \textit{\textbf{state of rest}}, or \textbf{\textit{move}} at \textbf{\textit{constant speed in a stright line}} unless an \textbf{\textit{external resultant force}} acts on it.\\
 					$\rightarrow$ Inertia & The resistance to change in the state of motion of an object \\
@@ -84,13 +88,12 @@
 				\begin{tabular}{@{} p{2.7cm} l p{6.8cm} @{}}
 					\toprule
 					Linear Momentum & $\textbf{p}=m\textbf{v}$ & The product of an object's mass and its velocity. \\
-					\rule{0pt}{20pt}Impulse & $\displaystyle \textbf{J}=\int_{t1}^{t2}\textbf{F}~dt=P_{f}-P_{i}$	& The product of the average force acting on an object and the time interval that the force is being applied.\\	
+					\rule{0pt}{20pt}Impulse & $\displaystyle \textbf{J}=\int_{t1}^{t2}\textbf{F}~dt=\textbf{p}_{f}-\textbf{p}_{i}$	& The product of the average force acting on an object and the time interval that the force is being applied.\\	
 					\midrule
 					Principle of Conservation of Linear Momentum & \multicolumn{2}{p{10.7cm}}{The total momentum of the system is a constant when no external resultant force acts on it.}\\
 					\bottomrule
 				\end{tabular}
 			\end{center}
-	\newpage
 	\section{Forces}
 		\begin{center}
 			\renewcommand{\arraystretch}{1.2}
@@ -127,7 +130,7 @@
 		\end{center}
 		\begin{center}
 			\renewcommand{\arraystretch}{1.2}
-			\begin{tabular}{@{} l l >{\parskip=\oldparskip}p{7.5cm} @{}}
+			\begin{tabular}{@{} l l >{\parskip=\oldparskip}p{7.7cm} @{}}
 				\toprule
 				Work done by a Force & $\displaystyle W=\int_{x1}^{x2} \textbf{F} \cdot d\textbf{x} $ & The product of the magnitude of the force $F$ and the displacement $s$ in the direction of the force. \\
 				Total Mechanical Energy & $\sum \textrm{KE} + \sum \textrm{PE}$ & The total mechnical energy of a system is the sum of all types of kinetic energy and potential energy. \\
@@ -191,7 +194,7 @@
 	\section{Waves and Superposition}
 	\begin{center}
 		\renewcommand{\arraystretch}{1.3}
-		\begin{tabular}{@{} l p{9cm} @{}}
+		\begin{tabular}{@{} l p{10cm} @{}}
 			\toprule
 			Progressive Waves & Disturbance/Vibration which \textbf{propagates}, carrying \textbf{energy without physically transferring} the wave particle \\
 			$\rightarrow$ Transverse Waves & Progressive wave in which particles or fields oscillate perpendicular to direction of wave propagation \\ 
@@ -222,12 +225,12 @@
 			\renewcommand{\arraystretch}{1.2}
 			\begin{tabular}{@{} l l p{8.5cm} @{}}
 				\toprule
-				Temperature & $T$ & The average kinetic energy the molecules in a system possess. \\
-				Heat & $Q$ & Transfer of thermal energy from regions of higher to lower temperature. \\
+				Temperature & $T$ & Measure of the average kinetic energy the molecules in a system possess. \\
+				Heat & $Q$ & Thermal energy that naturally flows from regions of higher to lower temperature. \\
 				Thermal Equilibrium & & 2 objects in thermal contact with no net exchange of heat. \\
 				Kelvin Scale & & Absolute temperature scale independent of thermometric properties. \\
 				Absolute Zero & 0K & All molecules possess minimal internal energy. \\
-				Specific Heat Capacity & $C$ & Amount of thermal energy per unit substance to increase the temperature of the unit substance by one unit of temperature. \\
+				Specific Heat Capacity & $C$ & Amount of thermal energy per unit mass to increase the temperature of the unit mass of substance by one unit of temperature. \\
 				Specific latent heat of fusion & $L_f$ & Amount of \textbf{thermal energy per unit mass} to convert the substance from solid to liquid without any change in temperature. \\
 				Specific latent heat of vaporisation & $L_v$ & Amount of \textbf{thermal energy per unit mass} to convert the substance from liquid to gas without any change in temperature. \\
 				Internal Energy & $U$ & Sum of microscopic random kinetic energy and microscopic potential energy of molecules in system. For ideal gases: $$U=\frac{3}{2}~nRT$$ \vspace*{-\baselineskip} \\ 
@@ -237,7 +240,7 @@
 		\subsection{Laws of Thermodynamics}
 			\begin{center}
 				\renewcommand{\arraystretch}{1.2}
-				\begin{tabular}{@{} l p{11cm} @{}}
+				\begin{tabular}{@{} l p{14cm} @{}}
 					\toprule
 					0\textsuperscript{th} & If two systems are in thermal equilibrium with a third system, they are in thermal equilibrium with each other. \\
 					1\textsuperscript{st} & Increase in internal energy of system is sum of heat absorbed by system and work done on system. $$\Delta U = Q + W_{on}$$ \vspace*{-\baselineskip} \\
@@ -277,14 +280,127 @@
 	\end{center}
 	
 	\section{Current of Electricity}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabular}{@{} l p{11.4cm} @{}}
+			\toprule
+			Potential Difference & The potential difference \textbf{between 2 points} in a circuit is the \textbf{electrical energy converted to non-electrical} energy \textbf{per unit electric charge} between the 2 points. \\
+			Current & Rate of flow of charge. $$I_{\text{instantaneous}} = \frac{dQ}{dt}$$ \vspace*{-\baselineskip}\\ 
+			Electromotive Force & EMF \textbf{of a source} is the amount of \textbf{non-electrical energy converted to electrical energy} per unit electric charge in driving a charge round a \textbf{complete circuit} \\
+			Resistance & \textbf{Ratio} of potential difference across device to the current flowing through it $$R = \frac{\rho L}{A}$$ \vspace*{-\baselineskip}\\
+			Charge & The charge passing through a given point is the product of current and time during which the current flows. $$Q = It$$ \vspace*{-\baselineskip}\\ 
+			Coulomb & \SI{1}{\coulomb} is the quantity of electric charge that pass a given point in a circuit when a steady current of \SI{1}{\ampere} passes through that point for \SI{1}{\second}.\\
+			Ohm & \SI{1}{\ohm} is the resistance of a device through which a current of \SI{1}{\ampere} flows when a potential difference of \SI{1}{\volt} exists across it.\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
 	\section{DC Circuits}
+	The potential divider rule is summarised by the equation: 
+	\begin{equation*}
+	V_{\text{R1}} = \frac{R_{\text{R1}}}{R_{\text{total}}} \times V_{\text{total}}
+	\end{equation*}
+	A potentiometer can be used to find the electromotive force of an unknown cell as well as its internal resistance. The simplest and most common potentiometer setup is shown in the following figure.
+	\begin{figure}[H]
+		\centering \includegraphics[width=0.4\textwidth]{potentiometer}
+	\end{figure}
+	When the galvanometer shows zero deflection, i.e. no current passes through $G$, the emf of $E_1$ can be found by:
+	\begin{equation*}
+	V_{E_1} = \frac{L_{\text{AC$_1$}}}{L_{\text{AB}}} \times V_{E_0}
+	\end{equation*}
+	To find the internal resistance of $E_1$, a resistor of known resistance is added across $E_1$, and the position of $C_1$ adjusted such that the galvanometer again shows no deflection. This effectively creates two separate circuits, one around $E_0AB$ and one from $E_1$ to the resistor. The terminal potential difference of $E_1$ can be found using the same equation as above. Using this value, the previously found electromotive force of $E_1$, and the potential divider rule, the internal resistance can be found accordingly. 
 	\section{EM and EMI}
+	\subsection{Concepts}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l l p{10cm} @{}}
+			\toprule
+			Magnetic Flux Density & $B$ & The \textbf{force per unit length per unit current} acting on an \textbf{infinitely long} current carrying conductor placed perpendicular to the magnetic field. The SI unit is the tesla, \si{\tesla}. \\
+			Tesla & \si{\tesla} & The magnetic flux density of a magnetic field is said to be \SI{1}{\tesla} if the force acting per unit length on an infinitely long conductor carrying a current of \SI{1}{\ampere} and placed perpendicular to the magnetic field is \SI{1}{\newton\per\meter}. \\
+			Magnetic Flux & $\varphi$ & The magnetic flux through a surface is the product of the magnetic flux density \textbf{normal} to the surface and the area of the surface. The SI unit is the weber, \si{\weber}. \\
+			Weber & \si{\weber} & The weber is defined as the magnetic flux through a surface of \SI{1}{\meter\squared} if a magnetic field of flux density \SI{1}{\tesla} exists perpendicular to the surface.\\
+			Flux Linkage & $\Phi$ & The product of the magnetic flux through a coil and the number of turns of the coil. The SI unit is also the weber, \si{\weber}. \\
+			\midrule
+			Lenz's Law & \multicolumn{2}{p{11.1cm}}{The polarity of the induced EMF is such that it tends to produce a current that creates a magnetic field so as to oppose the change in magnetic flux. It is a statement of the conservation of energy where the mechanical energy is converted to electrical energy. This law allows us to determine the polarity of the induced EMF and predict the direction of the induced current.} \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\subsection{Equations}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l C{9cm} @{}}
+			\toprule
+			Force on Current Carrying Conductor & $F = BIL\sin\theta$\\
+			Force on Moving Charge & $F = BQv\sin\theta$\\
+			Torque in DC Motor & $\text{Torque} = NBIA\sin\theta$\\
+			Faraday's Law & $\varepsilon \propto \frac{d\Phi}{dt}$\\
+			Induced EMF in AC Generator & $\varepsilon = NBA\omega\sin\left(\omega t\right)$\\
+			Induced EMF in a Rod Cutting Flux & $\varepsilon = B_\perp Lv$\\
+			Induced EMF in a Faraday's Disc & $\varepsilon = BAf$\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
 	\section{Alternating Current}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l p{10cm} @{}}
+			\toprule
+			Alternating Current & Occurs when charge carriers periodically reverse their direction of motion.\\
+			Root-Mean-Square & To find the RMS value for any AC graph: \begin{enumerate}
+				\item Square the $I/t$ or $V/t$ graph.
+				\item Find area under graph in 1 period.
+				\item Divide the area by 1 period.
+				\item Square root the above result.
+			\end{enumerate}
+			If the graph is sinusoidal, the RMS value can be found by simply dividing the peak value by $\sqrt{2}$. The RMS value of an alternating current is the equivalent constant DC that will dissipate the same power in a given resistive load.\\
+			AC to DC Conversion & Called rectification. Can be accomplished by placing a diode next to the AC source.\\
+			Non-Ideality in Transformers & Caused by:
+			\begin{enumerate}
+				\item Energy dissipated as heat due to resistance of windings in coils. Can be minimised by using thick coils. 
+				\item Alternating magnetic flux induces eddy currents in iron core and causes heating. Can be minimised by using a laminated core.
+				\item Hysteresis loss whenever direction of magnetic flux is reversed causing some energy wastage. Can be minimised by using a soft iron core.
+				\item Flux leakage if core is badly designed.
+			\end{enumerate}\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
 	\section{Quantum Physics}
 	\section{Lasers and Semiconductors}
-	\section{Nuclear Physics}
-	
 	\begin{center}
-		{\Huge Good Luck! Don't Panic.}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l p{10cm} @{}}
+			\toprule
+			Spontaneous Emission & Emission of photons through random de-excitation of excited atoms.\\
+			Stimulated Emission & Emission of photons from excited atoms as triggered by an incident photon with energy exactly equal to the difference between the excited state and the lower energy state. Emitted photon has exactly the same phase, energy, polarisation and direction of travel as incident photon.\\
+			Population Inversion & Condition where there are more atoms in the upper energy state/level than in the lower energy state/level.\\
+			Metastable State & Excited state with longer life-time than other excited states.\\
+			Conduction Band & Empty or partially filled band just above the valence band.\\
+			Valence Band & Highest \textbf{fully-filled} energy band at \SI{0}{\kelvin}.\\
+			Metals & Metals have a partially filled conduction band at \SI{0}{\kelvin}.\\
+			Insulators & Insulators have a fully-filled valence band and empty conduction band at 0K, and also a large bandgap. There are very few electrons in the conduction band even at room temperature due to the large bandgap.\\
+			Intrinsic Semiconductor & Intrinsic semiconductors have a full valence band and empty conduction band at 0K, but a smaller bandgap than that of insulators. An appreciable number of electrons are promoted to the conduction band at room temperature due to the smaller bandgap.\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\section{Nuclear Physics}
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular}{@{} l p{10cm} @{}}
+			\toprule
+			Nucleon & A constituent of a nucleus, i.e. a proton or neutron.\\
+			Nuclide & A \textbf{species} of atom characterised by \textbf{constituent of nucleus} (no. of neutrons and protons).\\
+			Isotope & Atoms with the same number of protons but different number of neutrons.\\
+			Unified Atomic Mass Unit & 1 u is defined as $\frac{1}{12}$ of the mass of a Carbon-12 atom.\\
+			Binding Energy of Nucleus/Atom & The energy required to \textbf{separate} the nucleus/atom into its \textbf{constituents}.\\
+			Binding Energy per Nucleon & The \textbf{average} energy required to remove a nucleon from its nucleus.\\
+			Radioactive Decay & A \textbf{spontaneous} and \textbf{random} process where an \textbf{unstable} nucleus changes into a different nuclide by emitting radiation. Spontaneous means that it is not triggered by external factors or influences, and random means that it is impossible to predict \textbf{which} nuclide will decay and \textbf{when} a \textbf{particular} nuclide will decay.\\
+			Activity & The rate of decay, or number of disintegrations per unit time. SI unit is \si{\per\second} or the becquerel, \si{\becquerel}. $$A = -\frac{dN}{dt} = \lambda N$$ \vspace*{-\baselineskip}\\
+			Decay Constant & \textbf{Probability per unit time} that a nucleus will decay. SI unit is \si{\per\second}. $$\lambda = \frac{A}{N}$$ \vspace*{-\baselineskip}\\
+			Half-Life & The \textbf{average} time taken for a number of \textbf{radioactive} nuclei to decay to \textbf{half} its original value. $$t_{\frac{1}{2}} = \frac{\ln 2}{\lambda}$$ \vspace*{-\baselineskip}\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\vspace{2cm}
+	\begin{center}
+		{\huge Good luck! Don't panic, all is well.}
 	\end{center}
 \end{document}
